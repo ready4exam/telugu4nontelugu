@@ -1,0 +1,95 @@
+name: 🏗️ Generate Class Content
+
+on:
+  workflow_dispatch:
+    inputs:
+      class_folder_name:
+        description: 'Folder Name (must match exactly, e.g., class5)'
+        required: true
+        default: 'class5'
+      chapter_list:
+        description: 'Comma separated Chapter Names'
+        required: true
+        default: 'Pandem, Samaikya Bharati, Rekkala Enugu, Parishubhrata, Nirmal Bommalu, Shataka Padyalu, Sankranthi Sandesham, Kanuvippu, Ramappa, Shibi Chakravarti'
+
+jobs:
+  create-files:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Build Folders and Files
+        run: |
+          # 1. Capture Inputs
+          CLASS_DIR="${{ inputs.class_folder_name }}"
+          IFS=',' read -r -a CHAPTERS <<< "${{ inputs.chapter_list }}"
+          
+          echo "🚀 Processing $CLASS_DIR..."
+
+          # 2. Ensure Class Folder and PDF folder exist
+          mkdir -p "$CLASS_DIR/pdf"
+
+          # 3. Create the Class Index (README.md) inside the class folder
+          # This acts as the Table of Contents for that specific class
+          INDEX_FILE="$CLASS_DIR/README.md"
+          echo "# 📚 $CLASS_DIR - Table of Contents" > "$INDEX_FILE"
+          echo "" >> "$INDEX_FILE"
+          echo "### 📄 [Download Textbook PDF](./pdf/)" >> "$INDEX_FILE"
+          echo "" >> "$INDEX_FILE"
+          echo "## 🏫 Chapters" >> "$INDEX_FILE"
+
+          # 4. Loop through chapters to create sub-folders
+          count=1
+          for chapter in "${CHAPTERS[@]}"; do
+            # Clean whitespace
+            chapter=$(echo "$chapter" | xargs)
+            
+            # Create a safe folder name (e.g., 01_Pandem)
+            prefix=$(printf "%02d" $count)
+            safe_name=$(echo "$chapter" | tr ' ' '_')
+            chapter_dir="$CLASS_DIR/${prefix}_${safe_name}"
+            
+            mkdir -p "$chapter_dir"
+            
+            # --- Create Translation File ---
+            trans_file="$chapter_dir/translation.md"
+            if [ ! -f "$trans_file" ]; then
+              echo "# 📖 Chapter $count: $chapter (Translation)" > "$trans_file"
+              echo "**Source:** Page [Insert Page No]" >> "$trans_file"
+              echo "" >> "$trans_file"
+              echo "### 🗣️ Reading Guide" >> "$trans_file"
+              echo "| Telugu | Pronunciation | Meaning |" >> "$trans_file"
+              echo "| :--- | :--- | :--- |" >> "$trans_file"
+              echo "| (Paste Telugu) | (English Script) | (English Meaning) |" >> "$trans_file"
+            fi
+
+            # --- Create Exercise File ---
+            ex_file="$chapter_dir/exercise.md"
+            if [ ! -f "$ex_file" ]; then
+              echo "# ✍️ Chapter $count: Exercises" > "$ex_file"
+              echo "**Source:** Page [Insert Page No]" >> "$ex_file"
+              echo "" >> "$ex_file"
+              echo "### 🧠 Questions & Answers" >> "$ex_file"
+              echo "1. **Question:** ..." >> "$ex_file"
+              echo "   - *Pronunciation:* ..." >> "$ex_file"
+              echo "   - **Answer:** ..." >> "$ex_file"
+            fi
+
+            # Add link to the Class Index
+            echo "$count. **$chapter**" >> "$INDEX_FILE"
+            echo "   - [📖 Read Story](./${prefix}_${safe_name}/translation.md) | [✍️ Do Exercises](./${prefix}_${safe_name}/exercise.md)" >> "$INDEX_FILE"
+            echo "" >> "$INDEX_FILE"
+
+            count=$((count+1))
+          done
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "GitHub Automation"
+          git config --global user.email "action@github.com"
+          git add .
+          git commit -m "✨ Generated structure for ${{ inputs.class_folder_name }}" || echo "No changes to commit"
+          git push
