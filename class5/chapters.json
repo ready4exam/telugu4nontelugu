@@ -1,0 +1,66 @@
+{
+  "class_name": "Class 5",
+  "pdf_path": "class5/pdf/5th telugu om 2025-26.pdf",
+  "chapters": [
+    {
+      "folder": "01_Pandem",
+      "start_page": 12,
+      "end_page": 22,
+      "topic": "Pandem (The Race) - A story about a rabbit and tortoise."
+    },
+    {
+      "folder": "02_Samaikya_Bharati",
+      "start_page": 23,
+      "end_page": 34,
+      "topic": "Samaikya Bharati - A patriotic song about unity."
+    },
+    {
+      "folder": "03_Rekkala_Enugu",
+      "start_page": 35,
+      "end_page": 48,
+      "topic": "Rekkala Enugu - A fantasy story about a flying elephant."
+    },
+    {
+      "folder": "04_Parishubhrata",
+      "start_page": 49,
+      "end_page": 57,
+      "topic": "Parishubhrata - A lesson on cleanliness and hygiene."
+    },
+    {
+      "folder": "05_Nirmal_Bommalu",
+      "start_page": 58,
+      "end_page": 66,
+      "topic": "Nirmal Bommalu - The history of Nirmal toys."
+    },
+    {
+      "folder": "06_Shataka_Padyalu",
+      "start_page": 67,
+      "end_page": 74,
+      "topic": "Shataka Padyalu - Moral poems and their meanings."
+    },
+    {
+      "folder": "07_Sankranthi_Sandesham",
+      "start_page": 75,
+      "end_page": 80,
+      "topic": "Sankranthi Sandesham - A song about the Sankranthi festival."
+    },
+    {
+      "folder": "08_Kanuvippu",
+      "start_page": 81,
+      "end_page": 88,
+      "topic": "Kanuvippu - A story about realizing the value of trees."
+    },
+    {
+      "folder": "09_Ramappa",
+      "start_page": 89,
+      "end_page": 96,
+      "topic": "Ramappa - A travelogue about the Ramappa Temple."
+    },
+    {
+      "folder": "10_Shibi_Chakravarti",
+      "start_page": 97,
+      "end_page": 105,
+      "topic": "Shibi Chakravarti - A mythological story about sacrifice."
+    }
+  ]
+}
