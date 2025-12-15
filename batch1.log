@@ -1,0 +1,9 @@
+🔑 API Key loaded (starts with: AIza...)
+🔄 Finding a working model that supports 'generateContent'...
+   ✅ Found a working model: models/gemini-2.5-flash
+📂 Uploading PDF: class5/pdf/5th telugu om 2025-26.pdf...
+⏳ Waiting for PDF processing...
+🚀 Processing with model: models/gemini-2.5-flash
+   Translating 01_Pandem... ✅ Done.
+   Translating 02_Samaikya_Bharati... ✅ Done.
+   Translating 03_Rekkala_Enugu... ✅ Done.

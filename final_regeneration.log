@@ -1,0 +1,17 @@
+🔑 API Key loaded (starts with: AIza...)
+🔄 Finding a working model that supports 'generateContent'...
+   ✅ Found a working model: models/gemini-2.5-flash
+📂 Uploading PDF: class5/pdf/5th telugu om 2025-26.pdf...
+⏳ Waiting for PDF processing...
+🚀 Processing with model: models/gemini-2.5-flash
+   Translating 01_Pandem... ✅ Done.
+   Translating 02_Samaikya_Bharati... ✅ Done.
+   Translating 03_Rekkala_Enugu... ✅ Done.
+   Translating 04_Parishubhrata... ✅ Done.
+   Translating 05_Nirmal_Bommalu...    ⚠️ Error during generation: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 4. Meaning that the model was reciting from copyrighted material.
+✅ Done.
+   Translating 06_Shataka_Padyalu... ✅ Done.
+   Translating 07_Sankranthi_Sandesham... ✅ Done.
+   Translating 08_Kanuvippu... ✅ Done.
+   Translating 09_Ramappa... ✅ Done.
+   Translating 10_Shibi_Chakravarti... ✅ Done.

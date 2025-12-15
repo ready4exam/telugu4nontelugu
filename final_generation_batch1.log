@@ -1,0 +1,9 @@
+🔑 API Key loaded (starts with: AIza...)
+🔄 Finding a working model that supports 'generateContent'...
+   ✅ Found a working model: models/gemini-2.5-flash
+Traceback (most recent call last):
+  File "/app/scripts/translate_chapters.py", line 203, in <module>
+    main()
+  File "/app/scripts/translate_chapters.py", line 125, in main
+    raise FileNotFoundError(f"PDF not found at path: {pdf_path}")
+FileNotFoundError: PDF not found at path: class5/pdf/5th telugu om 2025-26.pdf

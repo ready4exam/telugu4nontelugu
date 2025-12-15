@@ -1,0 +1,16 @@
+🔑 API Key loaded (starts with: AIza...)
+🔄 Finding a working model that supports 'generateContent'...
+   ✅ Found a working model: models/gemini-2.5-flash
+📂 Uploading PDF: class5/pdf/5th telugu om 2025-26.pdf...
+⏳ Waiting for PDF processing...
+🚀 Processing with model: models/gemini-2.5-flash
+   📚 Generating lesson for 01_Pandem... ✅ Done.
+   ✍️ Generating exercises for 01_Pandem...    ⚠️ Error during generation: Invalid \escape: line 7 column 31 (char 244)
+✅ Done.
+   📚 Generating lesson for 02_Samaikya_Bharati...    ⚠️ Error during generation: Invalid \escape: line 15 column 22 (char 1259)
+   ⚠️ Error during generation: Invalid \escape: line 15 column 22 (char 1228)
+   ⚠️ Error during generation: Invalid \escape: line 15 column 22 (char 969)
+❌ An unexpected error occurred for chapter 02_Samaikya_Bharati: Invalid \escape: line 15 column 22 (char 969)
+   📚 Generating lesson for 03_Rekkala_Enugu...    ⚠️ Error during generation: Invalid \escape: line 45 column 40 (char 2421)
+✅ Done.
+   ✍️ Generating exercises for 03_Rekkala_Enugu... ✅ Done.
