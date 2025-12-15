@@ -32,4 +32,4 @@
     *   [📖 Read Lesson](09_Ramappa/lesson.html) | [✍️ Do Exercises](09_Ramappa/exercise.html)
 
 10. **Shibi Chakravarti**
-    *   [📖 Read Lesson](10_Shibi_Chakravarti/lesson.html) | [✍️ Do Exercises](10_Shibi_Chakravarti/exercise.html)
+    *   [📖 Read Lesson](10_Shibi_Chravarti/lesson.html) | [✍️ Do Exercises](10_Shibi_Chakravarti/exercise.html)
