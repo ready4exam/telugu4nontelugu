@@ -22,7 +22,6 @@ on:
 jobs:
   translate_lesson:
     runs-on: ubuntu-latest
-    # Grants write access to the repository to fix the 403 error
     permissions:
       contents: write
     
@@ -48,13 +47,7 @@ jobs:
           import sys
           from google import genai
 
-          # fallback chain using valid model IDs
-          MODEL_CHAIN = [
-              "gemini-2.0-flash",        
-              "gemini-flash-latest",     
-              "gemini-1.5-flash",        
-              "gemini-1.5-flash-8b"      
-          ]
+          MODEL_CHAIN = ["gemini-2.0-flash", "gemini-flash-latest", "gemini-1.5-flash", "gemini-1.5-flash-8b"]
           
           chapter = "${{ github.event.inputs.chapter_folder }}"
           md_path = f"class5/{chapter}/lesson.md"
@@ -70,17 +63,24 @@ jobs:
 
           client = genai.Client(api_key=api_key)
           
+          # Refined prompt for full word-by-word coverage including summaries
           prompt = f"""
-          You are a Telugu language tutor. Convert the following Telugu lesson text into a structured learning table.
+          You are a Telugu language tutor for Class 5 students. 
+          Convert the following lesson text into a kid-friendly, mobile-optimized HTML learning guide.
           
           TASK:
-          1. Create a row for every complete sentence in bold.
-          2. Create a row for every individual word in that sentence with: | Telugu Word | Pronunciation | Meaning |.
+          1. Process the entire text (Poem/Story AND Summary/Taatparyam). Do not omit any words.
+          2. Break the text into logical sentences.
+          3. For EVERY sentence, create a card. 
+          4. Inside each card, first display the full sentence in bold.
+          5. Below the full sentence, create a table with columns: | Telugu Word | Pronunciation | Meaning | 
+          6. Provide a row for EVERY individual word in that sentence.
           
           FORMAT:
-          Return ONLY a valid HTML table with Bootstrap classes: <table class="table table-striped table-bordered mt-3">
+          Return ONLY the raw HTML content (no markdown code blocks) using Bootstrap 5 classes for styling.
+          Use a table class like "table table-hover mb-0".
           
-          TEXT:
+          TEXT TO PROCESS:
           {lesson_content}
           """
 
@@ -91,16 +91,40 @@ jobs:
                   response = client.models.generate_content(model=model_name, contents=prompt)
                   output_html = response.text
                   
-                  # Strip markdown artifacts if the model provides them
                   if "```html" in output_html:
                       output_html = output_html.split("```html")[1].split("```")[0]
                   elif "```" in output_html:
                       output_html = output_html.split("```")[1].split("```")[0]
 
-                  final_code = f'<div class="container mt-4"><h2>{chapter.replace("_", " ")}</h2>{output_html.strip()}</div>'
-                  
+                  # CSS injection for a consistent, attractive look across all lessons
+                  styled_html = f"""
+          <!DOCTYPE html>
+          <html lang="te">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+              <style>
+                  body {{ background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; }}
+                  .sentence-card {{ background: white; border-radius: 15px; border: none; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; }}
+                  .full-sentence {{ background-color: #eef2ff; padding: 15px; font-weight: bold; color: #3730a3; border-bottom: 1px solid #e0e7ff; }}
+                  .word-table {{ font-size: 0.95rem; }}
+                  .lesson-title {{ background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; }}
+                  @media (max-width: 576px) {{ .word-table {{ font-size: 0.85rem; }} }}
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <div class="lesson-title text-center">
+                      <h1>{chapter.replace("_", " ")}</h1>
+                  </div>
+                  {output_html.strip()}
+              </div>
+          </body>
+          </html>
+          """
                   with open(html_path, "w", encoding="utf-8") as f:
-                      f.write(final_code)
+                      f.write(styled_html)
                   
                   print(f"✅ Updated {html_path} using {model_name}")
                   success = True
@@ -110,7 +134,6 @@ jobs:
                   continue
 
           if not success:
-              print("🔥 All models failed or reached quota limits.")
               sys.exit(1)
           EOF
 
@@ -119,5 +142,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }} with word-by-word translation"
+          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }} with full word-by-word format"
           git push
