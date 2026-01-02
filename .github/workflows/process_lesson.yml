@@ -8,6 +8,11 @@ on:
         required: true
         type: choice
         options:
+          - 01_Pandem
+          - 02_Samaikya_Bharati
+          - 03_Rekkala_Enugu
+          - 04_Parishubhrata
+          - 05_Nirmal_Bommalu
           - 06_Shataka_Padyalu
           - 07_Sankranthi_Sandesham
           - 08_Kanuvippu
@@ -17,6 +22,10 @@ on:
 jobs:
   translate_lesson:
     runs-on: ubuntu-latest
+    # Grants write access to the repository to fix the 403 error
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -38,14 +47,13 @@ jobs:
           import os
           import sys
           from google import genai
-          from google.genai import types
 
-          # Configuration
+          # fallback chain using valid model IDs
           MODEL_CHAIN = [
-              "gemini-2.0-flash",        # Currently standard high-speed model
-              "gemini-flash-latest",     # Backup
-              "gemini-1.5-flash",        # Stable backup
-              "gemini-1.5-flash-8b"      # High-quota fallback
+              "gemini-2.0-flash",        
+              "gemini-flash-latest",     
+              "gemini-1.5-flash",        
+              "gemini-1.5-flash-8b"      
           ]
           
           chapter = "${{ github.event.inputs.chapter_folder }}"
@@ -66,16 +74,13 @@ jobs:
           You are a Telugu language tutor. Convert the following Telugu lesson text into a structured learning table.
           
           TASK:
-          1. For every sentence in the text, first provide a row with the full sentence in bold.
-          2. Then, for every individual word in that sentence, provide a row with the word, its English pronunciation, and its English meaning.
+          1. Create a row for every complete sentence in bold.
+          2. Create a row for every individual word in that sentence with: | Telugu Word | Pronunciation | Meaning |.
           
           FORMAT:
-          Return ONLY a valid HTML snippet containing a table with these columns:
-          | Telugu | Pronunciation | Meaning |
+          Return ONLY a valid HTML table with Bootstrap classes: <table class="table table-striped table-bordered mt-3">
           
-          Use Bootstrap classes for styling: <table class="table table-striped table-bordered mt-3">
-          
-          TEXT TO PROCESS:
+          TEXT:
           {lesson_content}
           """
 
@@ -83,37 +88,29 @@ jobs:
           for model_name in MODEL_CHAIN:
               try:
                   print(f"🔄 Attempting with model: {model_name}...")
-                  response = client.models.generate_content(
-                      model=model_name,
-                      contents=prompt
-                  )
-                  
+                  response = client.models.generate_content(model=model_name, contents=prompt)
                   output_html = response.text
                   
-                  # Clean Markdown artifacts
+                  # Strip markdown artifacts if the model provides them
                   if "```html" in output_html:
                       output_html = output_html.split("```html")[1].split("```")[0]
                   elif "```" in output_html:
                       output_html = output_html.split("```")[1].split("```")[0]
 
-                  final_code = f"""
-          <div class="container mt-4">
-              <h2 class="mb-4">Lesson Translation: {chapter.replace('_', ' ')}</h2>
-              {output_html.strip()}
-          </div>
-          """
+                  final_code = f'<div class="container mt-4"><h2>{chapter.replace("_", " ")}</h2>{output_html.strip()}</div>'
+                  
                   with open(html_path, "w", encoding="utf-8") as f:
                       f.write(final_code)
                   
-                  print(f"✅ Successfully updated {html_path} using {model_name}")
+                  print(f"✅ Updated {html_path} using {model_name}")
                   success = True
                   break
               except Exception as e:
-                  print(f"⚠️ Model {model_name} failed. Error: {e}")
+                  print(f"⚠️ {model_name} failed: {e}")
                   continue
 
           if not success:
-              print("🔥 All models in the chain failed or reached quota limits.")
+              print("🔥 All models failed or reached quota limits.")
               sys.exit(1)
           EOF
 
@@ -122,5 +119,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }} using fallback chain"
+          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }} with word-by-word translation"
           git push
