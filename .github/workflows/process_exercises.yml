@@ -59,8 +59,16 @@ jobs:
           PAGES = "${{ github.event.inputs.page_numbers }}"
           OUTPUT_PATH = f"class5/{CHAPTER}/exercise.html"
           
-          # Updated Model Chain (Added 'latest' variants and fallback)
-          MODEL_CHAIN = ["gemini-2.0-flash", "gemini-1.5-flash-latest", "gemini-1.5-flash-002"]
+          # EXTENDED MODEL CHAIN (Tries everything from fastest to smartest)
+          MODEL_CHAIN = [
+              "gemini-2.0-flash", 
+              "gemini-2.0-flash-exp", 
+              "gemini-1.5-flash", 
+              "gemini-1.5-flash-latest", 
+              "gemini-1.5-flash-002", 
+              "gemini-1.5-pro", 
+              "gemini-1.5-pro-latest"
+          ]
           
           if not os.path.exists(PDF_PATH):
               print(f"❌ Error: PDF not found at {PDF_PATH}")
@@ -119,7 +127,7 @@ jobs:
           success = False
           
           for model_name in MODEL_CHAIN:
-              # RETRY LOGIC for Rate Limits (429)
+              # RETRY LOGIC: Try each model up to 3 times if Rate Limited
               max_retries = 3
               retry_count = 0
               
@@ -188,7 +196,7 @@ jobs:
                           retry_count += 1
                       else:
                           print(f"⚠️ {model_name} failed with non-retriable error: {e}")
-                          break # Break retry loop, try next model
+                          break # Break retry loop, move to next model
               
               if success:
                   break # Break model loop
