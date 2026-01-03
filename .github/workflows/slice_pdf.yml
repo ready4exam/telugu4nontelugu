@@ -1,0 +1,143 @@
+name: Split PDF Pages to Chapter
+
+on:
+  workflow_dispatch:
+    inputs:
+      class_folder:
+        description: 'Select Class Folder'
+        required: true
+        type: choice
+        options:
+          - class3
+          - class4
+          - class5
+          - class6
+          - class7
+          - class8
+          - class9
+          - class10
+      chapter_folder_name:
+        description: 'Chapter Folder Name (e.g. 01_Pandem)'
+        required: true
+        type: string
+      page_numbers:
+        description: 'Page Numbers (e.g. 5-8)'
+        required: true
+        type: string
+
+jobs:
+  slice_pdf_job:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install PyMuPDF
+        run: pip install pymupdf
+
+      - name: Run PDF Slicer
+        run: |
+          python << 'EOF'
+          import os
+          import sys
+          import glob
+          import fitz  # PyMuPDF
+
+          # --- INPUTS ---
+          CLASS_DIR = "${{ github.event.inputs.class_folder }}"
+          CHAPTER_NAME = "${{ github.event.inputs.chapter_folder_name }}"
+          PAGES_INPUT = "${{ github.event.inputs.page_numbers }}"
+
+          # --- PATHS ---
+          # 1. Source PDF Directory (e.g., class6/pdf/)
+          PDF_SOURCE_DIR = os.path.join(CLASS_DIR, "pdf")
+          
+          # 2. Destination Directory (e.g., class6/01_Pandem/)
+          DESTINATION_DIR = os.path.join(CLASS_DIR, CHAPTER_NAME)
+          
+          # 3. Output File Path
+          OUTPUT_FILE = os.path.join(DESTINATION_DIR, "exercise.pdf")
+
+          print(f"📂 Class: {CLASS_DIR}")
+          print(f"📂 Chapter: {CHAPTER_NAME}")
+          print(f"📄 Pages: {PAGES_INPUT}")
+
+          # --- 1. FIND SOURCE PDF ---
+          # We look for ANY .pdf file inside classX/pdf/
+          if not os.path.exists(PDF_SOURCE_DIR):
+              print(f"❌ Error: The folder '{PDF_SOURCE_DIR}' does not exist.")
+              print(f"👉 Please create '{CLASS_DIR}/pdf' and upload your textbook there.")
+              sys.exit(1)
+
+          pdf_files = glob.glob(os.path.join(PDF_SOURCE_DIR, "*.pdf"))
+          
+          if not pdf_files:
+              print(f"❌ Error: No PDF file found in '{PDF_SOURCE_DIR}'.")
+              sys.exit(1)
+              
+          SOURCE_PDF = pdf_files[0] # Pick the first PDF found
+          print(f"bi 📖 Found Source PDF: {SOURCE_PDF}")
+
+          # --- 2. ENSURE DESTINATION EXISTS ---
+          if not os.path.exists(DESTINATION_DIR):
+              print(f"⚠️ Warning: Chapter folder '{DESTINATION_DIR}' did not exist. Creating it...")
+              os.makedirs(DESTINATION_DIR, exist_ok=True)
+
+          # --- 3. PARSE PAGES ---
+          try:
+              if "-" in PAGES_INPUT:
+                  start_page, end_page = map(int, PAGES_INPUT.split("-"))
+              else:
+                  start_page = end_page = int(PAGES_INPUT)
+                  
+              # PyMuPDF uses 0-based indexing (Page 1 is index 0)
+              start_idx = start_page - 1
+              end_idx = end_page - 1 
+              
+          except ValueError:
+              print(f"❌ Error: Invalid page format '{PAGES_INPUT}'. Use '5-8' or '5'.")
+              sys.exit(1)
+
+          # --- 4. EXTRACT & SAVE ---
+          try:
+              doc = fitz.open(SOURCE_PDF)
+              
+              # Validate page numbers
+              if start_idx < 0 or end_idx >= len(doc):
+                  print(f"❌ Error: Page range {start_page}-{end_page} is out of bounds.")
+                  print(f"   (The PDF has {len(doc)} pages)")
+                  sys.exit(1)
+
+              print(f"✂️  Extracting pages {start_page} to {end_page}...")
+              
+              new_doc = fitz.open()
+              # insert_pdf includes 'to_page', so we use end_idx directly
+              new_doc.insert_pdf(doc, from_page=start_idx, to_page=end_idx)
+              
+              new_doc.save(OUTPUT_FILE)
+              new_doc.close()
+              doc.close()
+              
+              print(f"✅ Success! Created: {OUTPUT_FILE}")
+              
+          except Exception as e:
+              print(f"❌ Failed to process PDF: {e}")
+              sys.exit(1)
+          EOF
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull
+          git add .
+          git commit -m "Add exercise.pdf for ${{ github.event.inputs.class_folder }}/${{ github.event.inputs.chapter_folder_name }}"
+          git push
