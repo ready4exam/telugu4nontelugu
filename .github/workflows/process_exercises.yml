@@ -1,0 +1,200 @@
+name: Process Exercise Generation
+
+on:
+  workflow_dispatch:
+    inputs:
+      chapter_folder:
+        description: 'Select the Chapter Folder'
+        required: true
+        type: choice
+        options:
+          - 01_Pandem
+          - 02_Samaikya_Bharati
+          - 03_Rekkala_Enugu
+          - 04_Parishubhrata
+          - 05_Nirmal_Bommalu
+          - 06_Shataka_Padyalu
+          - 07_Sankranthi_Sandesham
+          - 08_Kanuvippu
+          - 09_Ramappa
+          - 10_Shibi_Chakravarti
+      page_numbers:
+        description: 'Page Numbers (e.g., 45-47)'
+        required: true
+        type: string
+
+jobs:
+  generate_exercises:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install google-genai
+
+      - name: Run Exercise Generation Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python << 'EOF'
+          import os
+          import sys
+          import time
+          from google import genai
+          from google.genai import types
+
+          # CONFIGURATION
+          # Ensure you have your textbook PDF at this location in your repo
+          PDF_PATH = "class5/textbook.pdf" 
+          CHAPTER = "${{ github.event.inputs.chapter_folder }}"
+          PAGES = "${{ github.event.inputs.page_numbers }}"
+          OUTPUT_PATH = f"class5/{CHAPTER}/exercise.html"
+          
+          MODEL_CHAIN = ["gemini-2.0-flash", "gemini-1.5-flash"]
+          
+          if not os.path.exists(PDF_PATH):
+              print(f"❌ Error: PDF not found at {PDF_PATH}")
+              sys.exit(1)
+
+          client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+
+          # 1. Upload PDF
+          print(f"bi 📤 Uploading PDF...")
+          try:
+              # Upload the file to Google File API
+              # Note: We use the V1beta client logic implicitly handled by the new library or fallback to standard upload
+              # For the 'google-genai' library specifically:
+              file_ref = client.files.upload(path=PDF_PATH, config={'display_name': 'Telugu_Textbook'})
+              
+              # Wait for processing (usually instant for PDFs, but safe to check)
+              while file_ref.state.name == "PROCESSING":
+                  print("... processing file ...")
+                  time.sleep(2)
+                  file_ref = client.files.get(name=file_ref.name)
+                  
+              if file_ref.state.name == "FAILED":
+                  raise ValueError("File processing failed on Google's side.")
+                  
+              print(f"✅ PDF Uploaded: {file_ref.uri}")
+              
+          except Exception as e:
+              print(f"❌ Upload failed: {e}")
+              sys.exit(1)
+
+          # 2. The Exercise Specific Prompt
+          prompt = f"""
+          You are an expert Telugu language tutor for Class 5 students.
+          Analyze the attached PDF, specifically looking at **Pages {PAGES}** which cover the Exercises (Abhyasam/Prashnalu) for the chapter "{CHAPTER}".
+
+          TASK:
+          Extract every question and answer pair found on these pages.
+          For each question, generate the answer yourself if it is not explicitly in the text.
+
+          OUTPUT FORMAT:
+          Create a mobile-friendly HTML file using Bootstrap 5.
+          For every Question & Answer pair, create a card with the following structure:
+
+          1. **Block A (The Question)** - Style as `alert alert-info` (Light Blue):
+             - **Telugu:** The question in Telugu script.
+             - **Pronunciation:** The English transliteration of the question.
+             - **Meaning:** Simple English translation of the question.
+
+          2. **Block B (The Answer)** - Style as `alert alert-success` (Light Green):
+             - **Telugu:** The answer in Telugu script.
+             - **Pronunciation:** The English transliteration of the answer.
+             - **Meaning:** Simple English translation of the answer.
+
+          STYLING RULES:
+          - Wrap each Q&A pair in a `<div class="card mb-4 shadow-sm">`.
+          - Inside the card, put Block A and Block B stacked vertically.
+          - Return ONLY the raw HTML body content (do not wrap in ```html).
+          """
+
+          success = False
+          
+          for model_name in MODEL_CHAIN:
+              try:
+                  print(f"🔄 Attempting with model: {model_name}...")
+                  
+                  # Generate content with the uploaded file reference
+                  response = client.models.generate_content(
+                      model=model_name,
+                      contents=[file_ref, prompt]
+                  )
+                  
+                  output_html = response.text
+                  
+                  # Clean Code Blocks
+                  if "```html" in output_html:
+                      output_html = output_html.split("```html")[1].split("```")[0]
+                  elif "```" in output_html:
+                      output_html = output_html.split("```")[1].split("```")[0]
+
+                  # Add Full HTML Boilerplate + CSS
+                  final_html = f"""
+                  <!DOCTYPE html>
+                  <html lang="te">
+                  <head>
+                      <meta charset="UTF-8">
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                      <title>{CHAPTER.replace("_", " ")} - Exercises</title>
+                      <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css)" rel="stylesheet">
+                      <style>
+                          body {{ background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; padding-top: 20px; padding-bottom: 40px; }}
+                          .exercise-title {{ background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; text-align: center; }}
+                          .card {{ border: none; border-radius: 12px; overflow: hidden; }}
+                          .alert {{ margin-bottom: 0; border-radius: 0; border: none; }}
+                          .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
+                          .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
+                          .label {{ font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; display: block; margin-bottom: 4px; }}
+                          .te-text {{ font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; }}
+                          .en-pron {{ font-style: italic; color: #555; font-size: 0.95rem; }}
+                          .en-mean {{ font-weight: 500; margin-top: 5px; }}
+                      </style>
+                  </head>
+                  <body>
+                      <div class="container">
+                          <div class="exercise-title">
+                              <h1>📖 Exercises</h1>
+                              <p class="mb-0">Pages: {PAGES}</p>
+                          </div>
+                          {output_html.strip()}
+                      </div>
+                  </body>
+                  </html>
+                  """
+
+                  with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+                      f.write(final_html)
+                  
+                  print(f"✅ Successfully created {OUTPUT_PATH}")
+                  success = True
+                  break
+
+              except Exception as e:
+                  print(f"⚠️ {model_name} failed: {e}")
+                  continue
+
+          if not success:
+              print("❌ All models failed.")
+              sys.exit(1)
+          EOF
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull
+          git add .
+          git commit -m "Generate exercise.html for ${{ github.event.inputs.chapter_folder }} (Pages ${{ github.event.inputs.page_numbers }})"
+          git push
