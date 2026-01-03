@@ -55,7 +55,7 @@ jobs:
 
           # CONFIGURATION
           # Ensure you have your textbook PDF at this location in your repo
-          PDF_PATH = "PDF_PATH = "class5/pdf/5th telugu om 2025-26.pdf"" 
+          PDF_PATH = "class5/pdf/5th telugu om 2025-26.pdf"
           CHAPTER = "${{ github.event.inputs.chapter_folder }}"
           PAGES = "${{ github.event.inputs.page_numbers }}"
           OUTPUT_PATH = f"class5/{CHAPTER}/exercise.html"
