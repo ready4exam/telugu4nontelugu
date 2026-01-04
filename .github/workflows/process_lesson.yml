@@ -52,14 +52,13 @@ jobs:
           chapter = "${{ github.event.inputs.chapter_folder }}"
           api_key = os.environ.get("GEMINI_API_KEY")
 
-          # --- NEW LOGIC: Determine filename based on chapter number ---
-          # Example: "06_Shataka_Padyalu" -> prefix "06" -> int 6 -> "lesson_6.md"
+          # --- Determine filename based on chapter number ---
           try:
               prefix = chapter.split('_')[0]
               chapter_num = int(prefix) 
               filename = f"lesson_{chapter_num}.md"
           except Exception as e:
-              print(f"❌ Error parsing chapter number from '{chapter}': {e}")
+              print(f"❌ Error parsing chapter number: {e}")
               sys.exit(1)
 
           md_path = f"class5/{chapter}/{filename}"
@@ -67,7 +66,6 @@ jobs:
 
           print(f"📂 Chapter: {chapter}")
           print(f"📄 Source File: {md_path}")
-          print(f"🎯 Target File: {html_path}")
 
           if not os.path.exists(md_path):
               print(f"❌ Error: {md_path} not found.")
@@ -78,22 +76,22 @@ jobs:
 
           client = genai.Client(api_key=api_key)
           
-          # Refined prompt for full word-by-word coverage including summaries
+          # Refined prompt with strict class instruction
           prompt = f"""
           You are a Telugu language tutor for Class 5 students. 
           Convert the following lesson text into a kid-friendly, mobile-optimized HTML learning guide.
           
           TASK:
-          1. Process the entire text (Poem/Story AND Summary/Taatparyam). Do not omit any words.
+          1. Process the entire text (Poem/Story AND Summary/Taatparyam).
           2. Break the text into logical sentences.
-          3. For EVERY sentence, create a card. 
+          3. For EVERY sentence, create a card using the class "card sentence-card".
           4. Inside each card, first display the full sentence in bold.
           5. Below the full sentence, create a table with columns: | Telugu Word | Pronunciation | Meaning | 
           6. Provide a row for EVERY individual word in that sentence.
           
           FORMAT:
-          Return ONLY the raw HTML content (no markdown code blocks) using Bootstrap 5 classes for styling.
-          Use a table class like "table table-hover mb-0".
+          Return ONLY the raw HTML content (no markdown code blocks) using Bootstrap 5 classes.
+          Use the table class "table table-hover mb-0".
           
           TEXT TO PROCESS:
           {lesson_content}
@@ -111,7 +109,7 @@ jobs:
                   elif "```" in output_html:
                       output_html = output_html.split("```")[1].split("```")[0]
 
-                  # CSS injection for a consistent, attractive look across all lessons
+                  # CSS injection with Mobile Fixes (table-layout: fixed)
                   styled_html = f"""
           <!DOCTYPE html>
           <html lang="te">
@@ -120,12 +118,51 @@ jobs:
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
               <style>
-                  body {{ background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; }}
-                  .sentence-card {{ background: white; border-radius: 15px; border: none; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; }}
-                  .full-sentence {{ background-color: #eef2ff; padding: 15px; font-weight: bold; color: #3730a3; border-bottom: 1px solid #e0e7ff; }}
-                  .word-table {{ font-size: 0.95rem; }}
-                  .lesson-title {{ background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; }}
-                  @media (max-width: 576px) {{ .word-table {{ font-size: 0.85rem; }} }}
+                  body {{ background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; overflow-x: hidden; }}
+                  
+                  .sentence-card {{ 
+                      background: white; 
+                      border-radius: 15px; 
+                      border: none; 
+                      margin-bottom: 25px; 
+                      box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+                      overflow: hidden; 
+                      width: 100%; /* Ensure card fits container */
+                  }}
+                  
+                  .full-sentence {{ 
+                      background-color: #eef2ff; 
+                      padding: 15px; 
+                      font-weight: bold; 
+                      color: #3730a3; 
+                      border-bottom: 1px solid #e0e7ff; 
+                  }}
+                  
+                  .lesson-title {{ 
+                      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); 
+                      color: white; 
+                      border-radius: 15px; 
+                      padding: 20px; 
+                      margin-bottom: 30px; 
+                  }}
+
+                  /* --- MOBILE FIXES --- */
+                  .table {{
+                      table-layout: fixed; /* Forces table to stay within width */
+                      width: 100%;
+                  }}
+                  
+                  .table td, .table th {{
+                      white-space: normal !important; /* Forces text to wrap */
+                      word-wrap: break-word; 
+                      word-break: break-word;
+                      vertical-align: middle;
+                  }}
+                  
+                  @media (max-width: 576px) {{ 
+                      .table {{ font-size: 0.85rem; }} 
+                      .full-sentence {{ font-size: 1rem; }}
+                  }}
               </style>
           </head>
           <body>
@@ -157,5 +194,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }} with full word-by-word format"
+          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }} with mobile fixes"
           git push
