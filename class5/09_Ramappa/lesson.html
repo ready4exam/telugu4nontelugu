@@ -6,12 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; }
-        .sentence-card { background: white; border-radius: 15px; border: none; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; }
-        .full-sentence { background-color: #eef2ff; padding: 15px; font-weight: bold; color: #3730a3; border-bottom: 1px solid #e0e7ff; }
-        .word-table { font-size: 0.95rem; }
-        .lesson-title { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; }
-        @media (max-width: 576px) { .word-table { font-size: 0.85rem; } }
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; overflow-x: hidden; }
+        
+        .sentence-card { 
+            background: white; 
+            border-radius: 15px; 
+            border: none; 
+            margin-bottom: 25px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            overflow: hidden; 
+            width: 100%; /* Ensure card fits container */
+        }
+        
+        .full-sentence { 
+            background-color: #eef2ff; 
+            padding: 15px; 
+            font-weight: bold; 
+            color: #3730a3; 
+            border-bottom: 1px solid #e0e7ff; 
+        }
+        
+        .lesson-title { 
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); 
+            color: white; 
+            border-radius: 15px; 
+            padding: 20px; 
+            margin-bottom: 30px; 
+        }
+
+        /* --- MOBILE FIXES --- */
+        .table {
+            table-layout: fixed; /* Forces table to stay within width */
+            width: 100%;
+        }
+        
+        .table td, .table th {
+            white-space: normal !important; /* Forces text to wrap */
+            word-wrap: break-word; 
+            word-break: break-word;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 576px) { 
+            .table { font-size: 0.85rem; } 
+            .full-sentence { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -20,13 +59,13 @@
             <h1>09 Ramappa</h1>
         </div>
         <div class="container py-3">
-    <h1 class="text-primary text-center mb-4">9. రామప్ప దేవాలయం - పాఠం</h1>
+    <h2 class="text-center text-primary mb-4">రామప్ప గుడి: పాఠం విశ్లేషణ (Class 5)</h2>
 
     <!-- Card 1 -->
-    <div class="card shadow mb-4">
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>తెలంగాణ రాష్ట్రంలో అనేక చారిత్రక కట్టడాలు ఉన్నాయి.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>ప్రశ్నలకు జవాబులు చెప్పండి</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -36,34 +75,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>తెలంగాణ</td>
-                        <td>Telangāṇa</td>
-                        <td>Telangana</td>
+                        <td>ప్రశ్నలకు</td>
+                        <td>Prashnalaku</td>
+                        <td>To the questions</td>
                     </tr>
                     <tr>
-                        <td>రాష్ట్రంలో</td>
-                        <td>Rāshtranlō</td>
-                        <td>In the state</td>
+                        <td>జవాబులు</td>
+                        <td>Javābulu</td>
+                        <td>Answers</td>
                     </tr>
                     <tr>
-                        <td>అనేక</td>
-                        <td>Anēka</td>
-                        <td>Many</td>
-                    </tr>
-                    <tr>
-                        <td>చారిత్రక</td>
-                        <td>Chāritrika</td>
-                        <td>Historical</td>
-                    </tr>
-                    <tr>
-                        <td>కట్టడాలు</td>
-                        <td>Kaṭṭaḍālu</td>
-                        <td>Structures / Buildings</td>
-                    </tr>
-                    <tr>
-                        <td>ఉన్నాయి</td>
-                        <td>Unnāyi</td>
-                        <td>Are (exist)</td>
+                        <td>చెప్పండి</td>
+                        <td>Cheppaṇḍi</td>
+                        <td>Tell (or Say)</td>
                     </tr>
                 </tbody>
             </table>
@@ -71,10 +95,10 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="card shadow mb-4">
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>వాటిలో ములుగు జిల్లాలోని 'రామప్ప దేవాలయం' ఎంతో ప్రసిద్ధి చెందింది.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>బొమ్మల్మోఏమేమి, కనబడుతున్నాయి?</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -84,39 +108,14 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>వాటిలో</td>
-                        <td>Vāṭilō</td>
-                        <td>Among them</td>
+                        <td>బొమ్మల్మోఏమేమి</td>
+                        <td>Bommalmoēmēmi</td>
+                        <td>What all things in the picture (Approx. meaning)</td>
                     </tr>
                     <tr>
-                        <td>ములుగు</td>
-                        <td>Mulugu</td>
-                        <td>Mulugu (District name)</td>
-                    </tr>
-                    <tr>
-                        <td>జిల్లాలోని</td>
-                        <td>Jillālōni</td>
-                        <td>In the district of</td>
-                    </tr>
-                    <tr>
-                        <td>రామప్ప దేవాలయం</td>
-                        <td>Rāmappa Dēvālayam</td>
-                        <td>Ramappa Temple</td>
-                    </tr>
-                    <tr>
-                        <td>ఎంతో</td>
-                        <td>Entō</td>
-                        <td>Very much</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రసిద్ధి</td>
-                        <td>Prasiddhi</td>
-                        <td>Fame</td>
-                    </tr>
-                    <tr>
-                        <td>చెందింది</td>
-                        <td>Chendindi</td>
-                        <td>Achieved / Became</td>
+                        <td>కనబడుతున్నాయి</td>
+                        <td>Kanabaḍutunnāyi</td>
+                        <td>Are visible/seen</td>
                     </tr>
                 </tbody>
             </table>
@@ -124,10 +123,10 @@
     </div>
 
     <!-- Card 3 -->
-    <div class="card shadow mb-4">
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>ఈ ఆలయం కాకతీయుల శిల్పకళా వైభవానికి నిలువుటద్దం.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>ట్యటీచర్ముపిల్లలంతా అక్కడికి ఎందుకు వెళ్ళి ఉంటారు?</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -137,34 +136,29 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ఈ</td>
-                        <td>Ī</td>
-                        <td>This</td>
+                        <td>ట్యటీచర్ముపిల్లలంతా</td>
+                        <td>Ṭyaṭīcharmupillalantā</td>
+                        <td>Teacher and all the children (Approx. meaning)</td>
                     </tr>
                     <tr>
-                        <td>ఆలయం</td>
-                        <td>Ālayam</td>
-                        <td>Temple</td>
+                        <td>అక్కడికి</td>
+                        <td>Akkaḍiki</td>
+                        <td>To that place</td>
                     </tr>
                     <tr>
-                        <td>కాకతీయుల</td>
-                        <td>Kākatīyula</td>
-                        <td>Of the Kakatiyas</td>
+                        <td>ఎందుకు</td>
+                        <td>Enduku</td>
+                        <td>Why</td>
                     </tr>
                     <tr>
-                        <td>శిల్పకళా</td>
-                        <td>Shilpakalā</td>
-                        <td>Sculptural art</td>
+                        <td>వెళ్ళి</td>
+                        <td>Veḷḷi</td>
+                        <td>Having gone</td>
                     </tr>
                     <tr>
-                        <td>వైభవానికి</td>
-                        <td>Vaibhavāniki</td>
-                        <td>For the glory/splendor</td>
-                    </tr>
-                    <tr>
-                        <td>నిలువుటద్దం</td>
-                        <td>Niluvuṭaddam</td>
-                        <td>Full-length mirror (a perfect reflection)</td>
+                        <td>ఉంటారు</td>
+                        <td>Unṭāru</td>
+                        <td>Would be (or might have gone)</td>
                     </tr>
                 </tbody>
             </table>
@@ -172,10 +166,10 @@
     </div>
 
     <!-- Card 4 -->
-    <div class="card shadow mb-4">
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>క్రీ.శ. 1213లో కాకతీయ గణపతిదేవుని కాలంలో అతని సేనాని రేచర్ల రుద్రుడు ఈ గుడిని కట్టించాడు.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>వ్యాళ్ళు దేని గురించి ఏం మాట్లాడుకుంటున్నారు?</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -185,54 +179,29 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>క్రీ.శ. 1213లో</td>
-                        <td>Krī.sha. 1213lō</td>
-                        <td>In 1213 AD</td>
+                        <td>వ్యాళ్ళు</td>
+                        <td>Vyāḷḷu</td>
+                        <td>They (referring to the people)</td>
                     </tr>
                     <tr>
-                        <td>కాకతీయ</td>
-                        <td>Kākatīya</td>
-                        <td>Kakatiya</td>
+                        <td>దేని</td>
+                        <td>Dēni</td>
+                        <td>About what</td>
                     </tr>
                     <tr>
-                        <td>గణపతిదేవుని</td>
-                        <td>Gaṇapatidēvuni</td>
-                        <td>Of Ganapatideva</td>
+                        <td>గురించి</td>
+                        <td>Gurinchi</td>
+                        <td>About</td>
                     </tr>
                     <tr>
-                        <td>కాలంలో</td>
-                        <td>Kālanlō</td>
-                        <td>During the time of</td>
+                        <td>ఏం</td>
+                        <td>Ēṁ</td>
+                        <td>What</td>
                     </tr>
                     <tr>
-                        <td>అతని</td>
-                        <td>Atani</td>
-                        <td>His</td>
-                    </tr>
-                    <tr>
-                        <td>సేనాని</td>
-                        <td>Sēnāni</td>
-                        <td>Commander / General</td>
-                    </tr>
-                    <tr>
-                        <td>రేచర్ల రుద్రుడు</td>
-                        <td>Rēcharla Rudruḍu</td>
-                        <td>Recharla Rudra</td>
-                    </tr>
-                    <tr>
-                        <td>ఈ</td>
-                        <td>Ī</td>
-                        <td>This</td>
-                    </tr>
-                    <tr>
-                        <td>గుడిని</td>
-                        <td>Guḍini</td>
-                        <td>The temple (object)</td>
-                    </tr>
-                    <tr>
-                        <td>కట్టించాడు</td>
-                        <td>Kaṭṭin̄cāḍu</td>
-                        <td>Got constructed / Built</td>
+                        <td>మాట్లాడుకుంటున్నారు</td>
+                        <td>Māṭlāḍukunnāru</td>
+                        <td>Are talking</td>
                     </tr>
                 </tbody>
             </table>
@@ -240,10 +209,10 @@
     </div>
 
     <!-- Card 5 -->
-    <div class="card shadow mb-4">
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>ఈ ఆలయాన్ని నిర్మించిన ప్రధాన శిల్పి పేరు 'రామప్ప'.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>విద్యార్థులకు సూచనలు</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -253,39 +222,14 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ఈ</td>
-                        <td>Ī</td>
-                        <td>This</td>
+                        <td>విద్యార్థులకు</td>
+                        <td>Vidyārthulaku</td>
+                        <td>To the students</td>
                     </tr>
                     <tr>
-                        <td>ఆలయాన్ని</td>
-                        <td>Ālayānni</td>
-                        <td>The temple (object)</td>
-                    </tr>
-                    <tr>
-                        <td>నిర్మించిన</td>
-                        <td>Nirmin̄cina</td>
-                        <td>Who constructed</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రధాన</td>
-                        <td>Pradhāna</td>
-                        <td>Main / Chief</td>
-                    </tr>
-                    <tr>
-                        <td>శిల్పి</td>
-                        <td>Shilpi</td>
-                        <td>Sculptor / Architect</td>
-                    </tr>
-                    <tr>
-                        <td>పేరు</td>
-                        <td>Pēru</td>
-                        <td>Name</td>
-                    </tr>
-                    <tr>
-                        <td>రామప్ప</td>
-                        <td>Rāmappa</td>
-                        <td>Ramappa</td>
+                        <td>సూచనలు</td>
+                        <td>Sūchanalu</td>
+                        <td>Instructions/Guidelines</td>
                     </tr>
                 </tbody>
             </table>
@@ -293,10 +237,10 @@
     </div>
 
     <!-- Card 6 -->
-    <div class="card shadow mb-4">
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>సాధారణంగా దేవాలయాలకు అక్కడ కొలువై ఉన్న దేవుని పేరు పెడతారు.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>పాఠంలోని బొమ్మలు చూడండి. మాట్లాడండి.</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -306,44 +250,24 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>సాధారణంగా</td>
-                        <td>Sādhāraṇan̄gā</td>
-                        <td>Generally / Usually</td>
+                        <td>పాఠంలోని</td>
+                        <td>Pāṭhaṁlōni</td>
+                        <td>In the lesson</td>
                     </tr>
                     <tr>
-                        <td>దేవాలయాలకు</td>
-                        <td>Dēvālayālaku</td>
-                        <td>To the temples</td>
+                        <td>బొమ్మలు</td>
+                        <td>Bommalu</td>
+                        <td>Pictures</td>
                     </tr>
                     <tr>
-                        <td>అక్కడ</td>
-                        <td>Akkaḍa</td>
-                        <td>There</td>
+                        <td>చూడండి</td>
+                        <td>Chūḍaṇḍi</td>
+                        <td>Look/See</td>
                     </tr>
                     <tr>
-                        <td>కొలువై</td>
-                        <td>Koluvai</td>
-                        <td>Enshrined</td>
-                    </tr>
-                    <tr>
-                        <td>ఉన్న</td>
-                        <td>Unna</td>
-                        <td>Existing / Being</td>
-                    </tr>
-                    <tr>
-                        <td>దేవుని</td>
-                        <td>Dēvuni</td>
-                        <td>God's</td>
-                    </tr>
-                    <tr>
-                        <td>పేరు</td>
-                        <td>Pēru</td>
-                        <td>Name</td>
-                    </tr>
-                    <tr>
-                        <td>పెడతారు</td>
-                        <td>Peḍatāru</td>
-                        <td>They keep / They name</td>
+                        <td>మాట్లాడండి</td>
+                        <td>Māṭlāḍaṇḍi</td>
+                        <td>Talk/Speak</td>
                     </tr>
                 </tbody>
             </table>
@@ -351,10 +275,10 @@
     </div>
 
     <!-- Card 7 -->
-    <div class="card shadow mb-4">
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>కానీ, ఈ ఆలయాన్ని అద్భుతంగా తీర్చిదిద్దిన శిల్పి జ్ఞాపకార్థం దీనికి 'రామప్ప దేవాలయం' అని పేరు వచ్చింది.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>మీ ఉపాధ్యాయిని పాఠం చదువుతున్నప్పుడు జాగ్రత్తగా వినండి.</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -364,54 +288,728 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>కానీ</td>
-                        <td>Kāni</td>
-                        <td>But</td>
+                        <td>మీ</td>
+                        <td>Mī</td>
+                        <td>Your</td>
                     </tr>
+                    <tr>
+                        <td>ఉపాధ్యాయిని</td>
+                        <td>Upādhyāyini</td>
+                        <td>Teacher (Female)</td>
+                    </tr>
+                    <tr>
+                        <td>పాఠం</td>
+                        <td>Pāṭhaṁ</td>
+                        <td>Lesson</td>
+                    </tr>
+                    <tr>
+                        <td>చదువుతున్నప్పుడు</td>
+                        <td>Chaduvutunnappuḍu</td>
+                        <td>While reading</td>
+                    </tr>
+                    <tr>
+                        <td>జాగ్రత్తగా</td>
+                        <td>Jāgrattagā</td>
+                        <td>Carefully</td>
+                    </tr>
+                    <tr>
+                        <td>వినండి</td>
+                        <td>Vinaṇḍi</td>
+                        <td>Listen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>పాఠం చదువండి. అర్ధంకాని పదాల కింద గీత గీయండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పాఠం</td>
+                        <td>Pāṭhaṁ</td>
+                        <td>Lesson</td>
+                    </tr>
+                    <tr>
+                        <td>చదువండి</td>
+                        <td>Chaduvandi</td>
+                        <td>Read</td>
+                    </tr>
+                    <tr>
+                        <td>అర్ధంకాని</td>
+                        <td>Ardhaṁkāni</td>
+                        <td>Not understood/Meaningless</td>
+                    </tr>
+                    <tr>
+                        <td>పదాల</td>
+                        <td>Padāla</td>
+                        <td>Of the words</td>
+                    </tr>
+                    <tr>
+                        <td>కింద</td>
+                        <td>Kinda</td>
+                        <td>Under</td>
+                    </tr>
+                    <tr>
+                        <td>గీత</td>
+                        <td>Gīta</td>
+                        <td>Line</td>
+                    </tr>
+                    <tr>
+                        <td>గీయండి</td>
+                        <td>Gīyaṇḍi</td>
+                        <td>Draw</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>గీత గీసిన పదాలకు అర్థాలను మీ మిత్రులనుగాని, ఉపాధ్యాయులనుగాని అడుగండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>గీత</td>
+                        <td>Gīta</td>
+                        <td>Line</td>
+                    </tr>
+                    <tr>
+                        <td>గీసిన</td>
+                        <td>Gīsina</td>
+                        <td>Drawn</td>
+                    </tr>
+                    <tr>
+                        <td>పదాలకు</td>
+                        <td>Padālaku</td>
+                        <td>To the words</td>
+                    </tr>
+                    <tr>
+                        <td>అర్థాలను</td>
+                        <td>Arthālanu</td>
+                        <td>Meanings</td>
+                    </tr>
+                    <tr>
+                        <td>మీ</td>
+                        <td>Mī</td>
+                        <td>Your</td>
+                    </tr>
+                    <tr>
+                        <td>మిత్రులనుగాని</td>
+                        <td>Mitrulanugāni</td>
+                        <td>Friends or</td>
+                    </tr>
+                    <tr>
+                        <td>ఉపాధ్యాయులనుగాని</td>
+                        <td>Upādhyāyulanugāni</td>
+                        <td>Teachers or</td>
+                    </tr>
+                    <tr>
+                        <td>అడుగండి</td>
+                        <td>Aḍugaṇḍi</td>
+                        <td>Ask</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>లేదా “పదాలు-అర్థాలు” అనే పట్టికలో చూసి తెలుసుకోండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>లేదా</td>
+                        <td>Lēdā</td>
+                        <td>Or</td>
+                    </tr>
+                    <tr>
+                        <td>పదాలు-అర్థాలు</td>
+                        <td>Padālu-Arthālu</td>
+                        <td>Words-Meanings</td>
+                    </tr>
+                    <tr>
+                        <td>అనే</td>
+                        <td>Anē</td>
+                        <td>Called/named</td>
+                    </tr>
+                    <tr>
+                        <td>పట్టికలో</td>
+                        <td>Paṭṭikalō</td>
+                        <td>In the table/list</td>
+                    </tr>
+                    <tr>
+                        <td>చూసి</td>
+                        <td>Chūsi</td>
+                        <td>Having seen</td>
+                    </tr>
+                    <tr>
+                        <td>తెలుసుకోండి</td>
+                        <td>Telusukōṇḍi</td>
+                        <td>Know/Find out</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <h3 class="text-center text-secondary mt-5 mb-4">పాఠం: రామప్ప గుడి</h3>
+
+    <!-- Card 11 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>బడి ఆవరణలో పిల్లలంతా ఉత్సాహంగా ఉన్నారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>బడి</td>
+                        <td>Baḍi</td>
+                        <td>School</td>
+                    </tr>
+                    <tr>
+                        <td>ఆవరణలో</td>
+                        <td>Āvaraṇalō</td>
+                        <td>In the premises/compound</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలంతా</td>
+                        <td>Pillalantā</td>
+                        <td>All the children</td>
+                    </tr>
+                    <tr>
+                        <td>ఉత్సాహంగా</td>
+                        <td>Utsāhaṅgā</td>
+                        <td>Enthusiastically</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్నారు</td>
+                        <td>Unnāru</td>
+                        <td>Are there (present)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>తాము కొత్త ప్రదేశాన్ని చూడబోతున్నామన్న విషయం వారిని ఉక్కిరి బిక్కిరి చేస్తున్నది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>తాము</td>
+                        <td>Tāmu</td>
+                        <td>They (themselves)</td>
+                    </tr>
+                    <tr>
+                        <td>కొత్త</td>
+                        <td>Kotta</td>
+                        <td>New</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రదేశాన్ని</td>
+                        <td>Pradēśānni</td>
+                        <td>Place</td>
+                    </tr>
+                    <tr>
+                        <td>చూడబోతున్నామన్న</td>
+                        <td>Chūḍabōtunnāmanna</td>
+                        <td>That they are going to see</td>
+                    </tr>
+                    <tr>
+                        <td>విషయం</td>
+                        <td>Viṣayaṁ</td>
+                        <td>Matter/Thing</td>
+                    </tr>
+                    <tr>
+                        <td>వారిని</td>
+                        <td>Vārini</td>
+                        <td>Them</td>
+                    </tr>
+                    <tr>
+                        <td>ఉక్కిరి బిక్కిరి</td>
+                        <td>Ukkiri Bikkiri</td>
+                        <td>Overwhelmed/Excited (literally: suffocated/nervous)</td>
+                    </tr>
+                    <tr>
+                        <td>చేస్తున్నది</td>
+                        <td>Cēstunnadi</td>
+                        <td>Is making</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 13 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>అంతలోనే బడి దగ్గర ఆగిన బస్సును చూసి పిల్లలు కేరింతలు కొట్టారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అంతలోనే</td>
+                        <td>Antalōnē</td>
+                        <td>Just then/Immediately</td>
+                    </tr>
+                    <tr>
+                        <td>బడి</td>
+                        <td>Baḍi</td>
+                        <td>School</td>
+                    </tr>
+                    <tr>
+                        <td>దగ్గర</td>
+                        <td>Daggara</td>
+                        <td>Near</td>
+                    </tr>
+                    <tr>
+                        <td>ఆగిన</td>
+                        <td>Āgina</td>
+                        <td>Stopped</td>
+                    </tr>
+                    <tr>
+                        <td>బస్సును</td>
+                        <td>Bassunu</td>
+                        <td>Bus (object)</td>
+                    </tr>
+                    <tr>
+                        <td>చూసి</td>
+                        <td>Chūsi</td>
+                        <td>Having seen</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలు</td>
+                        <td>Pillalu</td>
+                        <td>Children</td>
+                    </tr>
+                    <tr>
+                        <td>కేరింతలు</td>
+                        <td>Kērintalu</td>
+                        <td>Cheers/Screams of joy</td>
+                    </tr>
+                    <tr>
+                        <td>కొట్టారు</td>
+                        <td>Koṭṭāru</td>
+                        <td>Made (They cheered)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 14 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>పిల్లలందరూ బస్సు ఎక్కారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పిల్లలందరూ</td>
+                        <td>Pillalandarū</td>
+                        <td>All the children</td>
+                    </tr>
+                    <tr>
+                        <td>బస్సు</td>
+                        <td>Bassu</td>
+                        <td>Bus</td>
+                    </tr>
+                    <tr>
+                        <td>ఎక్కారు</td>
+                        <td>Ekkāru</td>
+                        <td>Got on/Climbed (aboard)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 15 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>బస్సు రామప్పకు బయలుదేరింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>బస్సు</td>
+                        <td>Bassu</td>
+                        <td>Bus</td>
+                    </tr>
+                    <tr>
+                        <td>రామప్పకు</td>
+                        <td>Rāmappaku</td>
+                        <td>To Ramappa</td>
+                    </tr>
+                    <tr>
+                        <td>బయలుదేరింది</td>
+                        <td>Bayaludērimdi</td>
+                        <td>Started/Set off</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 16 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>దారి పొడవునా పిల్లల మాటలతో, పాటలతో వాతావరణం సందడిగా మారింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దారి</td>
+                        <td>Dāri</td>
+                        <td>Road/Way</td>
+                    </tr>
+                    <tr>
+                        <td>పొడవునా</td>
+                        <td>Poḍavunā</td>
+                        <td>All along the length</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లల</td>
+                        <td>Pillala</td>
+                        <td>Children's</td>
+                    </tr>
+                    <tr>
+                        <td>మాటలతో</td>
+                        <td>Māṭalatō</td>
+                        <td>With talks/conversations</td>
+                    </tr>
+                    <tr>
+                        <td>పాటలతో</td>
+                        <td>Pāṭalatō</td>
+                        <td>With songs</td>
+                    </tr>
+                    <tr>
+                        <td>వాతావరణం</td>
+                        <td>Vātāvaraṇaṁ</td>
+                        <td>Atmosphere/Environment</td>
+                    </tr>
+                    <tr>
+                        <td>సందడిగా</td>
+                        <td>Sandaḍigā</td>
+                        <td>Bustling/Lively</td>
+                    </tr>
+                    <tr>
+                        <td>మారింది</td>
+                        <td>Mārimdi</td>
+                        <td>Changed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 17 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>బస్సు రామప్ప చేరుకున్నది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>బస్సు</td>
+                        <td>Bassu</td>
+                        <td>Bus</td>
+                    </tr>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa (place name)</td>
+                    </tr>
+                    <tr>
+                        <td>చేరుకున్నది</td>
+                        <td>Cērukunnadi</td>
+                        <td>Reached</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 18 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>టీచర్‌ పిల్లలందరినీ కిందికి దిగమని చెప్పి గుడి ప్రాంగణంలోకి తీసుకువెళ్ళింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలందరినీ</td>
+                        <td>Pillalandarinī</td>
+                        <td>All the children (object)</td>
+                    </tr>
+                    <tr>
+                        <td>కిందికి</td>
+                        <td>Kindiki</td>
+                        <td>Down</td>
+                    </tr>
+                    <tr>
+                        <td>దిగమని</td>
+                        <td>Digamani</td>
+                        <td>To get down/alight</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పి</td>
+                        <td>Cheppi</td>
+                        <td>Having told</td>
+                    </tr>
+                    <tr>
+                        <td>గుడి</td>
+                        <td>Guḍi</td>
+                        <td>Temple</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రాంగణంలోకి</td>
+                        <td>Prāṅgaṇamulōki</td>
+                        <td>Into the premises/compound</td>
+                    </tr>
+                    <tr>
+                        <td>తీసుకువెళ్ళింది</td>
+                        <td>Tīsukuveḷḷimdi</td>
+                        <td>Took</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 19 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“ఈ గుడి చాలా పురాతనమైనది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <td>ఈ</td>
                         <td>Ī</td>
                         <td>This</td>
                     </tr>
                     <tr>
-                        <td>ఆలయాన్ని</td>
-                        <td>Ālayānni</td>
-                        <td>The temple (object)</td>
+                        <td>గుడి</td>
+                        <td>Guḍi</td>
+                        <td>Temple</td>
                     </tr>
                     <tr>
-                        <td>అద్భుతంగా</td>
-                        <td>Adbhutan̄gā</td>
-                        <td>Wonderfully / Miraculously</td>
+                        <td>చాలా</td>
+                        <td>Cālā</td>
+                        <td>Very/Much</td>
                     </tr>
                     <tr>
-                        <td>తీర్చిదిద్దిన</td>
-                        <td>Tīrchididdina</td>
-                        <td>Who shaped/designed</td>
+                        <td>పురాతనమైనది</td>
+                        <td>Purātanamainadi</td>
+                        <td>Ancient/Very old</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 20 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>దీనిని క్రీ.శ. 1213లో: కాకతీయ రాజైన గణపతి దేవుని కాలంలో 'రేచర్ల రుద్రుడు” కట్టించాడు:</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దీనిని</td>
+                        <td>Dīnini</td>
+                        <td>This (object)</td>
+                    </tr>
+                    <tr>
+                        <td>క్రీ.శ. 1213లో</td>
+                        <td>Krī.śa. 1213lō</td>
+                        <td>In 1213 AD</td>
+                    </tr>
+                    <tr>
+                        <td>కాకతీయ</td>
+                        <td>Kākatīya</td>
+                        <td>Kakatiya (dynasty name)</td>
+                    </tr>
+                    <tr>
+                        <td>రాజైన</td>
+                        <td>Rājaina</td>
+                        <td>The king who was</td>
+                    </tr>
+                    <tr>
+                        <td>గణపతి దేవుని</td>
+                        <td>Gaṇapati Dēvuni</td>
+                        <td>Of Ganapati Deva</td>
+                    </tr>
+                    <tr>
+                        <td>కాలంలో</td>
+                        <td>Kālamlō</td>
+                        <td>During the time/period</td>
+                    </tr>
+                    <tr>
+                        <td>రేచర్ల రుద్రుడు</td>
+                        <td>Rēcarla Rudruḍu</td>
+                        <td>Recharla Rudra (name)</td>
+                    </tr>
+                    <tr>
+                        <td>కట్టించాడు</td>
+                        <td>Kaṭṭin̄cāḍu</td>
+                        <td>Built (it)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 21 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>దీనిని 'రామప్ప' అనే శిల్పి నిర్మించాడు కాబట్టి దీనికి రామప్పగుడి అనే పేరు వచ్చింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దీనిని</td>
+                        <td>Dīnini</td>
+                        <td>This (object)</td>
+                    </tr>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa (name)</td>
+                    </tr>
+                    <tr>
+                        <td>అనే</td>
+                        <td>Anē</td>
+                        <td>Called</td>
                     </tr>
                     <tr>
                         <td>శిల్పి</td>
-                        <td>Shilpi</td>
-                        <td>Sculptor</td>
+                        <td>Śilpi</td>
+                        <td>Sculptor/Architect</td>
                     </tr>
                     <tr>
-                        <td>జ్ఞాపకార్థం</td>
-                        <td>Gnāpakārthaṁ</td>
-                        <td>In memory of</td>
+                        <td>నిర్మించాడు</td>
+                        <td>Nirmiṁcāḍu</td>
+                        <td>Constructed</td>
+                    </tr>
+                    <tr>
+                        <td>కాబట్టి</td>
+                        <td>Kābaṭṭi</td>
+                        <td>Therefore/Because</td>
                     </tr>
                     <tr>
                         <td>దీనికి</td>
                         <td>Dīniki</td>
-                        <td>To this (it)</td>
+                        <td>To this</td>
                     </tr>
                     <tr>
-                        <td>రామప్ప దేవాలయం</td>
-                        <td>Rāmappa Dēvālayam</td>
+                        <td>రామప్పగుడి</td>
+                        <td>Rāmappaguḍi</td>
                         <td>Ramappa Temple</td>
-                    </tr>
-                    <tr>
-                        <td>అని</td>
-                        <td>Ani</td>
-                        <td>Thus (a quoting marker)</td>
                     </tr>
                     <tr>
                         <td>పేరు</td>
@@ -420,19 +1018,19 @@
                     </tr>
                     <tr>
                         <td>వచ్చింది</td>
-                        <td>Vacchindi</td>
-                        <td>Came / Received</td>
+                        <td>Vaccindi</td>
+                        <td>Came (got)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Card 8 -->
-    <div class="card shadow mb-4">
+    <!-- Card 22 -->
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>ఇక్కడ కొలువైన దేవుడు రామలింగేశ్వరుడు.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>ఈ గుడిలో ఉందే దేవుడు “రామలింగేశ్వరుడు”.</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -442,14 +1040,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ఇక్కడ</td>
-                        <td>Ikkaḍa</td>
-                        <td>Here</td>
+                        <td>ఈ</td>
+                        <td>Ī</td>
+                        <td>This</td>
                     </tr>
                     <tr>
-                        <td>కొలువైన</td>
-                        <td>Koluvaina</td>
-                        <td>Enshrined</td>
+                        <td>గుడిలో</td>
+                        <td>Guḍilō</td>
+                        <td>In the temple</td>
+                    </tr>
+                    <tr>
+                        <td>ఉందే</td>
+                        <td>Undē</td>
+                        <td>Existing</td>
                     </tr>
                     <tr>
                         <td>దేవుడు</td>
@@ -458,24 +1061,1545 @@
                     </tr>
                     <tr>
                         <td>రామలింగేశ్వరుడు</td>
-                        <td>Rāmalingēshvaruḍu</td>
-                        <td>Ramalingeshwara (Shiva)</td>
+                        <td>Rāmaliṅgēśvaruḍu</td>
+                        <td>Ramalingeshwara (God's name)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <h3 class="text-secondary mt-5 mb-3">ఆలయ ప్రత్యేకతలు (Temple Specialties)</h3>
-
-    <!-- Card 9 (Special Feature 1) -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-light">
-            <strong>నీటిపై తేలే ఇటుకలు:</strong>
-        </div>
+    <!-- Card 23 -->
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>ఈ ఆలయ గోపురాన్ని నిర్మించడానికి ఉపయోగించిన ఇటుకలు చాలా తేలికైనవి.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>కాబట్టి దీనిని 'రామలింగేశ్వర-ఆలయం” అని కూడా పిలుస్తారు.” అని టీచర్‌ చెప్తుంటే పిల్లలందరూ వినసాగారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>కాబట్టి</td>
+                        <td>Kābaṭṭi</td>
+                        <td>Therefore</td>
+                    </tr>
+                    <tr>
+                        <td>దీనిని</td>
+                        <td>Dīnini</td>
+                        <td>This (object)</td>
+                    </tr>
+                    <tr>
+                        <td>రామలింగేశ్వర-ఆలయం</td>
+                        <td>Rāmaliṅgēśvara-Ālayaṁ</td>
+                        <td>Ramalingeshwara Temple</td>
+                    </tr>
+                    <tr>
+                        <td>అని</td>
+                        <td>Ani</td>
+                        <td>Thus/Saying</td>
+                    </tr>
+                    <tr>
+                        <td>కూడా</td>
+                        <td>Kūḍā</td>
+                        <td>Also</td>
+                    </tr>
+                    <tr>
+                        <td>పిలుస్తారు</td>
+                        <td>Pilustāru</td>
+                        <td>They call (it)</td>
+                    </tr>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్తుంటే</td>
+                        <td>Cheptuntē</td>
+                        <td>While telling</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలందరూ</td>
+                        <td>Pillalandarū</td>
+                        <td>All the children</td>
+                    </tr>
+                    <tr>
+                        <td>వినసాగారు</td>
+                        <td>Vinasāgāru</td>
+                        <td>Started listening</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 24 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>టీచర్‌ పిల్లలను గుడి మంటపంలోనికి తీసుకువచ్చింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలను</td>
+                        <td>Pillalanu</td>
+                        <td>The children (object)</td>
+                    </tr>
+                    <tr>
+                        <td>గుడి</td>
+                        <td>Guḍi</td>
+                        <td>Temple</td>
+                    </tr>
+                    <tr>
+                        <td>మంటపంలోనికి</td>
+                        <td>Maṇṭapaṁlōniki</td>
+                        <td>Into the Mandapam (hall)</td>
+                    </tr>
+                    <tr>
+                        <td>తీసుకువచ్చింది</td>
+                        <td>Tīsukuvaccindi</td>
+                        <td>Brought</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 25 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“టీచర్‌! టీచర్‌! స్తంభాలపైన; దూలాలపైన, పైకప్పుపైన బొమ్మలు ఎంత బాగున్నాయో చూడండి అన్న రోహిత్‌ మాటలతో పిల్లల ధ్యాసంతా శిల్పాల పైకి మళ్లింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr>
+                        <td>స్తంభాలపైన</td>
+                        <td>Stambhālapaina</td>
+                        <td>On the pillars</td>
+                    </tr>
+                    <tr>
+                        <td>దూలాలపైన</td>
+                        <td>Dūlālapaina</td>
+                        <td>On the beams</td>
+                    </tr>
+                    <tr>
+                        <td>పైకప్పుపైన</td>
+                        <td>Paikappupaina</td>
+                        <td>On the roof/ceiling</td>
+                    </tr>
+                    <tr>
+                        <td>బొమ్మలు</td>
+                        <td>Bommalu</td>
+                        <td>Pictures/Carvings</td>
+                    </tr>
+                    <tr>
+                        <td>ఎంత</td>
+                        <td>Enta</td>
+                        <td>How much/How</td>
+                    </tr>
+                    <tr>
+                        <td>బాగున్నాయో</td>
+                        <td>Bāgunnāyō</td>
+                        <td>Are good/beautiful</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>Chūḍaṇḍi</td>
+                        <td>See</td>
+                    </tr>
+                    <tr>
+                        <td>అన్న</td>
+                        <td>Anna</td>
+                        <td>Said by</td>
+                    </tr>
+                    <tr>
+                        <td>రోహిత్‌</td>
+                        <td>Rōhit</td>
+                        <td>Rohit (name)</td>
+                    </tr>
+                    <tr>
+                        <td>మాటలతో</td>
+                        <td>Māṭalatō</td>
+                        <td>With the words</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లల</td>
+                        <td>Pillala</td>
+                        <td>Children's</td>
+                    </tr>
+                    <tr>
+                        <td>ధ్యాసంతా</td>
+                        <td>Dhyāsantā</td>
+                        <td>All the attention</td>
+                    </tr>
+                    <tr>
+                        <td>శిల్పాల</td>
+                        <td>Śilpāla</td>
+                        <td>Of the sculptures</td>
+                    </tr>
+                    <tr>
+                        <td>పైకి</td>
+                        <td>Paiki</td>
+                        <td>Towards</td>
+                    </tr>
+                    <tr>
+                        <td>మళ్లింది</td>
+                        <td>Maḷḷindi</td>
+                        <td>Shifted/Turned</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 26 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“అవును రోహిత్‌!,బాగా గమనించావు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అవును</td>
+                        <td>Avunu</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>రోహిత్‌</td>
+                        <td>Rōhit</td>
+                        <td>Rohit (name)</td>
+                    </tr>
+                    <tr>
+                        <td>బాగా</td>
+                        <td>Bāgā</td>
+                        <td>Well/Nicely</td>
+                    </tr>
+                    <tr>
+                        <td>గమనించావు</td>
+                        <td>Gamanin̄cāvu</td>
+                        <td>You observed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 27 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ఈ శిల్పాలను చాలా అందంగా చెక్కినారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>Ī</td>
+                        <td>These</td>
+                    </tr>
+                    <tr>
+                        <td>శిల్పాలను</td>
+                        <td>Śilpālanu</td>
+                        <td>Sculptures (object)</td>
+                    </tr>
+                    <tr>
+                        <td>చాలా</td>
+                        <td>Cālā</td>
+                        <td>Very</td>
+                    </tr>
+                    <tr>
+                        <td>అందంగా</td>
+                        <td>Andaṅgā</td>
+                        <td>Beautifully</td>
+                    </tr>
+                    <tr>
+                        <td>చెక్కినారు</td>
+                        <td>Chekkināru</td>
+                        <td>They carved</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 28 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>వందల ఏండ్లు గడిచినా అవి చెక్కుచెదరలేదు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వందల</td>
+                        <td>Vandala</td>
+                        <td>Hundreds of</td>
+                    </tr>
+                    <tr>
+                        <td>ఏండ్లు</td>
+                        <td>Ēṇḍlu</td>
+                        <td>Years</td>
+                    </tr>
+                    <tr>
+                        <td>గడిచినా</td>
+                        <td>Gaḍicinā</td>
+                        <td>Even if passed</td>
+                    </tr>
+                    <tr>
+                        <td>అవి</td>
+                        <td>Avi</td>
+                        <td>They (non-human)</td>
+                    </tr>
+                    <tr>
+                        <td>చెక్కుచెదరలేదు</td>
+                        <td>Chekkuchedaralēdu</td>
+                        <td>Did not deteriorate/remain pristine</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 29 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>మృదంగ వాద్యానికి నాట్యం చేస్తున్న స్త్రీ-పురుషముల శిల్పాలను చూడండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మృదంగ</td>
+                        <td>Mṛdaṅga</td>
+                        <td>Mridangam (a type of drum)</td>
+                    </tr>
+                    <tr>
+                        <td>వాద్యానికి</td>
+                        <td>Vādyāniki</td>
+                        <td>To the instrument/music</td>
+                    </tr>
+                    <tr>
+                        <td>నాట్యం</td>
+                        <td>Nāṭyaṁ</td>
+                        <td>Dance</td>
+                    </tr>
+                    <tr>
+                        <td>చేస్తున్న</td>
+                        <td>Cēstunnā</td>
+                        <td>Doing/Performing</td>
+                    </tr>
+                    <tr>
+                        <td>స్త్రీ-పురుషముల</td>
+                        <td>Strī-Puruṣamula</td>
+                        <td>Of women and men</td>
+                    </tr>
+                    <tr>
+                        <td>శిల్పాలను</td>
+                        <td>Śilpālanu</td>
+                        <td>Sculptures (object)</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>Chūḍaṇḍi</td>
+                        <td>Look/See</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 30 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ఎంత బాగున్నాయో!</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఎంత</td>
+                        <td>Enta</td>
+                        <td>How much/How</td>
+                    </tr>
+                    <tr>
+                        <td>బాగున్నాయో</td>
+                        <td>Bāgunnāyō</td>
+                        <td>Are beautiful/nice</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 31 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>అదిగో ద్వారంపైన సింహాల వరుసలను చూడండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అదిగో</td>
+                        <td>Adigō</td>
+                        <td>Look there!</td>
+                    </tr>
+                    <tr>
+                        <td>ద్వారంపైన</td>
+                        <td>Dvāraṁpaina</td>
+                        <td>On the doorway/gate</td>
+                    </tr>
+                    <tr>
+                        <td>సింహాల</td>
+                        <td>Siṁhāļa</td>
+                        <td>Of the lions</td>
+                    </tr>
+                    <tr>
+                        <td>వరుసలను</td>
+                        <td>Varusalanu</td>
+                        <td>Rows/Lines (object)</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>Chūḍaṇḍi</td>
+                        <td>See/Look</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 32 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ఇదిగో! ఈ పూల తీగలను చూడండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఇదిగో</td>
+                        <td>Idigō</td>
+                        <td>Look here!</td>
+                    </tr>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>Ī</td>
+                        <td>These</td>
+                    </tr>
+                    <tr>
+                        <td>పూల</td>
+                        <td>Pūla</td>
+                        <td>Flower (genitive)</td>
+                    </tr>
+                    <tr>
+                        <td>తీగలను</td>
+                        <td>Tīgalanu</td>
+                        <td>Creepers/Vines (object)</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>Chūḍaṇḍi</td>
+                        <td>Look/See</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 33 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ఎంత సహజంగా ఉన్నాయో!” అంటూ గోపికలు, కృష్ణుడు, సముద్ర మథనం, నటరాజు మొదలైన శిల్పాలను పిల్లలకు చూపించింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఎంత</td>
+                        <td>Enta</td>
+                        <td>How much/How</td>
+                    </tr>
+                    <tr>
+                        <td>సహజంగా</td>
+                        <td>Sahajaṅgā</td>
+                        <td>Naturally/Realistic</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్నాయో</td>
+                        <td>Unnāyō</td>
+                        <td>Are there</td>
+                    </tr>
+                    <tr>
+                        <td>అంటూ</td>
+                        <td>Aṇṭū</td>
+                        <td>Saying/While saying</td>
+                    </tr>
+                    <tr>
+                        <td>గోపికలు</td>
+                        <td>Gōpikalu</td>
+                        <td>Gopis (milkmaids)</td>
+                    </tr>
+                    <tr>
+                        <td>కృష్ణుడు</td>
+                        <td>Kṛṣṇuḍu</td>
+                        <td>Krishna (God)</td>
+                    </tr>
+                    <tr>
+                        <td>సముద్ర మథనం</td>
+                        <td>Samudra Mathanaṁ</td>
+                        <td>Churning of the Ocean</td>
+                    </tr>
+                    <tr>
+                        <td>నటరాజు</td>
+                        <td>Naṭarāju</td>
+                        <td>Nataraja (Shiva as the dancer)</td>
+                    </tr>
+                    <tr>
+                        <td>మొదలైన</td>
+                        <td>Modalaina</td>
+                        <td>Etc./Beginning with</td>
+                    </tr>
+                    <tr>
+                        <td>శిల్పాలను</td>
+                        <td>Śilpālanu</td>
+                        <td>Sculptures (object)</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలకు</td>
+                        <td>Pillalaku</td>
+                        <td>To the children</td>
+                    </tr>
+                    <tr>
+                        <td>చూపించింది</td>
+                        <td>Chūpin̄cindi</td>
+                        <td>Showed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 34 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>వాటితోపాటు దేవాలయం మంటపంపై నాలుగు పక్కల ఉన్న పెద్ద నల్లరాతి నాట్యకత్తెల విగ్రహాలను చూపించింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వాటితోపాటు</td>
+                        <td>Vātitōpāṭu</td>
+                        <td>Along with them</td>
+                    </tr>
+                    <tr>
+                        <td>దేవాలయం</td>
+                        <td>Dēvālayaṁ</td>
+                        <td>Temple</td>
+                    </tr>
+                    <tr>
+                        <td>మంటపంపై</td>
+                        <td>Maṇṭapaṁpai</td>
+                        <td>On the Mandapam (hall)</td>
+                    </tr>
+                    <tr>
+                        <td>నాలుగు</td>
+                        <td>Nālugu</td>
+                        <td>Four</td>
+                    </tr>
+                    <tr>
+                        <td>పక్కల</td>
+                        <td>Pakkala</td>
+                        <td>Sides</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్న</td>
+                        <td>Unna</td>
+                        <td>Existing/Which are</td>
+                    </tr>
+                    <tr>
+                        <td>పెద్ద</td>
+                        <td>Pedda</td>
+                        <td>Big</td>
+                    </tr>
+                    <tr>
+                        <td>నల్లరాతి</td>
+                        <td>Nallarāti</td>
+                        <td>Black stone</td>
+                    </tr>
+                    <tr>
+                        <td>నాట్యకత్తెల</td>
+                        <td>Nāṭyakattela</td>
+                        <td>Of the dancers (female)</td>
+                    </tr>
+                    <tr>
+                        <td>విగ్రహాలను</td>
+                        <td>Vigrahālanu</td>
+                        <td>Idols/Statues (object)</td>
+                    </tr>
+                    <tr>
+                        <td>చూపించింది</td>
+                        <td>Chūpin̄cindi</td>
+                        <td>Showed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 35 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>వీటితోపాటు నల్ల రాతి పలకలపై శిల్పులు చెక్కిన మదనిక, నాగిని శిల్పాలను కూడ పిల్లలు చూశారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వీటితోపాటు</td>
+                        <td>Vīṭitōpāṭu</td>
+                        <td>Along with these</td>
+                    </tr>
+                    <tr>
+                        <td>నల్ల</td>
+                        <td>Nalla</td>
+                        <td>Black</td>
+                    </tr>
+                    <tr>
+                        <td>రాతి</td>
+                        <td>Rāti</td>
+                        <td>Stone</td>
+                    </tr>
+                    <tr>
+                        <td>పలకలపై</td>
+                        <td>Palakalapai</td>
+                        <td>On the slabs/panels</td>
+                    </tr>
+                    <tr>
+                        <td>శిల్పులు</td>
+                        <td>Śilpulu</td>
+                        <td>Sculptors</td>
+                    </tr>
+                    <tr>
+                        <td>చెక్కిన</td>
+                        <td>Chekkina</td>
+                        <td>Carved</td>
+                    </tr>
+                    <tr>
+                        <td>మదనిక</td>
+                        <td>Madanika</td>
+                        <td>Madanika (name of a sculpture type)</td>
+                    </tr>
+                    <tr>
+                        <td>నాగిని</td>
+                        <td>Nāgini</td>
+                        <td>Nagini (female snake deity sculpture)</td>
+                    </tr>
+                    <tr>
+                        <td>శిల్పాలను</td>
+                        <td>Śilpālanu</td>
+                        <td>Sculptures (object)</td>
+                    </tr>
+                    <tr>
+                        <td>కూడ</td>
+                        <td>Kūḍa</td>
+                        <td>Also</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలు</td>
+                        <td>Pillalu</td>
+                        <td>Children</td>
+                    </tr>
+                    <tr>
+                        <td>చూశారు</td>
+                        <td>Chūśāru</td>
+                        <td>Saw</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 36 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>'పిల్లలూ! ఇక రామలింగేశ్వర స్వామిని దర్శనం చేసుకుందాం పదండి అని టీచర్‌ చెప్పడంతో పిల్లలంతా గర్భగుడి ముందుకువచ్చారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పిల్లలూ</td>
+                        <td>Pillalū</td>
+                        <td>Children!</td>
+                    </tr>
+                    <tr>
+                        <td>ఇక</td>
+                        <td>Ika</td>
+                        <td>Now/From now on</td>
+                    </tr>
+                    <tr>
+                        <td>రామలింగేశ్వర</td>
+                        <td>Rāmaliṅgēśvara</td>
+                        <td>Ramalingeshwara (God)</td>
+                    </tr>
+                    <tr>
+                        <td>స్వామిని</td>
+                        <td>Svāmini</td>
+                        <td>Lord (object)</td>
+                    </tr>
+                    <tr>
+                        <td>దర్శనం</td>
+                        <td>Darśanaṁ</td>
+                        <td>Sight/Viewing (of God)</td>
+                    </tr>
+                    <tr>
+                        <td>చేసుకుందాం</td>
+                        <td>Cēsukundāṁ</td>
+                        <td>Let's do/take</td>
+                    </tr>
+                    <tr>
+                        <td>పదండి</td>
+                        <td>Padaṇḍi</td>
+                        <td>Come/Let's go</td>
+                    </tr>
+                    <tr>
+                        <td>అని</td>
+                        <td>Ani</td>
+                        <td>Thus/Saying</td>
+                    </tr>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పడంతో</td>
+                        <td>Cheppaḍantō</td>
+                        <td>With the telling/When she told</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలంతా</td>
+                        <td>Pillalantā</td>
+                        <td>All the children</td>
+                    </tr>
+                    <tr>
+                        <td>గర్భగుడి</td>
+                        <td>Garbhaguḍi</td>
+                        <td>Sanctum Sanctorum (inner shrine)</td>
+                    </tr>
+                    <tr>
+                        <td>ముందుకువచ్చారు</td>
+                        <td>Mundukuvaccāru</td>
+                        <td>Came forward</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 37 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>పిల్లలూ! చూడండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పిల్లలూ</td>
+                        <td>Pillalū</td>
+                        <td>Children!</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>Chūḍaṇḍi</td>
+                        <td>Look/See</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 38 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>శివలింగం ఎత్తైన వేదికపై ఉంది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శివలింగం</td>
+                        <td>Śivaliṅgaṁ</td>
+                        <td>Shiva Lingam (icon of Shiva)</td>
+                    </tr>
+                    <tr>
+                        <td>ఎత్తైన</td>
+                        <td>Ettaina</td>
+                        <td>High/Raised</td>
+                    </tr>
+                    <tr>
+                        <td>వేదికపై</td>
+                        <td>Vēdikapai</td>
+                        <td>On the platform</td>
+                    </tr>
+                    <tr>
+                        <td>ఉంది</td>
+                        <td>Undi</td>
+                        <td>It is</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 39 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>దీనిని నల్లని నునుపురాతితో చెక్కారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దీనిని</td>
+                        <td>Dīnini</td>
+                        <td>This (object)</td>
+                    </tr>
+                    <tr>
+                        <td>నల్లని</td>
+                        <td>Nallani</td>
+                        <td>Black (adjective)</td>
+                    </tr>
+                    <tr>
+                        <td>నునుపురాతితో</td>
+                        <td>Nunupurātitō</td>
+                        <td>With smooth stone</td>
+                    </tr>
+                    <tr>
+                        <td>చెక్కారు</td>
+                        <td>Chekkāru</td>
+                        <td>They carved</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 40 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>దర్శనం చేసుకోండి అనడంతో పిల్లలు రామలింగేశ్వరుడిని దర్శనం చేసుకొని నంది మంటపంలోకి వచ్చారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దర్శనం</td>
+                        <td>Darśanaṁ</td>
+                        <td>Sight/Viewing</td>
+                    </tr>
+                    <tr>
+                        <td>చేసుకోండి</td>
+                        <td>Cēsukōṇḍi</td>
+                        <td>Take (Darshan)</td>
+                    </tr>
+                    <tr>
+                        <td>అనడంతో</td>
+                        <td>Anaḍantō</td>
+                        <td>With the saying/As soon as it was said</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలు</td>
+                        <td>Pillalu</td>
+                        <td>Children</td>
+                    </tr>
+                    <tr>
+                        <td>రామలింగేశ్వరుడిని</td>
+                        <td>Rāmaliṅgēśvaruḍini</td>
+                        <td>Ramalingeshwara (object)</td>
+                    </tr>
+                    <tr>
+                        <td>దర్శనం</td>
+                        <td>Darśanaṁ</td>
+                        <td>Sight/Viewing</td>
+                    </tr>
+                    <tr>
+                        <td>చేసుకొని</td>
+                        <td>Cēsukoni</td>
+                        <td>Having taken</td>
+                    </tr>
+                    <tr>
+                        <td>నంది</td>
+                        <td>Nandi</td>
+                        <td>Nandi (the bull deity)</td>
+                    </tr>
+                    <tr>
+                        <td>మంటపంలోకి</td>
+                        <td>Maṇṭapaṁlōki</td>
+                        <td>Into the hall</td>
+                    </tr>
+                    <tr>
+                        <td>వచ్చారు</td>
+                        <td>Vaccāru</td>
+                        <td>Came</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 41 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“టీచర్‌! నంది నావైపే చూస్తున్నది” అంది అర్చన.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr>
+                        <td>నంది</td>
+                        <td>Nandi</td>
+                        <td>Nandi (the bull)</td>
+                    </tr>
+                    <tr>
+                        <td>నావైపే</td>
+                        <td>Nāvaipē</td>
+                        <td>Towards me only</td>
+                    </tr>
+                    <tr>
+                        <td>చూస్తున్నది</td>
+                        <td>Chūstunnadi</td>
+                        <td>Is looking</td>
+                    </tr>
+                    <tr>
+                        <td>అంది</td>
+                        <td>Andi</td>
+                        <td>Said (female)</td>
+                    </tr>
+                    <tr>
+                        <td>అర్చన</td>
+                        <td>Arcana</td>
+                        <td>Archana (name)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 42 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“కాదు! నావైపే చూస్తున్నది” అన్నాడు సుధీర్‌.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>కాదు</td>
+                        <td>Kādu</td>
+                        <td>No/It is not</td>
+                    </tr>
+                    <tr>
+                        <td>నావైపే</td>
+                        <td>Nāvaipē</td>
+                        <td>Towards me only</td>
+                    </tr>
+                    <tr>
+                        <td>చూస్తున్నది</td>
+                        <td>Chūstunnadi</td>
+                        <td>Is looking</td>
+                    </tr>
+                    <tr>
+                        <td>అన్నాడు</td>
+                        <td>Annāḍu</td>
+                        <td>Said (male)</td>
+                    </tr>
+                    <tr>
+                        <td>సుధీర్‌</td>
+                        <td>Sudhīr</td>
+                        <td>Sudheer (name)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 43 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“పిల్లలూ! ఇక్కడి నంది ఏవైపు నుంచి చూస్తే ఆ దిక్కే చూస్తున్నట్లు అనిపిస్తుంది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పిల్లలూ</td>
+                        <td>Pillalū</td>
+                        <td>Children!</td>
+                    </tr>
+                    <tr>
+                        <td>ఇక్కడి</td>
+                        <td>Ikkaḍi</td>
+                        <td>Here's/This place's</td>
+                    </tr>
+                    <tr>
+                        <td>నంది</td>
+                        <td>Nandi</td>
+                        <td>Nandi (the bull)</td>
+                    </tr>
+                    <tr>
+                        <td>ఏవైపు</td>
+                        <td>Ēvaipu</td>
+                        <td>Which side</td>
+                    </tr>
+                    <tr>
+                        <td>నుంచి</td>
+                        <td>Nunchi</td>
+                        <td>From</td>
+                    </tr>
+                    <tr>
+                        <td>చూస్తే</td>
+                        <td>Chūstē</td>
+                        <td>If you look</td>
+                    </tr>
+                    <tr>
+                        <td>ఆ</td>
+                        <td>Ā</td>
+                        <td>That</td>
+                    </tr>
+                    <tr>
+                        <td>దిక్కే</td>
+                        <td>Dikkē</td>
+                        <td>Direction only</td>
+                    </tr>
+                    <tr>
+                        <td>చూస్తున్నట్లు</td>
+                        <td>Chūstunnaṭlu</td>
+                        <td>As if it is looking</td>
+                    </tr>
+                    <tr>
+                        <td>అనిపిస్తుంది</td>
+                        <td>Anipistundi</td>
+                        <td>It feels/seems</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 44 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>దాని మెడ పట్టీలు, చిన్న చిన్న గంటలు ఎంత బాగా ఉన్నాయో గమనించారా! అంది టీచర్‌.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దాని</td>
+                        <td>Dāni</td>
+                        <td>Its (referring to Nandi)</td>
+                    </tr>
+                    <tr>
+                        <td>మెడ</td>
+                        <td>Meḍa</td>
+                        <td>Neck</td>
+                    </tr>
+                    <tr>
+                        <td>పట్టీలు</td>
+                        <td>Paṭṭīlu</td>
+                        <td>Bands/Belts</td>
+                    </tr>
+                    <tr>
+                        <td>చిన్న</td>
+                        <td>Chinna</td>
+                        <td>Small</td>
+                    </tr>
+                    <tr>
+                        <td>చిన్న</td>
+                        <td>Chinna</td>
+                        <td>Small</td>
+                    </tr>
+                    <tr>
+                        <td>గంటలు</td>
+                        <td>Ganṭalu</td>
+                        <td>Bells</td>
+                    </tr>
+                    <tr>
+                        <td>ఎంత</td>
+                        <td>Enta</td>
+                        <td>How much/How</td>
+                    </tr>
+                    <tr>
+                        <td>బాగా</td>
+                        <td>Bāgā</td>
+                        <td>Well/Nicely</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్నాయో</td>
+                        <td>Unnāyō</td>
+                        <td>Are there</td>
+                    </tr>
+                    <tr>
+                        <td>గమనించారా</td>
+                        <td>Gamanin̄cārā</td>
+                        <td>Did you observe?</td>
+                    </tr>
+                    <tr>
+                        <td>అంది</td>
+                        <td>Andi</td>
+                        <td>Said (female)</td>
+                    </tr>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 45 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“అవును టీచర్‌! నంది ఒక కాలును కొంచెం పైకెత్తి శివునివైపు చూస్తున్నట్లు ఉంది అని లావణ్య మాటలతో పిల్లలంతా మరింత ఆసక్తితో నందిని పరిశీలించారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అవును</td>
+                        <td>Avunu</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr>
+                        <td>నంది</td>
+                        <td>Nandi</td>
+                        <td>Nandi (the bull)</td>
+                    </tr>
+                    <tr>
+                        <td>ఒక</td>
+                        <td>Oka</td>
+                        <td>One</td>
+                    </tr>
+                    <tr>
+                        <td>కాలును</td>
+                        <td>Kālunu</td>
+                        <td>Leg (object)</td>
+                    </tr>
+                    <tr>
+                        <td>కొంచెం</td>
+                        <td>Kon̄ceṁ</td>
+                        <td>A little</td>
+                    </tr>
+                    <tr>
+                        <td>పైకెత్తి</td>
+                        <td>Paiketti</td>
+                        <td>Having raised up</td>
+                    </tr>
+                    <tr>
+                        <td>శివునివైపు</td>
+                        <td>Śivunivaipu</td>
+                        <td>Towards Shiva</td>
+                    </tr>
+                    <tr>
+                        <td>చూస్తున్నట్లు</td>
+                        <td>Chūstunnnaṭlu</td>
+                        <td>As if it is looking</td>
+                    </tr>
+                    <tr>
+                        <td>ఉంది</td>
+                        <td>Undi</td>
+                        <td>It is</td>
+                    </tr>
+                    <tr>
+                        <td>అని</td>
+                        <td>Ani</td>
+                        <td>Thus (quote delimiter)</td>
+                    </tr>
+                    <tr>
+                        <td>లావణ్య</td>
+                        <td>Lāvaṇya</td>
+                        <td>Lavanya (name)</td>
+                    </tr>
+                    <tr>
+                        <td>మాటలతో</td>
+                        <td>Māṭalatō</td>
+                        <td>With the words</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలంతా</td>
+                        <td>Pillalantā</td>
+                        <td>All the children</td>
+                    </tr>
+                    <tr>
+                        <td>మరింత</td>
+                        <td>Marinta</td>
+                        <td>More</td>
+                    </tr>
+                    <tr>
+                        <td>ఆసక్తితో</td>
+                        <td>Āsaktitō</td>
+                        <td>With interest</td>
+                    </tr>
+                    <tr>
+                        <td>నందిని</td>
+                        <td>Nandini</td>
+                        <td>Nandi (object)</td>
+                    </tr>
+                    <tr>
+                        <td>పరిశీలించారు</td>
+                        <td>Pariśīlin̄cāru</td>
+                        <td>Examined/Observed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 46 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>పిల్లలందరినీ గుడి ఆవరణలో గుండ్రంగా కూర్చోబెట్టింది టీచర్‌.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పిల్లలందరినీ</td>
+                        <td>Pillalandarinī</td>
+                        <td>All the children (object)</td>
+                    </tr>
+                    <tr>
+                        <td>గుడి</td>
+                        <td>Guḍi</td>
+                        <td>Temple</td>
+                    </tr>
+                    <tr>
+                        <td>ఆవరణలో</td>
+                        <td>Āvaraṇalō</td>
+                        <td>In the premises</td>
+                    </tr>
+                    <tr>
+                        <td>గుండ్రంగా</td>
+                        <td>Guṇḍraṅgā</td>
+                        <td>In a circle</td>
+                    </tr>
+                    <tr>
+                        <td>కూర్చోబెట్టింది</td>
+                        <td>Kūrcōbeṭṭindi</td>
+                        <td>Made (them) sit</td>
+                    </tr>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 47 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“పిల్లలూ! మరో ఆసక్తికరమైన విషయాన్ని చెబుతాను వినండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పిల్లలూ</td>
+                        <td>Pillalū</td>
+                        <td>Children!</td>
+                    </tr>
+                    <tr>
+                        <td>మరో</td>
+                        <td>Marō</td>
+                        <td>Another</td>
+                    </tr>
+                    <tr>
+                        <td>ఆసక్తికరమైన</td>
+                        <td>Āsaktikaramaina</td>
+                        <td>Interesting</td>
+                    </tr>
+                    <tr>
+                        <td>విషయాన్ని</td>
+                        <td>Viṣayānni</td>
+                        <td>Thing/Matter (object)</td>
+                    </tr>
+                    <tr>
+                        <td>చెబుతాను</td>
+                        <td>Chebutānu</td>
+                        <td>I will tell</td>
+                    </tr>
+                    <tr>
+                        <td>వినండి</td>
+                        <td>Vinaṇḍi</td>
+                        <td>Listen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 48 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ఇంత పెద్ద గుడి పునాదులను ఇసుకతో నిర్మించారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఇంత</td>
+                        <td>Inta</td>
+                        <td>This much/So much</td>
+                    </tr>
+                    <tr>
+                        <td>పెద్ద</td>
+                        <td>Pedda</td>
+                        <td>Big</td>
+                    </tr>
+                    <tr>
+                        <td>గుడి</td>
+                        <td>Guḍi</td>
+                        <td>Temple</td>
+                    </tr>
+                    <tr>
+                        <td>పునాదులను</td>
+                        <td>Punādulanu</td>
+                        <td>Foundations (object)</td>
+                    </tr>
+                    <tr>
+                        <td>ఇసుకతో</td>
+                        <td>Isukatō</td>
+                        <td>With sand</td>
+                    </tr>
+                    <tr>
+                        <td>నిర్మించారు</td>
+                        <td>Nirmiṁcāru</td>
+                        <td>They built/constructed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 49 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>గుడి గోపుర నిర్మాణానికి నీటిలో తేలియాడే ఇటుకలను ఉపయోగించారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>గుడి</td>
+                        <td>Guḍi</td>
+                        <td>Temple</td>
+                    </tr>
+                    <tr>
+                        <td>గోపుర</td>
+                        <td>Gōpura</td>
+                        <td>Tower/Gopuram (genitive)</td>
+                    </tr>
+                    <tr>
+                        <td>నిర్మాణానికి</td>
+                        <td>Nirmāṇāniki</td>
+                        <td>For the construction</td>
+                    </tr>
+                    <tr>
+                        <td>నీటిలో</td>
+                        <td>Nīṭilō</td>
+                        <td>In the water</td>
+                    </tr>
+                    <tr>
+                        <td>తేలియాడే</td>
+                        <td>Tēliyāḍē</td>
+                        <td>Floating</td>
+                    </tr>
+                    <tr>
+                        <td>ఇటుకలను</td>
+                        <td>Iṭukalanu</td>
+                        <td>Bricks (object)</td>
+                    </tr>
+                    <tr>
+                        <td>ఉపయోగించారు</td>
+                        <td>Upayōgin̄cāru</td>
+                        <td>They used</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 50 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ఈ గుడికి ఇటీవలే (2020) ప్రపంచస్థాయి గుర్తింపు వచ్చింది.</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -490,50 +2614,40 @@
                         <td>This</td>
                     </tr>
                     <tr>
-                        <td>ఆలయ</td>
-                        <td>Ālaya</td>
-                        <td>Temple's</td>
+                        <td>గుడికి</td>
+                        <td>Guḍiki</td>
+                        <td>To the temple</td>
                     </tr>
                     <tr>
-                        <td>గోపురాన్ని</td>
-                        <td>Gōpurānni</td>
-                        <td>The tower (gopuram) (object)</td>
+                        <td>ఇటీవలే</td>
+                        <td>Iṭīvalē</td>
+                        <td>Recently only</td>
                     </tr>
                     <tr>
-                        <td>నిర్మించడానికి</td>
-                        <td>Nirmin̄caḍāniki</td>
-                        <td>To construct</td>
+                        <td>ప్రపంచస్థాయి</td>
+                        <td>Prapan̄casthāyi</td>
+                        <td>World standard/Level</td>
                     </tr>
                     <tr>
-                        <td>ఉపయోగించిన</td>
-                        <td>Upayōgin̄cina</td>
-                        <td>Used</td>
+                        <td>గుర్తింపు</td>
+                        <td>Gurtimpu</td>
+                        <td>Recognition</td>
                     </tr>
                     <tr>
-                        <td>ఇటుకలు</td>
-                        <td>Iṭukalu</td>
-                        <td>Bricks</td>
-                    </tr>
-                    <tr>
-                        <td>చాలా</td>
-                        <td>Chālā</td>
-                        <td>Very</td>
-                    </tr>
-                    <tr>
-                        <td>తేలికైనవి</td>
-                        <td>Tēlikainavi</td>
-                        <td>Lightweight ones</td>
+                        <td>వచ్చింది</td>
+                        <td>Vaccindi</td>
+                        <td>Came/Got</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Card 10 (Continuation of Feature 1) -->
-    <div class="card shadow mb-4">
+    <!-- Card 51 -->
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>ఇవి నీటిలో వేస్తే మునగవు, తేలుతాయి.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>యునెస్కో వారసత్వ కట్టడాల జాబితాలో చోటు సంపాదించుకోవడం తెలంగాణకే గర్వకారణం” అన్న టీచర్‌ మాటలకు పిల్లలకు సంతోషం కలిగింది.</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -542,281 +2656,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>ఇవి</td>
-                        <td>Ivi</td>
-                        <td>These (bricks)</td>
-                    </tr>
-                    <tr>
-                        <td>నీటిలో</td>
-                        <td>Nīṭilō</td>
-                        <td>In water</td>
-                    </tr>
-                    <tr>
-                        <td>వేస్తే</td>
-                        <td>Vēstē</td>
-                        <td>If thrown/put</td>
-                    </tr>
-                    <tr>
-                        <td>మునగవు</td>
-                        <td>Munagavu</td>
-                        <td>They do not sink</td>
-                    </tr>
-                    <tr>
-                        <td>తేలుతాయి</td>
-                        <td>Tēlutāyi</td>
-                        <td>They float</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Card 11 (Special Feature 2) -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-light">
-            <strong>నల్లరాతి శిల్పాలు:</strong>
-        </div>
-        <div class="card-body">
-            <p class="lead"><strong>ఆలయ ప్రాకారంలో ఉన్న మదనికల శిల్పాలు, నాట్యగత్తెల విగ్రహాలు నల్లరాతితో అత్యంత నైపుణ్యంతో చెక్కబడ్డాయి.</strong></p>
-            <table class="table table-hover table-sm mb-0">
-                <thead>
-                    <tr>
-                        <th>తెలుగు పదం</th>
-                        <th>ఉచ్చారణ (Pronunciation)</th>
-                        <th>అర్థం (Meaning)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ఆలయ</td>
-                        <td>Ālaya</td>
-                        <td>Temple's</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రాకారంలో</td>
-                        <td>Prākāranlō</td>
-                        <td>In the enclosure/courtyard</td>
-                    </tr>
-                    <tr>
-                        <td>ఉన్న</td>
-                        <td>Unna</td>
-                        <td>Existing</td>
-                    </tr>
-                    <tr>
-                        <td>మదనికల</td>
-                        <td>Madanikala</td>
-                        <td>Of the Madanikas (celestial dancers)</td>
-                    </tr>
-                    <tr>
-                        <td>శిల్పాలు</td>
-                        <td>Shilpālu</td>
-                        <td>Sculptures</td>
-                    </tr>
-                    <tr>
-                        <td>నాట్యగత్తెల</td>
-                        <td>Nāṭyagattela</td>
-                        <td>Of the dancers</td>
-                    </tr>
-                    <tr>
-                        <td>విగ్రహాలు</td>
-                        <td>Vigrahālu</td>
-                        <td>Idols / Statues</td>
-                    </tr>
-                    <tr>
-                        <td>నల్లరాతితో</td>
-                        <td>Nallarātithō</td>
-                        <td>With black stone (granite)</td>
-                    </tr>
-                    <tr>
-                        <td>అత్యంత</td>
-                        <td>Atyanta</td>
-                        <td>Extremely</td>
-                    </tr>
-                    <tr>
-                        <td>నైపుణ్యంతో</td>
-                        <td>Naipuṇyanthō</td>
-                        <td>With skill / Expertise</td>
-                    </tr>
-                    <tr>
-                        <td>చెక్కబడ్డాయి</td>
-                        <td>Chekkabaḍḍāyi</td>
-                        <td>Were carved</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Card 12 (Special Feature 3) -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-light">
-            <strong>నంది విగ్రహం:</strong>
-        </div>
-        <div class="card-body">
-            <p class="lead"><strong>ఇక్కడి నంది విగ్రహం ఒక ప్రత్యేకత.</strong></p>
-            <table class="table table-hover table-sm mb-0">
-                <thead>
-                    <tr>
-                        <th>తెలుగు పదం</th>
-                        <th>ఉచ్చారణ (Pronunciation)</th>
-                        <th>అర్థం (Meaning)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ఇక్కడి</td>
-                        <td>Ikkaḍi</td>
-                        <td>Here's</td>
-                    </tr>
-                    <tr>
-                        <td>నంది</td>
-                        <td>Nandi</td>
-                        <td>Nandi (Bull deity)</td>
-                    </tr>
-                    <tr>
-                        <td>విగ్రహం</td>
-                        <td>Vigrahaṁ</td>
-                        <td>Statue / Idol</td>
-                    </tr>
-                    <tr>
-                        <td>ఒక</td>
-                        <td>Oka</td>
-                        <td>One / A</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రత్యేకత</td>
-                        <td>Pratyēkata</td>
-                        <td>Specialty / Unique feature</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Card 13 (Continuation of Feature 3) -->
-    <div class="card shadow mb-4">
-        <div class="card-body">
-            <p class="lead"><strong>మనం ఏ దిశ నుండి చూసినా నంది మనల్నే చూస్తున్నట్లు అనిపిస్తుంది.</strong></p>
-            <table class="table table-hover table-sm mb-0">
-                <thead>
-                    <tr>
-                        <th>తెలుగు పదం</th>
-                        <th>ఉచ్చారణ (Pronunciation)</th>
-                        <th>అర్థం (Meaning)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>మనం</td>
-                        <td>Manam</td>
-                        <td>We</td>
-                    </tr>
-                    <tr>
-                        <td>ఏ</td>
-                        <td>Ē</td>
-                        <td>Which / Any</td>
-                    </tr>
-                    <tr>
-                        <td>దిశ</td>
-                        <td>Disha</td>
-                        <td>Direction</td>
-                    </tr>
-                    <tr>
-                        <td>నుండి</td>
-                        <td>Nunḍi</td>
-                        <td>From</td>
-                    </tr>
-                    <tr>
-                        <td>చూసినా</td>
-                        <td>Chūsinā</td>
-                        <td>Even if we look</td>
-                    </tr>
-                    <tr>
-                        <td>నంది</td>
-                        <td>Nandi</td>
-                        <td>Nandi</td>
-                    </tr>
-                    <tr>
-                        <td>మనల్నే</td>
-                        <td>Manalnē</td>
-                        <td>Only us (emphasis on us)</td>
-                    </tr>
-                    <tr>
-                        <td>చూస్తున్నట్లు</td>
-                        <td>Chūstunnaṭlu</td>
-                        <td>As if looking</td>
-                    </tr>
-                    <tr>
-                        <td>అనిపిస్తుంది</td>
-                        <td>Anipistundi</td>
-                        <td>It feels / It appears</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Card 14 (Special Feature 4) -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-light">
-            <strong>యునెస్కో గుర్తింపు:</strong>
-        </div>
-        <div class="card-body">
-            <p class="lead"><strong>రామప్ప దేవాలయానికి ఉన్న చారిత్రక, శిల్పకళా ప్రాధాన్యతను గుర్తించి 2021లో 'యునెస్కో' (UNESCO) ప్రపంచ వారసత్వ కట్టడంగా గుర్తించింది.</strong></p>
-            <table class="table table-hover table-sm mb-0">
-                <thead>
-                    <tr>
-                        <th>తెలుగు పదం</th>
-                        <th>ఉచ్చారణ (Pronunciation)</th>
-                        <th>అర్థం (Meaning)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>రామప్ప దేవాలయానికి</td>
-                        <td>Rāmappa Dēvālayāniki</td>
-                        <td>To the Ramappa Temple</td>
-                    </tr>
-                    <tr>
-                        <td>ఉన్న</td>
-                        <td>Unna</td>
-                        <td>Existing / Which it has</td>
-                    </tr>
-                    <tr>
-                        <td>చారిత్రక</td>
-                        <td>Chāritrika</td>
-                        <td>Historical</td>
-                    </tr>
-                    <tr>
-                        <td>శిల్పకళా</td>
-                        <td>Shilpakalā</td>
-                        <td>Sculptural art</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రాధాన్యతను</td>
-                        <td>Prādhānyatanu</td>
-                        <td>The importance/significance (object)</td>
-                    </tr>
-                    <tr>
-                        <td>గుర్తించి</td>
-                        <td>Gurtin̄ci</td>
-                        <td>Having recognized</td>
-                    </tr>
-                    <tr>
-                        <td>2021లో</td>
-                        <td>2021lō</td>
-                        <td>In 2021</td>
-                    </tr>
                     <tr>
                         <td>యునెస్కో</td>
                         <td>Yuneskō</td>
                         <td>UNESCO</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రపంచ</td>
-                        <td>Prapan̄ca</td>
-                        <td>World</td>
                     </tr>
                     <tr>
                         <td>వారసత్వ</td>
@@ -824,80 +2667,75 @@
                         <td>Heritage</td>
                     </tr>
                     <tr>
-                        <td>కట్టడంగా</td>
-                        <td>Kaṭṭaḍan̄gā</td>
-                        <td>As a structure/site</td>
-                    </tr>
-                    <tr>
-                        <td>గుర్తించింది</td>
-                        <td>Gurtin̄cindi</td>
-                        <td>Recognized</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <h3 class="text-secondary mt-5 mb-3">పాఠం సారాంశం (Summary)</h3>
-
-    <!-- Card 15 (Summary Point 1) -->
-    <div class="card shadow mb-4">
-        <div class="card-body">
-            <p class="lead"><strong>ఈ పాఠం తెలంగాణలోని చారిత్రక కట్టడాల ప్రాముఖ్యతను వివరిస్తుంది.</strong></p>
-            <table class="table table-hover table-sm mb-0">
-                <thead>
-                    <tr>
-                        <th>తెలుగు పదం</th>
-                        <th>ఉచ్చారణ (Pronunciation)</th>
-                        <th>అర్థం (Meaning)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ఈ</td>
-                        <td>Ī</td>
-                        <td>This</td>
-                    </tr>
-                    <tr>
-                        <td>పాఠం</td>
-                        <td>Pāṭham</td>
-                        <td>Lesson</td>
-                    </tr>
-                    <tr>
-                        <td>తెలంగాణలోని</td>
-                        <td>Telangāṇalōni</td>
-                        <td>In Telangana's</td>
-                    </tr>
-                    <tr>
-                        <td>చారిత్రక</td>
-                        <td>Chāritrika</td>
-                        <td>Historical</td>
-                    </tr>
-                    <tr>
                         <td>కట్టడాల</td>
                         <td>Kaṭṭaḍāla</td>
-                        <td>Of the structures</td>
+                        <td>Of the structures/buildings</td>
                     </tr>
                     <tr>
-                        <td>ప్రాముఖ్యతను</td>
-                        <td>Prāmukhyatanu</td>
-                        <td>The importance (object)</td>
+                        <td>జాబితాలో</td>
+                        <td>Jābitālō</td>
+                        <td>In the list</td>
                     </tr>
                     <tr>
-                        <td>వివరిస్తుంది</td>
-                        <td>Vivaristundi</td>
-                        <td>Explains</td>
+                        <td>చోటు</td>
+                        <td>Cōṭu</td>
+                        <td>Place/Spot</td>
+                    </tr>
+                    <tr>
+                        <td>సంపాదించుకోవడం</td>
+                        <td>Sampādin̄cukōvaḍaṁ</td>
+                        <td>Getting/Acquiring</td>
+                    </tr>
+                    <tr>
+                        <td>తెలంగాణకే</td>
+                        <td>Telaṅgāṇakē</td>
+                        <td>To Telangana itself</td>
+                    </tr>
+                    <tr>
+                        <td>గర్వకారణం</td>
+                        <td>Garvakāraṇaṁ</td>
+                        <td>Reason for pride</td>
+                    </tr>
+                    <tr>
+                        <td>అన్న</td>
+                        <td>Anna</td>
+                        <td>Said by</td>
+                    </tr>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher's</td>
+                    </tr>
+                    <tr>
+                        <td>మాటలకు</td>
+                        <td>Māṭalaku</td>
+                        <td>To the words</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలకు</td>
+                        <td>Pillalaku</td>
+                        <td>To the children</td>
+                    </tr>
+                    <tr>
+                        <td>సంతోషం</td>
+                        <td>Santōṣaṁ</td>
+                        <td>Happiness</td>
+                    </tr>
+                    <tr>
+                        <td>కలిగింది</td>
+                        <td>Kaligindi</td>
+                        <td>Happened/Caused</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Card 16 (Summary Point 2) -->
-    <div class="card shadow mb-4">
+    <!-- Card 52 -->
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>శిల్పి పేరుతో పిలవబడే ఏకైక భారతీయ దేవాలయం రామప్ప.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>అక్కడి నుంచి నేరుగా రామప్ప చెరువును చూశారు.</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -907,50 +2745,45 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>శిల్పి</td>
-                        <td>Shilpi</td>
-                        <td>Sculptor's</td>
+                        <td>అక్కడి</td>
+                        <td>Akkaḍi</td>
+                        <td>Of that place</td>
                     </tr>
                     <tr>
-                        <td>పేరుతో</td>
-                        <td>Pēruthō</td>
-                        <td>With the name</td>
+                        <td>నుంచి</td>
+                        <td>Nunchi</td>
+                        <td>From</td>
                     </tr>
                     <tr>
-                        <td>పిలవబడే</td>
-                        <td>Pilavabaḍē</td>
-                        <td>Which is called</td>
-                    </tr>
-                    <tr>
-                        <td>ఏకైక</td>
-                        <td>Ēkaika</td>
-                        <td>Only one / Single</td>
-                    </tr>
-                    <tr>
-                        <td>భారతీయ</td>
-                        <td>Bhāratīya</td>
-                        <td>Indian</td>
-                    </tr>
-                    <tr>
-                        <td>దేవాలయం</td>
-                        <td>Dēvālayam</td>
-                        <td>Temple</td>
+                        <td>నేరుగా</td>
+                        <td>Nērugā</td>
+                        <td>Directly</td>
                     </tr>
                     <tr>
                         <td>రామప్ప</td>
                         <td>Rāmappa</td>
                         <td>Ramappa</td>
                     </tr>
+                    <tr>
+                        <td>చెరువును</td>
+                        <td>Cheruvunu</td>
+                        <td>Lake/Tank (object)</td>
+                    </tr>
+                    <tr>
+                        <td>చూశారు</td>
+                        <td>Chūśāru</td>
+                        <td>They saw</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Card 17 (Summary Point 3) -->
-    <div class="card shadow mb-4">
+    <!-- Card 53 -->
+    <div class="card sentence-card shadow-sm mb-3">
         <div class="card-body">
-            <p class="lead"><strong>కాకతీయుల కాలం నాటి అద్భుతమైన సాంకేతికత (తేలే ఇటుకలు) గురించి విద్యార్థులకు అవగాహన కలిగిస్తుంది.</strong></p>
-            <table class="table table-hover table-sm mb-0">
+            <p class="card-text mb-2"><b>“గుడిని నిర్మించిన శిల్పి రామప్పను ప్రతిఫలంగా ఏమి కావాలో అని రేచర్ల రుద్రుడు అడిగాడట.</b></p>
+            <table class="table table-hover mb-0">
                 <thead>
                     <tr>
                         <th>తెలుగు పదం</th>
@@ -960,60 +2793,829 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>కాకతీయుల</td>
-                        <td>Kākatīyula</td>
-                        <td>Of the Kakatiyas</td>
+                        <td>గుడిని</td>
+                        <td>Guḍini</td>
+                        <td>The temple (object)</td>
                     </tr>
                     <tr>
-                        <td>కాలం</td>
-                        <td>Kālaṁ</td>
-                        <td>Time / Era</td>
+                        <td>నిర్మించిన</td>
+                        <td>Nirmiṁcina</td>
+                        <td>Constructed</td>
                     </tr>
                     <tr>
-                        <td>నాటి</td>
-                        <td>Nāṭi</td>
-                        <td>Belonging to that era</td>
+                        <td>శిల్పి</td>
+                        <td>Śilpi</td>
+                        <td>Sculptor</td>
                     </tr>
                     <tr>
-                        <td>అద్భుతమైన</td>
-                        <td>Adbhutanmaina</td>
-                        <td>Amazing / Wonderful</td>
+                        <td>రామప్పను</td>
+                        <td>Rāmappanu</td>
+                        <td>Ramappa (object)</td>
                     </tr>
                     <tr>
-                        <td>సాంకేతికత</td>
-                        <td>Sānkētikata</td>
-                        <td>Technology</td>
+                        <td>ప్రతిఫలంగా</td>
+                        <td>Pratiphalaṅgā</td>
+                        <td>As a reward/return</td>
                     </tr>
                     <tr>
-                        <td>తేలే ఇటుకలు</td>
-                        <td>Tēlē Iṭukalu</td>
-                        <td>Floating bricks</td>
+                        <td>ఏమి</td>
+                        <td>Ēmi</td>
+                        <td>What</td>
                     </tr>
                     <tr>
-                        <td>గురించి</td>
-                        <td>Gurin̄ci</td>
-                        <td>About</td>
+                        <td>కావాలో</td>
+                        <td>Kāvālō</td>
+                        <td>Is wanted/needed</td>
                     </tr>
                     <tr>
-                        <td>విద్యార్థులకు</td>
-                        <td>Vidyārthulaku</td>
-                        <td>To the students</td>
+                        <td>అని</td>
+                        <td>Ani</td>
+                        <td>Thus/Saying</td>
                     </tr>
                     <tr>
-                        <td>అవగాహన</td>
-                        <td>Avagāhana</td>
-                        <td>Understanding / Awareness</td>
+                        <td>రేచర్ల రుద్రుడు</td>
+                        <td>Rēcarla Rudruḍu</td>
+                        <td>Recharla Rudra (name)</td>
                     </tr>
                     <tr>
-                        <td>కలిగిస్తుంది</td>
-                        <td>Kaligistundi</td>
-                        <td>Creates / Provides</td>
+                        <td>అడిగాడట</td>
+                        <td>Aḍigāḍaṭa</td>
+                        <td>He asked (reportedly)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
+    <!-- Card 54 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>దానికి రామప్ప నాకేమీ వద్దు చెరువు తవ్వించండి చాలు అన్నాడట.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దానికి</td>
+                        <td>Dāniki</td>
+                        <td>To that (question)</td>
+                    </tr>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa (name)</td>
+                    </tr>
+                    <tr>
+                        <td>నాకేమీ</td>
+                        <td>Nākēmī</td>
+                        <td>To me nothing (I don't need anything)</td>
+                    </tr>
+                    <tr>
+                        <td>వద్దు</td>
+                        <td>Vaddu</td>
+                        <td>Not needed</td>
+                    </tr>
+                    <tr>
+                        <td>చెరువు</td>
+                        <td>Cheruvu</td>
+                        <td>Lake/Tank</td>
+                    </tr>
+                    <tr>
+                        <td>తవ్వించండి</td>
+                        <td>Tavvin̄caṇḍi</td>
+                        <td>Get (a tank) dug</td>
+                    </tr>
+                    <tr>
+                        <td>చాలు</td>
+                        <td>Chālu</td>
+                        <td>Enough/Sufficient</td>
+                    </tr>
+                    <tr>
+                        <td>అన్నాడట</td>
+                        <td>Annāḍaṭa</td>
+                        <td>He said (reportedly)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 55 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>అందుకే రేచర్ల రుద్రుడు చెరువును తవ్వించాడు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అందుకే</td>
+                        <td>Andukē</td>
+                        <td>That's why/For that reason</td>
+                    </tr>
+                    <tr>
+                        <td>రేచర్ల రుద్రుడు</td>
+                        <td>Rēcarla Rudruḍu</td>
+                        <td>Recharla Rudra (name)</td>
+                    </tr>
+                    <tr>
+                        <td>చెరువును</td>
+                        <td>Cheruvunu</td>
+                        <td>The lake (object)</td>
+                    </tr>
+                    <tr>
+                        <td>తవ్వించాడు</td>
+                        <td>Tavvin̄cāḍu</td>
+                        <td>Got (it) dug</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 56 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>దాని పేరే రామప్ప చెరువు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దాని</td>
+                        <td>Dāni</td>
+                        <td>Its (referring to the lake)</td>
+                    </tr>
+                    <tr>
+                        <td>పేరే</td>
+                        <td>Pērē</td>
+                        <td>Name only</td>
+                    </tr>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa</td>
+                    </tr>
+                    <tr>
+                        <td>చెరువు</td>
+                        <td>Cheruvu</td>
+                        <td>Lake/Tank</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 57 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ఇది వేలాది ఎకరాల పంటపొలాలకు నీళ్లిస్తుంది.” అని టీచర్‌ పిల్లలకు చెప్పింది.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఇది</td>
+                        <td>Idi</td>
+                        <td>This (Ramappa Cheruvu)</td>
+                    </tr>
+                    <tr>
+                        <td>వేలాది</td>
+                        <td>Vēlādi</td>
+                        <td>Thousands of</td>
+                    </tr>
+                    <tr>
+                        <td>ఎకరాల</td>
+                        <td>Ekarāla</td>
+                        <td>Acres' (of land)</td>
+                    </tr>
+                    <tr>
+                        <td>పంటపొలాలకు</td>
+                        <td>Paṇṭapolāku</td>
+                        <td>To the farm lands</td>
+                    </tr>
+                    <tr>
+                        <td>నీళ్లిస్తుంది</td>
+                        <td>Nīḷlistundi</td>
+                        <td>Gives water/irrigates</td>
+                    </tr>
+                    <tr>
+                        <td>అని</td>
+                        <td>Ani</td>
+                        <td>Thus/Saying</td>
+                    </tr>
+                    <tr>
+                        <td>టీచర్‌</td>
+                        <td>Ṭīcar</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr>
+                        <td>పిల్లలకు</td>
+                        <td>Pillalaku</td>
+                        <td>To the children</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పింది</td>
+                        <td>Cheppindi</td>
+                        <td>Told (female)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 58 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>అప్పటికే సాయంత్రం కావడంతో అందరూ తిరిగి బస్సులో తమ ఊరికి బయలుదేరారు.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అప్పటికే</td>
+                        <td>Appaṭikē</td>
+                        <td>By that time only</td>
+                    </tr>
+                    <tr>
+                        <td>సాయంత్రం</td>
+                        <td>Sāyaṁtraṁ</td>
+                        <td>Evening</td>
+                    </tr>
+                    <tr>
+                        <td>కావడంతో</td>
+                        <td>Kāvaḍantō</td>
+                        <td>Because it happened/Since it became</td>
+                    </tr>
+                    <tr>
+                        <td>అందరూ</td>
+                        <td>Andarū</td>
+                        <td>Everyone</td>
+                    </tr>
+                    <tr>
+                        <td>తిరిగి</td>
+                        <td>Tirigi</td>
+                        <td>Back/Returning</td>
+                    </tr>
+                    <tr>
+                        <td>బస్సులో</td>
+                        <td>Bassulō</td>
+                        <td>In the bus</td>
+                    </tr>
+                    <tr>
+                        <td>తమ</td>
+                        <td>Tama</td>
+                        <td>Their own</td>
+                    </tr>
+                    <tr>
+                        <td>ఊరికి</td>
+                        <td>Ūriki</td>
+                        <td>To the village/town</td>
+                    </tr>
+                    <tr>
+                        <td>బయలుదేరారు</td>
+                        <td>Bayaludērāru</td>
+                        <td>Set off</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 59 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ఊరికి చేరేవరకు బస్సులో రామప్ప ముచ్చట్లే ముచ్చట్లు!</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఊరికి</td>
+                        <td>Ūriki</td>
+                        <td>To the village/town</td>
+                    </tr>
+                    <tr>
+                        <td>చేరేవరకు</td>
+                        <td>Cērēvaraku</td>
+                        <td>Until reaching</td>
+                    </tr>
+                    <tr>
+                        <td>బస్సులో</td>
+                        <td>Bassulō</td>
+                        <td>In the bus</td>
+                    </tr>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa (place name)</td>
+                    </tr>
+                    <tr>
+                        <td>ముచ్చట్లే</td>
+                        <td>Muccaṭlē</td>
+                        <td>Talks/Chats only</td>
+                    </tr>
+                    <tr>
+                        <td>ముచ్చట్లు</td>
+                        <td>Muccaṭlu</td>
+                        <td>Chats</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <h3 class="text-center text-success mt-5 mb-4">అభ్యాసాలు (Activities)</h3>
+
+    <!-- Card 60 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>వినడం-ఆలోచించి మాట్లాడడం</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వినడం</td>
+                        <td>Vinaḍaṁ</td>
+                        <td>Listening</td>
+                    </tr>
+                    <tr>
+                        <td>ఆలోచించి</td>
+                        <td>Ālōcin̄ci</td>
+                        <td>Having thought</td>
+                    </tr>
+                    <tr>
+                        <td>మాట్లాడడం</td>
+                        <td>Māṭlāḍaḍaṁ</td>
+                        <td>Speaking</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 61 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>“రామప్ప చెరువు గురించి విన్నారు కదా! చెరువువల్ల ఉపయోగాలు ఏమిటి? చెప్పండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa</td>
+                    </tr>
+                    <tr>
+                        <td>చెరువు</td>
+                        <td>Cheruvu</td>
+                        <td>Lake/Tank</td>
+                    </tr>
+                    <tr>
+                        <td>గురించి</td>
+                        <td>Gurinchi</td>
+                        <td>About</td>
+                    </tr>
+                    <tr>
+                        <td>విన్నారు</td>
+                        <td>Vinnāru</td>
+                        <td>You heard</td>
+                    </tr>
+                    <tr>
+                        <td>కదా</td>
+                        <td>Kadā</td>
+                        <td>Isn't it? (tag question)</td>
+                    </tr>
+                    <tr>
+                        <td>చెరువువల్ల</td>
+                        <td>Cheruvuvalla</td>
+                        <td>Because of the lake</td>
+                    </tr>
+                    <tr>
+                        <td>ఉపయోగాలు</td>
+                        <td>Upayōgālu</td>
+                        <td>Uses/Benefits</td>
+                    </tr>
+                    <tr>
+                        <td>ఏమిటి</td>
+                        <td>Ēmiṭi</td>
+                        <td>What are (they)</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పండి</td>
+                        <td>Cheppaṇḍi</td>
+                        <td>Tell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 62 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>మీరు చూసిన పర్యాటక ప్రదేశాల గురించి సొంతమాటల్లో చెప్పండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మీరు</td>
+                        <td>Mīru</td>
+                        <td>You (plural/respectful)</td>
+                    </tr>
+                    <tr>
+                        <td>చూసిన</td>
+                        <td>Chūsina</td>
+                        <td>Having seen</td>
+                    </tr>
+                    <tr>
+                        <td>పర్యాటక</td>
+                        <td>Paryāṭaka</td>
+                        <td>Tourist</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రదేశాల</td>
+                        <td>Pradēśāla</td>
+                        <td>Of the places</td>
+                    </tr>
+                    <tr>
+                        <td>గురించి</td>
+                        <td>Gurinchi</td>
+                        <td>About</td>
+                    </tr>
+                    <tr>
+                        <td>సొంతమాటల్లో</td>
+                        <td>Sontamāṭallō</td>
+                        <td>In your own words</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పండి</td>
+                        <td>Cheppaṇḍi</td>
+                        <td>Tell/Speak</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 63 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>ధారాళంగా చదువడం - అర్థం చేసుకోవడం</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ధారాళంగా</td>
+                        <td>Dhārāḷaṅgā</td>
+                        <td>Fluently</td>
+                    </tr>
+                    <tr>
+                        <td>చదువడం</td>
+                        <td>Chaduvadaṁ</td>
+                        <td>Reading</td>
+                    </tr>
+                    <tr>
+                        <td>అర్థం</td>
+                        <td>Ardhaṁ</td>
+                        <td>Meaning/Comprehension</td>
+                    </tr>
+                    <tr>
+                        <td>చేసుకోవడం</td>
+                        <td>Chēsukōvaḍaṁ</td>
+                        <td>Understanding/Doing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 64 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>పాఠం చదువండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పాఠం</td>
+                        <td>Pāṭhaṁ</td>
+                        <td>Lesson</td>
+                    </tr>
+                    <tr>
+                        <td>చదువండి</td>
+                        <td>Chaduvandi</td>
+                        <td>Read</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 65 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>పాఠం ఆధారంగా కింది పట్టికను పూరించండి.</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పాఠం</td>
+                        <td>Pāṭhaṁ</td>
+                        <td>Lesson</td>
+                    </tr>
+                    <tr>
+                        <td>ఆధారంగా</td>
+                        <td>Ādhāraṅgā</td>
+                        <td>Based on</td>
+                    </tr>
+                    <tr>
+                        <td>కింది</td>
+                        <td>Kindi</td>
+                        <td>Below/Following</td>
+                    </tr>
+                    <tr>
+                        <td>పట్టికను</td>
+                        <td>Paṭṭikanu</td>
+                        <td>The table/list (object)</td>
+                    </tr>
+                    <tr>
+                        <td>పూరించండి</td>
+                        <td>Pūrin̄caṇḍi</td>
+                        <td>Fill (it)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Table Headers/Instruction Phrases (Treated as sentences for structure consistency) -->
+
+    <!-- Card 66 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>రామప్ప గుడిని కట్టించిన రాజు</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa</td>
+                    </tr>
+                    <tr>
+                        <td>గుడిని</td>
+                        <td>Guḍini</td>
+                        <td>The temple (object)</td>
+                    </tr>
+                    <tr>
+                        <td>కట్టించిన</td>
+                        <td>Kaṭṭin̄cina</td>
+                        <td>Who caused to be built</td>
+                    </tr>
+                    <tr>
+                        <td>రాజు</td>
+                        <td>Rāju</td>
+                        <td>King</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 67 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>రామప్ప గుడికి మరో పేరు</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa</td>
+                    </tr>
+                    <tr>
+                        <td>గుడికి</td>
+                        <td>Guḍiki</td>
+                        <td>To the temple</td>
+                    </tr>
+                    <tr>
+                        <td>మరో</td>
+                        <td>Marō</td>
+                        <td>Another</td>
+                    </tr>
+                    <tr>
+                        <td>పేరు</td>
+                        <td>Pēru</td>
+                        <td>Name</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 68 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>నల్లని రాతి పలకలపై ఉన్న శిల్పాల పేర్లు</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నల్లని</td>
+                        <td>Nallani</td>
+                        <td>Black</td>
+                    </tr>
+                    <tr>
+                        <td>రాతి</td>
+                        <td>Rāti</td>
+                        <td>Stone</td>
+                    </tr>
+                    <tr>
+                        <td>పలకలపై</td>
+                        <td>Palakalapai</td>
+                        <td>On the slabs/panels</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్న</td>
+                        <td>Unna</td>
+                        <td>Existing/Which are</td>
+                    </tr>
+                    <tr>
+                        <td>శిల్పాల</td>
+                        <td>Śilpāla</td>
+                        <td>Of the sculptures</td>
+                    </tr>
+                    <tr>
+                        <td>పేర్లు</td>
+                        <td>Pērlu</td>
+                        <td>Names</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 69 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>రామప్ప ఇటుకల ప్రత్యేకత</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa</td>
+                    </tr>
+                    <tr>
+                        <td>ఇటుకల</td>
+                        <td>Iṭukala</td>
+                        <td>Of the bricks</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రత్యేకత</td>
+                        <td>Pratyēkata</td>
+                        <td>Specialty/Uniqueness</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Card 70 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body">
+            <p class="card-text mb-2"><b>రామప్ప గుడికి లభించిన ప్రత్యేక గుర్తింపు</b></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రామప్ప</td>
+                        <td>Rāmappa</td>
+                        <td>Ramappa</td>
+                    </tr>
+                    <tr>
+                        <td>గుడికి</td>
+                        <td>Guḍiki</td>
+                        <td>To the temple</td>
+                    </tr>
+                    <tr>
+                        <td>లభించిన</td>
+                        <td>Labhin̄cina</td>
+                        <td>Obtained/Received</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రత్యేక</td>
+                        <td>Pratyēka</td>
+                        <td>Special</td>
+                    </tr>
+                    <tr>
+                        <td>గుర్తింపు</td>
+                        <td>Gurtimpu</td>
+                        <td>Recognition</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
     </div>
 </body>
