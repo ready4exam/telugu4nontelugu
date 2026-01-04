@@ -46,14 +46,12 @@ jobs:
           import os
           import sys
           import time
-          from google import genai
-          from google.genai import types
+          from google import genaiit 
 
           # --- CONFIGURATION ---
           CHAPTER = "${{ github.event.inputs.chapter_folder }}"
           API_KEY = os.environ.get("GEMINI_API_KEY")
           
-          # Updated Model Chain
           MODEL_CHAIN = [
               "gemini-2.0-flash", 
               "gemini-1.5-flash",
@@ -64,14 +62,10 @@ jobs:
 
           # --- STEP 1: LOCATE FILES ---
           try:
-              # Extract chapter number (e.g., "06" -> 6)
               prefix = CHAPTER.split('_')[0]
               chapter_num = int(prefix) 
-              
-              # Define filenames
               ex_filename = f"exercise_{chapter_num}.md"
               lesson_filename = f"lesson_{chapter_num}.md"
-              
           except Exception as e:
               print(f"❌ Error parsing chapter number: {e}")
               sys.exit(1)
@@ -82,58 +76,66 @@ jobs:
 
           print(f"📂 Chapter: {CHAPTER}")
           print(f"📄 Exercise Source: {ex_path}")
-          print(f"📖 Lesson Source: {lesson_path}")
 
-          # Check Exercise File
           if not os.path.exists(ex_path):
               print(f"❌ Error: Exercise file {ex_path} not found.")
               sys.exit(1)
               
-          # Check Lesson File (Optional but recommended for context)
+          # Load Lesson Text for Context
           lesson_text = ""
           if os.path.exists(lesson_path):
               with open(lesson_path, "r", encoding="utf-8") as f:
                   lesson_text = f.read()
               print("✅ Lesson text loaded for context.")
           else:
-              print("⚠️ Warning: Lesson file not found. Answers might be less accurate.")
+              print("⚠️ Warning: Lesson file not found.")
 
-          # Read Exercise Text
           with open(ex_path, "r", encoding="utf-8") as f:
               exercise_text = f.read()
 
           # --- STEP 2: PREPARE CLIENT ---
           client = genai.Client(api_key=API_KEY)
 
-          # --- STEP 3: PROMPT ---
+          # --- STEP 3: REFINED PROMPT ---
           prompt = f"""
           You are an expert Telugu language tutor.
           
-          CONTEXT (The Lesson Story/Content):
+          CONTEXT (Lesson Story):
           {lesson_text}
           
-          EXERCISE TASK (Questions to Answer):
+          EXERCISE TEXT (Raw OCR):
           {exercise_text}
 
-          INSTRUCTIONS:
-          1. Extract every Question & Answer pair from the Exercise text.
-          2. **CRITICAL:** Use the "CONTEXT" provided above to find the correct answers. The answers must be based on the lesson story.
-          3. If the answer is not explicitly in the text, infer it logically from the lesson story.
-          4. Fix any OCR typos in the questions.
+          TASK:
+          Convert the "EXERCISE TEXT" into a structured Q&A format.
+          
+          CRITICAL INSTRUCTIONS:
+          1. **Process ALL Sections:** You must handle Questions, Fill in the Blanks, Meanings (Arthalu), and especially "Match the Following" (Jata Parchandi).
+          2. **Match the Following Handling:** Treat each *correctly matched pair* as a Q&A. 
+             - Question = The Left side item.
+             - Answer = The Correctly Matched Right side item.
+          3. **Fill in the Blanks Handling:**
+             - Question = The sentence with the blank.
+             - Answer = The full correct sentence (or just the missing word).
+          4. **MANDATORY PRONUNCIATION:** - EVERY single Telugu sentence/word in the Question block MUST have an English pronunciation.
+             - EVERY single Telugu sentence/word in the Answer block MUST have an English pronunciation.
+             - **ZERO TOLERANCE:** Do not output any Telugu text without its English transliteration next to it.
+          5. **Context:** Use the Lesson Story provided to find the correct answers if they are missing or ambiguous in the exercise text.
 
           OUTPUT FORMAT:
-          Return ONLY raw HTML.
-          Structure each Q&A in a <div class="card mb-4 shadow-sm">.
-          
-          Block A (The Question) - <div class="alert alert-info">:
-          - **Telugu:** [Question in Telugu]
-          - **Pronunciation:** [English Transliteration]
-          - **Meaning:** [English Translation]
-
-          Block B (The Answer) - <div class="alert alert-success">:
-          - **Telugu:** [Answer in Telugu]
-          - **Pronunciation:** [English Transliteration]
-          - **Meaning:** [English Translation]
+          Return ONLY raw HTML. Wrap each pair in:
+          <div class="card mb-4 shadow-sm">
+            <div class="alert alert-info">
+               <strong>Q:</strong> [Telugu Text] <br>
+               <em>(Pronunciation: [English Transliteration])</em> <br>
+               <span>Meaning: [English Translation]</span>
+            </div>
+            <div class="alert alert-success">
+               <strong>A:</strong> [Telugu Text] <br>
+               <em>(Pronunciation: [English Transliteration])</em> <br>
+               <span>Meaning: [English Translation]</span>
+            </div>
+          </div>
           """
 
           success = False
@@ -149,7 +151,6 @@ jobs:
                   
                   output_html = response.text
                   
-                  # Strip code blocks
                   if "```html" in output_html:
                       output_html = output_html.split("```html")[1].split("```")[0]
                   elif "```" in output_html:
@@ -186,17 +187,20 @@ jobs:
                               width: 100%;
                               max-width: 100%;
                           }}
-                          /* MOBILE FIXES */
-                          .alert, .card-body, p, div, span {{
+                          /* MOBILE FIXES & TYPOGRAPHY */
+                          .alert, .card-body, p, div, span, strong, em {{
                               word-wrap: break-word;
                               overflow-wrap: break-word;
                               word-break: break-word;
                               white-space: normal;
                               max-width: 100%;
                           }}
-                          .alert {{ margin-bottom: 0; border-radius: 0; border: none; }}
+                          .alert {{ margin-bottom: 0; border-radius: 0; border: none; padding: 15px; }}
                           .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
                           .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
+                          
+                          em {{ color: #555; font-size: 0.9rem; display: block; margin-top: 2px; }}
+                          strong {{ font-size: 1.1rem; }}
                       </style>
                   </head>
                   <body>
@@ -219,9 +223,8 @@ jobs:
 
               except Exception as e:
                   print(f"⚠️ {model_name} failed: {e}")
-                  # Add delay if we hit a rate limit (429)
                   if "429" in str(e):
-                      print("⏳ Rate limit hit. Sleeping for 30 seconds...")
+                      print("⏳ Rate limit hit. Sleeping for 30s...")
                       time.sleep(30)
                   continue
           
@@ -236,5 +239,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull
           git add .
-          git commit -m "Generate exercise.html for ${{ github.event.inputs.chapter_folder }} using Lesson Context"
+          git commit -m "Generate exercises for ${{ github.event.inputs.chapter_folder }} with full pronunciation"
           git push
