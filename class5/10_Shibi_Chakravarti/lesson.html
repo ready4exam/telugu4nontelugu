@@ -6,12 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; }
-        .sentence-card { background: white; border-radius: 15px; border: none; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; }
-        .full-sentence { background-color: #eef2ff; padding: 15px; font-weight: bold; color: #3730a3; border-bottom: 1px solid #e0e7ff; }
-        .word-table { font-size: 0.95rem; }
-        .lesson-title { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; }
-        @media (max-width: 576px) { .word-table { font-size: 0.85rem; } }
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; overflow-x: hidden; }
+        
+        .sentence-card { 
+            background: white; 
+            border-radius: 15px; 
+            border: none; 
+            margin-bottom: 25px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            overflow: hidden; 
+            width: 100%; /* Ensure card fits container */
+        }
+        
+        .full-sentence { 
+            background-color: #eef2ff; 
+            padding: 15px; 
+            font-weight: bold; 
+            color: #3730a3; 
+            border-bottom: 1px solid #e0e7ff; 
+        }
+        
+        .lesson-title { 
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); 
+            color: white; 
+            border-radius: 15px; 
+            padding: 20px; 
+            margin-bottom: 30px; 
+        }
+
+        /* --- MOBILE FIXES --- */
+        .table {
+            table-layout: fixed; /* Forces table to stay within width */
+            width: 100%;
+        }
+        
+        .table td, .table th {
+            white-space: normal !important; /* Forces text to wrap */
+            word-wrap: break-word; 
+            word-break: break-word;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 576px) { 
+            .table { font-size: 0.85rem; } 
+            .full-sentence { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -19,1248 +58,3242 @@
         <div class="lesson-title text-center">
             <h1>10 Shibi Chakravarti</h1>
         </div>
-        <div class="container py-4">
-    <h1 class="text-center mb-4 text-primary">10. శిబి చక్రవర్తి (Emperor Shibi)</h1>
-    <p class="text-center text-muted">Class 5 Telugu Learning Guide</p>
+        <div class="container py-3">
+    <h3 class="text-center text-primary mb-4">ఐదవ తరగతి: పాఠ్యాంశం - శిబి చక్రవర్తి</h3>
+    <p class="text-muted text-center">(ప్రతి వాక్యాన్ని అర్థం చేసుకుందాం)</p>
 
-    <!-- CARD 1 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>పూర్వం శిబి అనే చక్రవర్తి ఉండేవాడు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 1 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ప్రశ్నలకు జవాఖుల్లు చెప్పండి</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th style="width: 30%;">తెలుగు పదం</th>
+                        <th style="width: 30%;">ఉచ్చారణ (Pronunciation)</th>
+                        <th style="width: 40%;">అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>పూర్వం</td>
-                        <td>Poorvam</td>
-                        <td>In the past/Once upon a time</td>
+                        <td>ప్రశ్నలకు</td>
+                        <td>prashnalaku</td>
+                        <td>ప్రశ్నల కోసం (For the questions)</td>
                     </tr>
                     <tr>
-                        <td>శిబి</td>
-                        <td>Shibi</td>
-                        <td>Shibi (name)</td>
+                        <td>జవాఖుల్లు</td>
+                        <td>javākhullu</td>
+                        <td>సమాధానాలు (Answers)</td>
                     </tr>
                     <tr>
-                        <td>అనే</td>
-                        <td>Ane</td>
-                        <td>Named/Called</td>
-                    </tr>
-                    <tr>
-                        <td>చక్రవర్తి</td>
-                        <td>Chakravarthi</td>
-                        <td>Emperor</td>
-                    </tr>
-                    <tr>
-                        <td>ఉండేవాడు</td>
-                        <td>Undevadu</td>
-                        <td>Used to be</td>
+                        <td>చెప్పండి</td>
+                        <td>cheppaṇḍi</td>
+                        <td>తెలపండి (Tell / Answer)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ఆయన గొప్ప దానశీలి, ధర్మాత్ముడు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 2 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>౫ బొమ్మను చూడండి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>౫</td>
+                        <td>5</td>
+                        <td>సంఖ్య (Number 5 - marker)</td>
+                    </tr>
+                    <tr>
+                        <td>బొమ్మను</td>
+                        <td>bommanu</td>
+                        <td>చిత్రాన్ని (The picture/drawing)</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>chūḍaṇḍi</td>
+                        <td>గమనించండి (Look/Observe)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 3 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>బొమ్మలో ఎవరెవరు ఉన్నారు?</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>బొమ్మలో</td>
+                        <td>bommalō</td>
+                        <td>చిత్రంలో (In the picture)</td>
+                    </tr>
+                    <tr>
+                        <td>ఎవరెవరు</td>
+                        <td>evarevaru</td>
+                        <td>ఎవరు + ఎవరు (Who all)</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్నారు</td>
+                        <td>unnāru</td>
+                        <td>కలరు (Are present)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 4 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>* ఏమ్మిచేస్తున్నారు?</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఏమ్మిచేస్తున్నారు</td>
+                        <td>ēmmi cēstunnāru</td>
+                        <td>ఏం చేస్తున్నారు (What are they doing?)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 5 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>శః మనం ఇతరులకు ఎందుకు సహాయం చేయాలి?</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శః</td>
+                        <td>śaḥ</td>
+                        <td>ప్రశ్న సంఖ్య (Question marker)</td>
+                    </tr>
+                    <tr>
+                        <td>మనం</td>
+                        <td>manam</td>
+                        <td>మనుషులు (We/People)</td>
+                    </tr>
+                    <tr>
+                        <td>ఇతరులకు</td>
+                        <td>itarulaku</td>
+                        <td>వేరేవారికి (To others)</td>
+                    </tr>
+                    <tr>
+                        <td>ఎందుకు</td>
+                        <td>enduku</td>
+                        <td>దేని కోసం (Why)</td>
+                    </tr>
+                    <tr>
+                        <td>సహాయం</td>
+                        <td>sahāyam</td>
+                        <td>ఉపకారం (Help/Assistance)</td>
+                    </tr>
+                    <tr>
+                        <td>చేయాలి</td>
+                        <td>cēyāli</td>
+                        <td>చేయవలెను (Should do)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h4 class="text-center text-secondary mt-4 mb-3">విద్యార్థులకు సూచనలు (Instructions to Students)</h4>
+
+    <!-- Sentence 6 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>గా [౯ పాఠంలోని బొమ్మలు చూడండి. మాట్లాడండి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>గా [౯</td>
+                        <td>gā [9</td>
+                        <td>సూచన సంఖ్య (Instruction marker)</td>
+                    </tr>
+                    <tr>
+                        <td>పాఠంలోని</td>
+                        <td>pāṭhantōni</td>
+                        <td>లెసన్‌లో ఉన్న (In the lesson)</td>
+                    </tr>
+                    <tr>
+                        <td>బొమ్మలు</td>
+                        <td>bommalu</td>
+                        <td>చిత్రాలు (Pictures)</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>chūḍaṇḍi</td>
+                        <td>గమనించండి (Observe)</td>
+                    </tr>
+                    <tr>
+                        <td>మాట్లాడండి</td>
+                        <td>māṭlāḍaṇḍi</td>
+                        <td>సంభాషించండి (Talk/Discuss)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 7 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>న. మీ ఉపాధ్యాయిని పాఠం చదువుతున్నప్పుడు జాగ్రత్తగా వినండి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>న.</td>
+                        <td>na.</td>
+                        <td>(Instruction marker)</td>
+                    </tr>
+                    <tr>
+                        <td>మీ</td>
+                        <td>mī</td>
+                        <td>మీయొక్క (Your)</td>
+                    </tr>
+                    <tr>
+                        <td>ఉపాధ్యాయిని</td>
+                        <td>upādhyāyini</td>
+                        <td>టీచర్ (Teacher - female)</td>
+                    </tr>
+                    <tr>
+                        <td>పాఠం</td>
+                        <td>pāṭham</td>
+                        <td>లెసన్ (Lesson)</td>
+                    </tr>
+                    <tr>
+                        <td>చదువుతున్నప్పుడు</td>
+                        <td>chaduvutunnappuḍu</td>
+                        <td>రీడ్ చేస్తున్న సమయంలో (While reading)</td>
+                    </tr>
+                    <tr>
+                        <td>జాగ్రత్తగా</td>
+                        <td>jāgrattagā</td>
+                        <td>శ్రద్ధగా (Carefully/Attentively)</td>
+                    </tr>
+                    <tr>
+                        <td>వినండి</td>
+                        <td>vinaṇḍi</td>
+                        <td>శ్రద్ధ పెట్టండి (Listen)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 8 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>5౩ పాఠం చదువండి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5౩</td>
+                        <td>53</td>
+                        <td>(Instruction marker)</td>
+                    </tr>
+                    <tr>
+                        <td>పాఠం</td>
+                        <td>pāṭham</td>
+                        <td>లెసన్ (Lesson)</td>
+                    </tr>
+                    <tr>
+                        <td>చదువండి</td>
+                        <td>chadūvaṇḍi</td>
+                        <td>పఠించండి (Read)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 9 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అర్థంకాని పదాల కింద గీత గీయండి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అర్థంకాని</td>
+                        <td>arthan'kāni</td>
+                        <td>మీనింగ్ తెలియని (Which are not understood)</td>
+                    </tr>
+                    <tr>
+                        <td>పదాల</td>
+                        <td>padāla</td>
+                        <td>మాటల (Of words)</td>
+                    </tr>
+                    <tr>
+                        <td>కింద</td>
+                        <td>kinda</td>
+                        <td>అడుగున (Under)</td>
+                    </tr>
+                    <tr>
+                        <td>గీత</td>
+                        <td>gīta</td>
+                        <td>లైన్ (Line)</td>
+                    </tr>
+                    <tr>
+                        <td>గీయండి</td>
+                        <td>gīyaṇḍi</td>
+                        <td>రాయండి (Draw)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 10 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>[౩ గీత గీసిన పదాలకు అర్థాలను మీ మిత్రులనుగాని, ఉపాధ్యాయులనుగాని అడుగండి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[౩</td>
+                        <td>[3</td>
+                        <td>(Instruction marker)</td>
+                    </tr>
+                    <tr>
+                        <td>గీత</td>
+                        <td>gīta</td>
+                        <td>లైన్ (Line)</td>
+                    </tr>
+                    <tr>
+                        <td>గీసిన</td>
+                        <td>gīsina</td>
+                        <td>గీసినటువంటి (Drawn)</td>
+                    </tr>
+                    <tr>
+                        <td>పదాలకు</td>
+                        <td>padālaku</td>
+                        <td>మాటలకు (To the words)</td>
+                    </tr>
+                    <tr>
+                        <td>అర్థాలను</td>
+                        <td>arthālanu</td>
+                        <td>మీనింగ్స్ (Meanings)</td>
+                    </tr>
+                    <tr>
+                        <td>మీ</td>
+                        <td>mī</td>
+                        <td>మీయొక్క (Your)</td>
+                    </tr>
+                    <tr>
+                        <td>మిత్రులనుగాని</td>
+                        <td>mitrulanugāni</td>
+                        <td>స్నేహితులను కానీ (Either your friends)</td>
+                    </tr>
+                    <tr>
+                        <td>ఉపాధ్యాయులనుగాని</td>
+                        <td>upādhyāyulunugāni</td>
+                        <td>టీచర్లను కానీ (Or your teachers)</td>
+                    </tr>
+                    <tr>
+                        <td>అడుగండి</td>
+                        <td>aḍugaṇḍi</td>
+                        <td>తెలుసుకోండి (Ask)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 11 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>లేదా “పదాలు-అర్జాలు” అనే పట్టికలో చూసి తెలుసుకోండి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>లేదా</td>
+                        <td>lēdā</td>
+                        <td>లేకపొతే (Or else)</td>
+                    </tr>
+                    <tr>
+                        <td>“పదాలు-అర్జాలు”</td>
+                        <td>padālu-arjālu</td>
+                        <td>"పదాలు-అర్థాలు" (Words and Meanings)</td>
+                    </tr>
+                    <tr>
+                        <td>అనే</td>
+                        <td>anē</td>
+                        <td>ఎ పేరుగల (Named/Called)</td>
+                    </tr>
+                    <tr>
+                        <td>పట్టికలో</td>
+                        <td>paṭṭikalō</td>
+                        <td>టేబుల్లో (In the table/chart)</td>
+                    </tr>
+                    <tr>
+                        <td>చూసి</td>
+                        <td>cūsi</td>
+                        <td>గమనించి (Having seen)</td>
+                    </tr>
+                    <tr>
+                        <td>తెలుసుకోండి</td>
+                        <td>telusukōṇḍi</td>
+                        <td>నేర్చుకోండి (Learn/Know)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h4 class="text-center text-danger mt-4 mb-3">కథాభాగం: శిబి చక్రవర్తి (The Story)</h4>
+
+    <!-- Sentence 12 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>శిబి గొప్ప చక్రవర్తి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>(Name of the king)</td>
+                    </tr>
+                    <tr>
+                        <td>గొప్ప</td>
+                        <td>goppa</td>
+                        <td>మహోన్నతమైన (Great)</td>
+                    </tr>
+                    <tr>
+                        <td>చక్రవర్తి</td>
+                        <td>cakravarti</td>
+                        <td>రాజులలో రాజు (Emperor)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 13 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఆపదలో ఉన్నవారికి సాయం చేయడంలో ఆయనకు ఆయనే సాటి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఆపదలో</td>
+                        <td>āpadalō</td>
+                        <td>కష్టంలో (In danger/trouble)</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్నవారికి</td>
+                        <td>unnavāriki</td>
+                        <td>కలవారికి (To those who are)</td>
+                    </tr>
+                    <tr>
+                        <td>సాయం</td>
+                        <td>sāyam</td>
+                        <td>సహాయం (Help)</td>
+                    </tr>
+                    <tr>
+                        <td>చేయడంలో</td>
+                        <td>cēyadaṅlō</td>
+                        <td>చేసే విషయంలో (In doing/offering)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆయనకు</td>
+                        <td>āyanaku</td>
+                        <td>అతనికి (To him)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆయనే</td>
+                        <td>āyanē</td>
+                        <td>అతనే (Only he)</td>
+                    </tr>
+                    <tr>
+                        <td>సాటి</td>
+                        <td>sāṭi</td>
+                        <td>సమానం (Equal/Match)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 14 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>శిబి ఔదార్యాన్ని దానశీలతను ప్రజలందరు ప్రశంసిస్తున్నారు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
+                    </tr>
+                    <tr>
+                        <td>ఔదార్యాన్ని</td>
+                        <td>audāryānni</td>
+                        <td>ఉదార స్వభావాన్ని (Magnanimity/Generosity)</td>
+                    </tr>
+                    <tr>
+                        <td>దానశీలతను</td>
+                        <td>dānaśīlatanu</td>
+                        <td>దానాలు చేసే గుణాన్ని (Charitable nature)</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రజలందరు</td>
+                        <td>prajalandaru</td>
+                        <td>అందరు మనుషులు (All the people)</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రశంసిస్తున్నారు</td>
+                        <td>praśaṁsistunnāru</td>
+                        <td>మెచ్చుకుంటున్నారు (Are praising)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 15 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఈ వార్త ఇంద్రుని వరకు వెళ్ళింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>ī</td>
+                        <td>ఈయొక్క (This)</td>
+                    </tr>
+                    <tr>
+                        <td>వార్త</td>
+                        <td>vārta</td>
+                        <td>సమాచారం (News/Information)</td>
+                    </tr>
+                    <tr>
+                        <td>ఇంద్రుని</td>
+                        <td>indruni</td>
+                        <td>దేవతల రాజును (Indra - the King of Gods)</td>
+                    </tr>
+                    <tr>
+                        <td>వరకు</td>
+                        <td>varaku</td>
+                        <td>దాకా (Up to)</td>
+                    </tr>
+                    <tr>
+                        <td>వెళ్ళింది</td>
+                        <td>veḷḷindi</td>
+                        <td>చేరింది (Reached)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 16 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఆయన శిబి చక్రవర్తి ఔదార్యాన్ని పరీక్షిద్దామనుకున్నాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>ఆయన</td>
-                        <td>Aayana</td>
-                        <td>He</td>
+                        <td>āyana</td>
+                        <td>ఇంద్రుడు (He/Indra)</td>
                     </tr>
                     <tr>
-                        <td>గొప్ప</td>
-                        <td>Goppa</td>
-                        <td>Great</td>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
                     </tr>
                     <tr>
-                        <td>దానశీలి</td>
-                        <td>Daana-sheeli</td>
-                        <td>Generous person/Philanthropist</td>
+                        <td>చక్రవర్తి</td>
+                        <td>cakravarti</td>
+                        <td>రాజు (Emperor)</td>
                     </tr>
                     <tr>
-                        <td>ధర్మాత్ముడు</td>
-                        <td>Dharmaathmudu</td>
-                        <td>Righteous person</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>శరణు కోరి వచ్చిన వారిని ప్రాణాలకు తెగించి అయినా కాపాడే గుణం కలిగినవాడు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
-                    <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>శరణు</td>
-                        <td>Sharanu</td>
-                        <td>Refuge/Shelter</td>
+                        <td>ఔదార్యాన్ని</td>
+                        <td>audāryānni</td>
+                        <td>దానగుణాన్ని (Generosity)</td>
                     </tr>
                     <tr>
-                        <td>కోరి</td>
-                        <td>Kori</td>
-                        <td>Requesting/Asking for</td>
-                    </tr>
-                    <tr>
-                        <td>వచ్చిన</td>
-                        <td>Vachina</td>
-                        <td>Who came</td>
-                    </tr>
-                    <tr>
-                        <td>వారిని</td>
-                        <td>Vaarini</td>
-                        <td>Them (people)</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రాణాలకు</td>
-                        <td>Praanaalaku</td>
-                        <td>To (their) lives</td>
-                    </tr>
-                    <tr>
-                        <td>తెగించి</td>
-                        <td>Teginchi</td>
-                        <td>Daring/Risking</td>
-                    </tr>
-                    <tr>
-                        <td>అయినా</td>
-                        <td>Ayina</td>
-                        <td>Even if</td>
-                    </tr>
-                    <tr>
-                        <td>కాపాడే</td>
-                        <td>Kaapaade</td>
-                        <td>Protecting</td>
-                    </tr>
-                    <tr>
-                        <td>గుణం</td>
-                        <td>Gunam</td>
-                        <td>Quality/Trait</td>
-                    </tr>
-                    <tr>
-                        <td>కలిగినవాడు</td>
-                        <td>Kaliginavadu</td>
-                        <td>One who possesses</td>
+                        <td>పరీక్షిద్దామనుకున్నాడు</td>
+                        <td>parīkṣiddāmanukunnāḍu</td>
+                        <td>పరీక్ష చేయాలని అనుకున్నాడు (Thought of testing)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 4 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>శిబి చక్రవర్తి ధర్మాన్ని పరీక్షించాలని ఇంద్రుడు, అగ్నిదేవుడు నిశ్చయించుకున్నారు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 17 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఒకరోజు యజ్ఞవేదిక మీద శిబి చక్రవర్తి కూర్చుని ఉన్నాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>శిబి చక్రవర్తి</td>
-                        <td>Shibi Chakravarthi</td>
-                        <td>Emperor Shibi</td>
+                        <td>ఒకరోజు</td>
+                        <td>okarōju</td>
+                        <td>ఒక దినం (One day)</td>
                     </tr>
                     <tr>
-                        <td>ధర్మాన్ని</td>
-                        <td>Dharmaanni</td>
-                        <td>Righteousness/Duty (his Dharma)</td>
+                        <td>యజ్ఞవేదిక</td>
+                        <td>yajñavēdika</td>
+                        <td>పూజ చేసే స్థలం (Sacrificial platform)</td>
                     </tr>
                     <tr>
-                        <td>పరీక్షించాలని</td>
-                        <td>Pareekshinchaalani</td>
-                        <td>To test</td>
+                        <td>మీద</td>
+                        <td>mīda</td>
+                        <td>పైన (On)</td>
                     </tr>
                     <tr>
-                        <td>ఇంద్రుడు</td>
-                        <td>Indrudu</td>
-                        <td>Indra (King of Gods)</td>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
                     </tr>
                     <tr>
-                        <td>అగ్నిదేవుడు</td>
-                        <td>Agnidevudu</td>
-                        <td>Agni (God of Fire)</td>
+                        <td>చక్రవర్తి</td>
+                        <td>cakravarti</td>
+                        <td>రాజు (Emperor)</td>
                     </tr>
                     <tr>
-                        <td>నిశ్చయించుకున్నారు</td>
-                        <td>Nishchayin-chukunnaru</td>
-                        <td>Decided</td>
+                        <td>కూర్చుని</td>
+                        <td>kūrcuni</td>
+                        <td>ఉపవేశించి (Sitting)</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్నాడు</td>
+                        <td>unnāḍu</td>
+                        <td>కలడు (Was)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 5 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>అగ్నిదేవుడు ఒక పావురంగా, ఇంద్రుడు ఒక డేగగా రూపం మార్చుకున్నారు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 18 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఆయన ఒడిలో ఒక పావురం వచ్చి వాలింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>అగ్నిదేవుడు</td>
-                        <td>Agnidevudu</td>
-                        <td>Agni (God of Fire)</td>
+                        <td>ఆయన</td>
+                        <td>āyana</td>
+                        <td>రాజు (He/The King)</td>
+                    </tr>
+                    <tr>
+                        <td>ఒడిలో</td>
+                        <td>oḍilō</td>
+                        <td>తొడపై (In the lap)</td>
                     </tr>
                     <tr>
                         <td>ఒక</td>
-                        <td>Oka</td>
-                        <td>One/A</td>
-                    </tr>
-                    <tr>
-                        <td>పావురంగా</td>
-                        <td>Paavurangaa</td>
-                        <td>As a pigeon</td>
-                    </tr>
-                    <tr>
-                        <td>ఇంద్రుడు</td>
-                        <td>Indrudu</td>
-                        <td>Indra</td>
-                    </tr>
-                    <tr>
-                        <td>ఒక</td>
-                        <td>Oka</td>
-                        <td>One/A</td>
-                    </tr>
-                    <tr>
-                        <td>డేగగా</td>
-                        <td>Degagaa</td>
-                        <td>As an eagle</td>
-                    </tr>
-                    <tr>
-                        <td>రూపం</td>
-                        <td>Roopam</td>
-                        <td>Form/Shape</td>
-                    </tr>
-                    <tr>
-                        <td>మార్చుకున్నారు</td>
-                        <td>Maarchu-kunnaru</td>
-                        <td>Changed (themselves)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- CARD 6 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>డేగ పావురాన్ని తరుముకుంటూ వచ్చింది.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
-                    <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>డేగ</td>
-                        <td>Dega</td>
-                        <td>Eagle</td>
-                    </tr>
-                    <tr>
-                        <td>పావురాన్ని</td>
-                        <td>Paavuraanni</td>
-                        <td>The pigeon (object)</td>
-                    </tr>
-                    <tr>
-                        <td>తరుముకుంటూ</td>
-                        <td>Tarumukuntu</td>
-                        <td>Chasing/Pursuing</td>
-                    </tr>
-                    <tr>
-                        <td>వచ్చింది</td>
-                        <td>Vachindi</td>
-                        <td>Came</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- CARD 7 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ప్రాణ భయంతో ఆ పావురం వెళ్లి శిబి చక్రవర్తి తొడపై వాలి, "రాజా! నన్ను కాపాడు" అని శరణు వేడింది.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
-                    <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ప్రాణ</td>
-                        <td>Praana</td>
-                        <td>Life</td>
-                    </tr>
-                    <tr>
-                        <td>భయంతో</td>
-                        <td>Bhayamtho</td>
-                        <td>With fear</td>
-                    </tr>
-                    <tr>
-                        <td>ఆ</td>
-                        <td>Aa</td>
-                        <td>That</td>
+                        <td>oka</td>
+                        <td>ఒకటి (One)</td>
                     </tr>
                     <tr>
                         <td>పావురం</td>
-                        <td>Paavuram</td>
-                        <td>Pigeon</td>
-                    </tr>
-                    <tr>
-                        <td>వెళ్లి</td>
-                        <td>Velli</td>
-                        <td>Having gone</td>
-                    </tr>
-                    <tr>
-                        <td>శిబి చక్రవర్తి</td>
-                        <td>Shibi Chakravarthi</td>
-                        <td>Emperor Shibi</td>
-                    </tr>
-                    <tr>
-                        <td>తొడపై</td>
-                        <td>Thodapai</td>
-                        <td>On the thigh</td>
-                    </tr>
-                    <tr>
-                        <td>వాలి</td>
-                        <td>Vaali</td>
-                        <td>Landed</td>
-                    </tr>
-                    <tr>
-                        <td>రాజా!</td>
-                        <td>Raajaa!</td>
-                        <td>Oh King!</td>
-                    </tr>
-                    <tr>
-                        <td>నన్ను</td>
-                        <td>Nannu</td>
-                        <td>Me</td>
-                    </tr>
-                    <tr>
-                        <td>కాపాడు</td>
-                        <td>Kaapaadu</td>
-                        <td>Protect</td>
-                    </tr>
-                    <tr>
-                        <td>అని</td>
-                        <td>Ani</td>
-                        <td>Thus/Saying</td>
-                    </tr>
-                    <tr>
-                        <td>శరణు</td>
-                        <td>Sharanu</td>
-                        <td>Refuge</td>
-                    </tr>
-                    <tr>
-                        <td>వేడింది</td>
-                        <td>Vedindi</td>
-                        <td>Pleaded/Requested</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- CARD 8 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>వెంటనే డేగ వచ్చి, "రాజా! ఈ పావురం నాకు ఆహారం.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
-                    <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>వెంటనే</td>
-                        <td>Ventane</td>
-                        <td>Immediately</td>
-                    </tr>
-                    <tr>
-                        <td>డేగ</td>
-                        <td>Dega</td>
-                        <td>Eagle</td>
+                        <td>pāvuram</td>
+                        <td>పిజియన్ (Pigeon/Dove)</td>
                     </tr>
                     <tr>
                         <td>వచ్చి</td>
-                        <td>Vachchi</td>
-                        <td>Having come</td>
+                        <td>vacchi</td>
+                        <td>రాగా (Having come)</td>
                     </tr>
                     <tr>
-                        <td>రాజా!</td>
-                        <td>Raajaa!</td>
-                        <td>Oh King!</td>
-                    </tr>
-                    <tr>
-                        <td>ఈ</td>
-                        <td>Ee</td>
-                        <td>This</td>
-                    </tr>
-                    <tr>
-                        <td>పావురం</td>
-                        <td>Paavuram</td>
-                        <td>Pigeon</td>
-                    </tr>
-                    <tr>
-                        <td>నాకు</td>
-                        <td>Naaku</td>
-                        <td>To me</td>
-                    </tr>
-                    <tr>
-                        <td>ఆహారం</td>
-                        <td>Aahaaram</td>
-                        <td>Food</td>
+                        <td>వాలింది</td>
+                        <td>vāḷindi</td>
+                        <td>వచ్చి కూర్చుంది (Perched/Landed)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 9 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ఆకలితో ఉన్న నా ఆహారాన్ని నాకు వదిలిపెట్టు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 19 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అది భయంతో కలవరపడుతోంది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ఆకలితో</td>
-                        <td>Aakalitho</td>
-                        <td>With hunger</td>
+                        <td>అది</td>
+                        <td>adi</td>
+                        <td>పావురం (It/The pigeon)</td>
                     </tr>
                     <tr>
-                        <td>ఉన్న</td>
-                        <td>Unna</td>
-                        <td>Being/That is</td>
+                        <td>భయంతో</td>
+                        <td>bhayantō</td>
+                        <td>భయముతో (With fear)</td>
                     </tr>
                     <tr>
-                        <td>నా</td>
-                        <td>Naa</td>
-                        <td>My</td>
-                    </tr>
-                    <tr>
-                        <td>ఆహారాన్ని</td>
-                        <td>Aahaaraanni</td>
-                        <td>Food (object)</td>
-                    </tr>
-                    <tr>
-                        <td>నాకు</td>
-                        <td>Naaku</td>
-                        <td>To me</td>
-                    </tr>
-                    <tr>
-                        <td>వదిలిపెట్టు</td>
-                        <td>Vadili-pettu</td>
-                        <td>Release/Leave it</td>
+                        <td>కలవరపడుతోంది</td>
+                        <td>kalavarapaḍutōndi</td>
+                        <td>అల్లరి పడుతోంది/భయపడుతోంది (Is trembling/disturbed)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 10 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ఇది నా ధర్మం" అని వాదించింది.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 20 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>“మహారాజా! రక్షించు!</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ఇది</td>
-                        <td>Idi</td>
-                        <td>This</td>
+                        <td>మహారాజా</td>
+                        <td>mahārājā</td>
+                        <td>ఓ గొప్ప రాజు (Oh King!)</td>
                     </tr>
                     <tr>
-                        <td>నా</td>
-                        <td>Naa</td>
-                        <td>My</td>
-                    </tr>
-                    <tr>
-                        <td>ధర్మం</td>
-                        <td>Dharmam</td>
-                        <td>Duty/Righteousness</td>
-                    </tr>
-                    <tr>
-                        <td>అని</td>
-                        <td>Ani</td>
-                        <td>Thus/Saying</td>
-                    </tr>
-                    <tr>
-                        <td>వాదించింది</td>
-                        <td>Vaadinchindi</td>
-                        <td>Argued</td>
+                        <td>రక్షించు</td>
+                        <td>rakṣin̄chu</td>
+                        <td>కాపాడు (Protect me)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 11 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>అప్పుడు శిబి చక్రవర్తి "నన్ను శరణు కోరిన ప్రాణిని వదిలిపెట్టడం రాజధర్మం కాదు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 21 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నన్ను ఒక డేగ వెంటాడుతున్నది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>అప్పుడు</td>
-                        <td>Appudu</td>
-                        <td>Then</td>
+                        <td>నన్ను</td>
+                        <td>nannu</td>
+                        <td>నాయొక్క (Me)</td>
                     </tr>
                     <tr>
-                        <td>శిబి చక్రవర్తి</td>
-                        <td>Shibi Chakravarthi</td>
-                        <td>Emperor Shibi</td>
+                        <td>ఒక</td>
+                        <td>oka</td>
+                        <td>ఒకటి (One)</td>
+                    </tr>
+                    <tr>
+                        <td>డేగ</td>
+                        <td>ḍēga</td>
+                        <td>గద్ద (Eagle/Hawk)</td>
+                    </tr>
+                    <tr>
+                        <td>వెంటాడుతున్నది</td>
+                        <td>veṇṭāḍutunnadi</td>
+                        <td>తరుముతోంది (Is chasing)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 22 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నన్ను చంపి తినాలని చూస్తోంది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నన్ను</td>
+                        <td>nannu</td>
+                        <td>నాయొక్క (Me)</td>
+                    </tr>
+                    <tr>
+                        <td>చంపి</td>
+                        <td>champi</td>
+                        <td>చంపేసి (Having killed)</td>
+                    </tr>
+                    <tr>
+                        <td>తినాలని</td>
+                        <td>tinālani</td>
+                        <td>ఆహారంగా తీసుకోవాలని (To eat)</td>
+                    </tr>
+                    <tr>
+                        <td>చూస్తోంది</td>
+                        <td>cūstōndi</td>
+                        <td>ప్రయత్నిస్తోంది (Is trying/looking to)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 23 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>దానిబారి నుండి నన్ను కాపాడండి” అని దీనంగా మానవ భాషలో వేడుకుంది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దానిబారి</td>
+                        <td>dānibāri</td>
+                        <td>దాని దాడి నుండి (From its attack/clutches)</td>
+                    </tr>
+                    <tr>
+                        <td>నుండి</td>
+                        <td>nuṇḍi</td>
+                        <td>నుంచి (From)</td>
                     </tr>
                     <tr>
                         <td>నన్ను</td>
-                        <td>Nannu</td>
-                        <td>Me</td>
+                        <td>nannu</td>
+                        <td>నాయొక్క (Me)</td>
                     </tr>
                     <tr>
-                        <td>శరణు</td>
-                        <td>Sharanu</td>
-                        <td>Refuge</td>
+                        <td>కాపాడండి</td>
+                        <td>kāpāḍaṇḍi</td>
+                        <td>రక్షించండి (Protect)</td>
                     </tr>
                     <tr>
-                        <td>కోరిన</td>
-                        <td>Korina</td>
-                        <td>Requested</td>
+                        <td>అని</td>
+                        <td>ani</td>
+                        <td>ఈ విధంగా (Thus)</td>
                     </tr>
                     <tr>
-                        <td>ప్రాణిని</td>
-                        <td>Praanini</td>
-                        <td>Creature (object)</td>
+                        <td>దీనంగా</td>
+                        <td>dīnaṅgā</td>
+                        <td>పాపం లాగా/విచారంగా (Piteously/Miserably)</td>
                     </tr>
                     <tr>
-                        <td>వదిలిపెట్టడం</td>
-                        <td>Vadilipettadam</td>
-                        <td>Leaving/Releasing</td>
+                        <td>మానవ</td>
+                        <td>mānava</td>
+                        <td>మనుషుల (Human)</td>
                     </tr>
                     <tr>
-                        <td>రాజధర్మం</td>
-                        <td>Raajadharmam</td>
-                        <td>King's duty</td>
+                        <td>భాషలో</td>
+                        <td>bhāṣalō</td>
+                        <td>మాటల్లో (In language)</td>
                     </tr>
                     <tr>
-                        <td>కాదు</td>
-                        <td>Kaadu</td>
-                        <td>Is not</td>
+                        <td>వేడుకుంది</td>
+                        <td>vēḍukundi</td>
+                        <td>కోరింది (Pleaded/Requested)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 12 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ఈ పావురానికి బదులుగా నీకు ఏమి కావాలో కోరుకో" అన్నాడు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 24 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>శిబి పావురాన్ని ప్రేమగా నిమురుతూ “నిన్ను కాపాడే బాధ్యత నాది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
+                    </tr>
+                    <tr>
+                        <td>పావురాన్ని</td>
+                        <td>pāvurānni</td>
+                        <td>పావురాన్ని (The pigeon)</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రేమగా</td>
+                        <td>prēmagaa</td>
+                        <td>దయతో (Lovingly/Affectionately)</td>
+                    </tr>
+                    <tr>
+                        <td>నిమురుతూ</td>
+                        <td>nimurutū</td>
+                        <td>తడుముతూ (Stroking/Patting)</td>
+                    </tr>
+                    <tr>
+                        <td>నిన్ను</td>
+                        <td>ninnu</td>
+                        <td>నీయొక్క (You)</td>
+                    </tr>
+                    <tr>
+                        <td>కాపాడే</td>
+                        <td>kāpāḍē</td>
+                        <td>రక్షించే (Protecting)</td>
+                    </tr>
+                    <tr>
+                        <td>బాధ్యత</td>
+                        <td>bādhyata</td>
+                        <td>జవాబుదారీ (Responsibility)</td>
+                    </tr>
+                    <tr>
+                        <td>నాది</td>
+                        <td>nādi</td>
+                        <td>నాయొక్కది (Is mine)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 25 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నీకు ఎవరి నుంచి ప్రమాదం రాదు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నీకు</td>
+                        <td>nīku</td>
+                        <td>నీయొక్క (To you)</td>
+                    </tr>
+                    <tr>
+                        <td>ఎవరి</td>
+                        <td>evari</td>
+                        <td>ఎవరైనా (Whose/Anyone)</td>
+                    </tr>
+                    <tr>
+                        <td>నుంచి</td>
+                        <td>nun̄chi</td>
+                        <td>నుండి (From)</td>
+                    </tr>
+                    <tr>
+                        <td>ప్రమాదం</td>
+                        <td>pramādam</td>
+                        <td>ఆపద (Danger/Harm)</td>
+                    </tr>
+                    <tr>
+                        <td>రాదు</td>
+                        <td>rādu</td>
+                        <td>సంభవించదు (Will not come)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 26 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అని హామీ ఇచ్చాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అని</td>
+                        <td>ani</td>
+                        <td>ఈ విధంగా (Thus)</td>
+                    </tr>
+                    <tr>
+                        <td>హామీ</td>
+                        <td>hāmī</td>
+                        <td>భరోసా (Assurance/Guarantee)</td>
+                    </tr>
+                    <tr>
+                        <td>ఇచ్చాడు</td>
+                        <td>icchaḍu</td>
+                        <td>అందించాడు (Gave)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 27 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>పావురం మనసు కుదుటపడింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పావురం</td>
+                        <td>pāvuram</td>
+                        <td>పిజియన్ (Pigeon)</td>
+                    </tr>
+                    <tr>
+                        <td>మనసు</td>
+                        <td>manasu</td>
+                        <td>హృదయం (Mind/Heart)</td>
+                    </tr>
+                    <tr>
+                        <td>కుదుటపడింది</td>
+                        <td>kuduṭapaḍindi</td>
+                        <td>శాంతించింది (Calmed down/Settled)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 28 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అంతలో అక్కడికి డేగ రానే వచ్చింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అంతలో</td>
+                        <td>antalō</td>
+                        <td>అంతే సమయంలో (Meanwhile)</td>
+                    </tr>
+                    <tr>
+                        <td>అక్కడికి</td>
+                        <td>akkaḍiki</td>
+                        <td>ఆ స్థలానికి (To that place)</td>
+                    </tr>
+                    <tr>
+                        <td>డేగ</td>
+                        <td>ḍēga</td>
+                        <td>గద్ద (Eagle/Hawk)</td>
+                    </tr>
+                    <tr>
+                        <td>రానే</td>
+                        <td>rānē</td>
+                        <td>వచ్చి (Indeed)</td>
+                    </tr>
+                    <tr>
+                        <td>వచ్చింది</td>
+                        <td>vachchindi</td>
+                        <td>చేరింది (Came)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 29 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>రాజుగారి ఎదురుగా ఎత్తయిన చోట వాలింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రాజుగారి</td>
+                        <td>rājugaari</td>
+                        <td>రాజుయొక్క (The King's)</td>
+                    </tr>
+                    <tr>
+                        <td>ఎదురుగా</td>
+                        <td>edurugā</td>
+                        <td>ముందుగా (In front of)</td>
+                    </tr>
+                    <tr>
+                        <td>ఎత్తయిన</td>
+                        <td>ettayina</td>
+                        <td>పొడవైన (High/Elevated)</td>
+                    </tr>
+                    <tr>
+                        <td>చోట</td>
+                        <td>chōṭa</td>
+                        <td>స్థలంలో (In a place)</td>
+                    </tr>
+                    <tr>
+                        <td>వాలింది</td>
+                        <td>vāḷindi</td>
+                        <td>కూర్చుంది (Landed/Perched)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 30 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అది కూడా మానవ భాషలో “మహారాజా! ఈ పావురం నా ఆహారం.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అది</td>
+                        <td>adi</td>
+                        <td>డేగ (It/The Hawk)</td>
+                    </tr>
+                    <tr>
+                        <td>కూడా</td>
+                        <td>kūḍā</td>
+                        <td>కూడాను (Also)</td>
+                    </tr>
+                    <tr>
+                        <td>మానవ</td>
+                        <td>mānava</td>
+                        <td>మనుషుల (Human)</td>
+                    </tr>
+                    <tr>
+                        <td>భాషలో</td>
+                        <td>bhāṣalō</td>
+                        <td>మాటల్లో (In language)</td>
+                    </tr>
+                    <tr>
+                        <td>మహారాజా</td>
+                        <td>mahārājā</td>
+                        <td>ఓ గొప్ప రాజు (Oh King!)</td>
+                    </tr>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>ī</td>
+                        <td>ఈయొక్క (This)</td>
+                    </tr>
+                    <tr>
+                        <td>పావురం</td>
+                        <td>pāvuram</td>
+                        <td>పిజియన్ (Pigeon)</td>
+                    </tr>
+                    <tr>
+                        <td>నా</td>
+                        <td>nā</td>
+                        <td>నాయొక్క (My)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆహారం</td>
+                        <td>āhāram</td>
+                        <td>తిండి (Food)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 31 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>తప్పించుకొని వచ్చి మిమ్మల్ని చేరింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>తప్పించుకొని</td>
+                        <td>tappin̄chukoni</td>
+                        <td>ఎగవేసి (Having escaped)</td>
+                    </tr>
+                    <tr>
+                        <td>వచ్చి</td>
+                        <td>vacchi</td>
+                        <td>రాగా (Having come)</td>
+                    </tr>
+                    <tr>
+                        <td>మిమ్మల్ని</td>
+                        <td>mimmali</td>
+                        <td>మీయొక్క (You - plural/respectful)</td>
+                    </tr>
+                    <tr>
+                        <td>చేరింది</td>
+                        <td>cērindi</td>
+                        <td>వచ్చింది (Reached)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 32 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>దయతో దాన్ని నాకు వదిలిపెట్టండి” అంది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దయతో</td>
+                        <td>dayatō</td>
+                        <td>జాలితో (Kindly/With mercy)</td>
+                    </tr>
+                    <tr>
+                        <td>దాన్ని</td>
+                        <td>dānni</td>
+                        <td>ఆ దానిని (That one)</td>
+                    </tr>
+                    <tr>
+                        <td>నాకు</td>
+                        <td>nāku</td>
+                        <td>నాయొక్క (To me)</td>
+                    </tr>
+                    <tr>
+                        <td>వదిలిపెట్టండి</td>
+                        <td>vadilipeṭṭaṇḍi</td>
+                        <td>విడిచిపెట్టండి (Leave/Let go)</td>
+                    </tr>
+                    <tr>
+                        <td>అంది</td>
+                        <td>andi</td>
+                        <td>చెప్పింది (Said)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 33 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>రాజు గారికి సభలో ఉన్న వారందరికీ ఈ రెండూ మనుషుల్లా మాట్లాడడం ఆశ్చర్యం కలిగించింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రాజు</td>
+                        <td>rāju</td>
+                        <td>రాజుగారి (King)</td>
+                    </tr>
+                    <tr>
+                        <td>గారికి</td>
+                        <td>gāriki</td>
+                        <td>కొరకు (To the respected)</td>
+                    </tr>
+                    <tr>
+                        <td>సభలో</td>
+                        <td>sabhalō</td>
+                        <td>మీటింగ్ లో (In the assembly/court)</td>
+                    </tr>
+                    <tr>
+                        <td>ఉన్న</td>
+                        <td>unna</td>
+                        <td>కల (Present)</td>
+                    </tr>
+                    <tr>
+                        <td>వారందరికీ</td>
+                        <td>vārandarīki</td>
+                        <td>అందరి మనుషులకు (To everyone)</td>
+                    </tr>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>ī</td>
+                        <td>ఈయొక్క (These)</td>
+                    </tr>
+                    <tr>
+                        <td>రెండూ</td>
+                        <td>reṇḍū</td>
+                        <td>రెండు వస్తువులు (Both)</td>
+                    </tr>
+                    <tr>
+                        <td>మనుషుల్లా</td>
+                        <td>manuṣullā</td>
+                        <td>మానవుల వలె (Like humans)</td>
+                    </tr>
+                    <tr>
+                        <td>మాట్లాడడం</td>
+                        <td>māṭlāḍaḍam</td>
+                        <td>మాట్లాడే పని (The act of speaking)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆశ్చర్యం</td>
+                        <td>āścaryam</td>
+                        <td>వింత (Surprise/Wonder)</td>
+                    </tr>
+                    <tr>
+                        <td>కలిగించింది</td>
+                        <td>kaligin̄chindi</td>
+                        <td>చేసింది (Caused)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 34 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>“నేను కాపాడుతానని ఈ పావురానికి మాట ఇచ్చాను.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నేను</td>
+                        <td>nēnu</td>
+                        <td>నేను (I)</td>
+                    </tr>
+                    <tr>
+                        <td>కాపాడుతానని</td>
+                        <td>kāpāḍutānani</td>
+                        <td>రక్షిస్తానని (That I will protect)</td>
+                    </tr>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>ī</td>
+                        <td>ఈయొక్క (This)</td>
+                    </tr>
+                    <tr>
+                        <td>పావురానికి</td>
+                        <td>pāvurāniki</td>
+                        <td>పావురానికి (To the pigeon)</td>
+                    </tr>
+                    <tr>
+                        <td>మాట</td>
+                        <td>māṭa</td>
+                        <td>వాగ్దానం (Promise/Word)</td>
+                    </tr>
+                    <tr>
+                        <td>ఇచ్చాను</td>
+                        <td>icchānu</td>
+                        <td>అందించాను (Gave)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 35 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఆడిన మాట తప్పను.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఆడిన</td>
+                        <td>āḍina</td>
+                        <td>చెప్పిన (Spoken)</td>
+                    </tr>
+                    <tr>
+                        <td>మాట</td>
+                        <td>māṭa</td>
+                        <td>వాగ్దానం (Word/Promise)</td>
+                    </tr>
+                    <tr>
+                        <td>తప్పను</td>
+                        <td>tappanu</td>
+                        <td>విడిచిపెట్టను (Will not break/miss)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 36 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అయినా నీకు మాత్రం అంత పట్టుదల ఎందుకు?</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అయినా</td>
+                        <td>ayinā</td>
+                        <td>మరి (Even so)</td>
+                    </tr>
+                    <tr>
+                        <td>నీకు</td>
+                        <td>nīku</td>
+                        <td>నీయొక్క (To you)</td>
+                    </tr>
+                    <tr>
+                        <td>మాత్రం</td>
+                        <td>mātram</td>
+                        <td>కేవలం (Only/Just)</td>
+                    </tr>
+                    <tr>
+                        <td>అంత</td>
+                        <td>anta</td>
+                        <td>అంతటి (That much)</td>
+                    </tr>
+                    <tr>
+                        <td>పట్టుదల</td>
+                        <td>paṭṭudala</td>
+                        <td>నిర్బంధం (Stubbornness/Determination)</td>
+                    </tr>
+                    <tr>
+                        <td>ఎందుకు</td>
+                        <td>enduku</td>
+                        <td>దేని కోసం (Why)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 37 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>దీన్ని వదిలి మరో ఆహారం వెతుకోో” అన్నాడు శిబి చక్రవర్తి.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>దీన్ని</td>
+                        <td>dīnni</td>
+                        <td>దీనిని (This one)</td>
+                    </tr>
+                    <tr>
+                        <td>వదిలి</td>
+                        <td>vadili</td>
+                        <td>విడిచి (Leaving)</td>
+                    </tr>
+                    <tr>
+                        <td>మరో</td>
+                        <td>marō</td>
+                        <td>ఇంకో (Another)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆహారం</td>
+                        <td>āhāram</td>
+                        <td>తిండి (Food)</td>
+                    </tr>
+                    <tr>
+                        <td>వెతుకోో</td>
+                        <td>vetukōō</td>
+                        <td>కనుక్కో (Search/Find)</td>
+                    </tr>
+                    <tr>
+                        <td>అన్నాడు</td>
+                        <td>annāḍu</td>
+                        <td>చెప్పాడు (Said)</td>
+                    </tr>
+                    <tr>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
+                    </tr>
+                    <tr>
+                        <td>చక్రవర్తి</td>
+                        <td>cakravarti</td>
+                        <td>రాజు (Emperor)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 38 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>“రాజా! నీవు ధర్మం తెలిసిన వాడవు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రాజా</td>
+                        <td>rājā</td>
+                        <td>ఓ రాజు (Oh King)</td>
+                    </tr>
+                    <tr>
+                        <td>నీవు</td>
+                        <td>nīvu</td>
+                        <td>నువ్వు (You)</td>
+                    </tr>
+                    <tr>
+                        <td>ధర్మం</td>
+                        <td>dharmam</td>
+                        <td>న్యాయం/విధి (Righteousness/Duty)</td>
+                    </tr>
+                    <tr>
+                        <td>తెలిసిన</td>
+                        <td>telisina</td>
+                        <td>తెలిసినటువంటి (Known)</td>
+                    </tr>
+                    <tr>
+                        <td>వాడవు</td>
+                        <td>vāḍavu</td>
+                        <td>మనిషివి (Person)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 39 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>న్యాయంగా ఆలోచించు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>న్యాయంగా</td>
+                        <td>nyāyaṅgā</td>
+                        <td>ధర్మంగా (Justly/Fairly)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆలోచించు</td>
+                        <td>ālōcin̄chu</td>
+                        <td>గుర్తుచేసుకో (Think/Consider)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 40 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నేను ఆకలితో నకనకలాడుతున్నాను.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నేను</td>
+                        <td>nēnu</td>
+                        <td>నేను (I)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆకలితో</td>
+                        <td>ākalitō</td>
+                        <td>హంగర్‌తో (With hunger)</td>
+                    </tr>
+                    <tr>
+                        <td>నకనకలాడుతున్నాను</td>
+                        <td>nakanakalāḍutunnānu</td>
+                        <td>చాలా బాధపడుతున్నాను (Am suffering intensely/starving)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 41 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఈ పావురం దొరికినట్లే దొరికి తప్పించుకొని పారిపోయి నీ దగ్గరకు వచ్చింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>ఈ</td>
-                        <td>Ee</td>
-                        <td>This</td>
+                        <td>ī</td>
+                        <td>ఈయొక్క (This)</td>
                     </tr>
                     <tr>
-                        <td>పావురానికి</td>
-                        <td>Paavuraaniki</td>
-                        <td>For the pigeon</td>
+                        <td>పావురం</td>
+                        <td>pāvuram</td>
+                        <td>పిజియన్ (Pigeon)</td>
                     </tr>
                     <tr>
-                        <td>బదులుగా</td>
-                        <td>Badulugaa</td>
-                        <td>Instead of</td>
+                        <td>దొరికినట్లే</td>
+                        <td>dorikinaṭlē</td>
+                        <td>దొరికిన విధంగానే (Just as it was caught)</td>
                     </tr>
                     <tr>
-                        <td>నీకు</td>
-                        <td>Neeku</td>
-                        <td>To you</td>
+                        <td>దొరికి</td>
+                        <td>doriki</td>
+                        <td>పట్టుబడి (Found/Caught)</td>
                     </tr>
                     <tr>
-                        <td>ఏమి</td>
-                        <td>Emi</td>
-                        <td>What</td>
+                        <td>తప్పించుకొని</td>
+                        <td>tappin̄chukoni</td>
+                        <td>విడిపించుకొని (Having escaped)</td>
                     </tr>
                     <tr>
-                        <td>కావాలో</td>
-                        <td>Kaavaalo</td>
-                        <td>Is needed</td>
+                        <td>పారిపోయి</td>
+                        <td>pāripōyi</td>
+                        <td>పరుగెత్తిపోయి (Having run away)</td>
                     </tr>
                     <tr>
-                        <td>కోరుకో</td>
-                        <td>Koruko</td>
-                        <td>Ask/Wish for</td>
+                        <td>నీ</td>
+                        <td>nī</td>
+                        <td>నీయొక్క (Your)</td>
                     </tr>
                     <tr>
-                        <td>అన్నాడు</td>
-                        <td>Annaadu</td>
-                        <td>Said</td>
+                        <td>దగ్గరకు</td>
+                        <td>daggaraku</td>
+                        <td>సమీపానికి (To near)</td>
+                    </tr>
+                    <tr>
+                        <td>వచ్చింది</td>
+                        <td>vachchindi</td>
+                        <td>చేరింది (Came)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 13 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>డేగ ఆలోచించి, "అయితే ఈ పావురం బరువుకు సమానమైన నీ శరీర మాంసాన్ని నాకు ఇవ్వు" అని కోరింది.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 42 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నా నోటి ముందరి ఆహారం తీసివేయడం ధర్మం కాదు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నా</td>
+                        <td>nā</td>
+                        <td>నాయొక్క (My)</td>
+                    </tr>
+                    <tr>
+                        <td>నోటి</td>
+                        <td>nōṭi</td>
+                        <td>ముఖం యొక్క (Of the mouth)</td>
+                    </tr>
+                    <tr>
+                        <td>ముందరి</td>
+                        <td>mundari</td>
+                        <td>ఎదురుగా ఉన్న (In front of)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆహారం</td>
+                        <td>āhāram</td>
+                        <td>తిండి (Food)</td>
+                    </tr>
+                    <tr>
+                        <td>తీసివేయడం</td>
+                        <td>tīsivēyaḍam</td>
+                        <td>తొలగించడం (The act of removing)</td>
+                    </tr>
+                    <tr>
+                        <td>ధర్మం</td>
+                        <td>dharmam</td>
+                        <td>న్యాయం (Righteousness/Just)</td>
+                    </tr>
+                    <tr>
+                        <td>కాదు</td>
+                        <td>kādu</td>
+                        <td>అవ్వదు (Is not)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 43 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఇప్పుడు ఈ ఆహారం లేకపోతే నేను ఆకలిబాధతో మరణిస్తాను.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఇప్పుడు</td>
+                        <td>ippuḍu</td>
+                        <td>ఈ సమయంలో (Now)</td>
+                    </tr>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>ī</td>
+                        <td>ఈయొక్క (This)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆహారం</td>
+                        <td>āhāram</td>
+                        <td>తిండి (Food)</td>
+                    </tr>
+                    <tr>
+                        <td>లేకపోతే</td>
+                        <td>lēkapōtē</td>
+                        <td>ఉండకపోతే (If there is no)</td>
+                    </tr>
+                    <tr>
+                        <td>నేను</td>
+                        <td>nēnu</td>
+                        <td>నేను (I)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆకలిబాధతో</td>
+                        <td>ākalibādhatō</td>
+                        <td>హంగర్ నొప్పిని (With hunger pain)</td>
+                    </tr>
+                    <tr>
+                        <td>మరణిస్తాను</td>
+                        <td>maraṇistānu</td>
+                        <td>చనిపోతాను (Will die)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 44 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అది నీకు ధర్మమా?” అంది డేగ.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అది</td>
+                        <td>adi</td>
+                        <td>ఆ విషయం (That thing)</td>
+                    </tr>
+                    <tr>
+                        <td>నీకు</td>
+                        <td>nīku</td>
+                        <td>నీయొక్క (To you)</td>
+                    </tr>
+                    <tr>
+                        <td>ధర్మమా</td>
+                        <td>dharmamā</td>
+                        <td>న్యాయమా? (Is it righteous?)</td>
+                    </tr>
+                    <tr>
+                        <td>అంది</td>
+                        <td>andi</td>
+                        <td>చెప్పింది (Said)</td>
+                    </tr>
+                    <tr>
+                        <td>డేగ</td>
+                        <td>ḍēga</td>
+                        <td>గద్ద (Hawk)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 45 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>డేగ మాటలకు రాజుతో సహా సభలోని వారంతా ఆశ్చర్యపోయారు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>డేగ</td>
-                        <td>Dega</td>
-                        <td>Eagle</td>
+                        <td>ḍēga</td>
+                        <td>డేగయొక్క (The hawk's)</td>
                     </tr>
                     <tr>
-                        <td>ఆలోచించి</td>
-                        <td>Aalochinchi</td>
-                        <td>Having thought</td>
+                        <td>మాటలకు</td>
+                        <td>māṭalaku</td>
+                        <td>సంభాషణకు (To the words)</td>
                     </tr>
                     <tr>
-                        <td>అయితే</td>
-                        <td>Ayithe</td>
-                        <td>If so/Then</td>
+                        <td>రాజుతో</td>
+                        <td>rājutō</td>
+                        <td>రాజుతో పాటు (Along with the King)</td>
                     </tr>
                     <tr>
-                        <td>ఈ</td>
-                        <td>Ee</td>
-                        <td>This</td>
+                        <td>సహా</td>
+                        <td>sahā</td>
+                        <td>కలిపి (Including)</td>
                     </tr>
                     <tr>
-                        <td>పావురం</td>
-                        <td>Paavuram</td>
-                        <td>Pigeon</td>
+                        <td>సభలోని</td>
+                        <td>sabhalōni</td>
+                        <td>కౌన్సిల్‌లో ఉన్న (In the assembly)</td>
                     </tr>
                     <tr>
-                        <td>బరువుకు</td>
-                        <td>Baruvuku</td>
-                        <td>To the weight</td>
+                        <td>వారంతా</td>
+                        <td>vārantā</td>
+                        <td>అందరు మనుషులు (All the people)</td>
                     </tr>
                     <tr>
-                        <td>సమానమైన</td>
-                        <td>Samaanamaina</td>
-                        <td>Equal</td>
+                        <td>ఆశ్చర్యపోయారు</td>
+                        <td>āścaryapōyāru</td>
+                        <td>వింతపడ్డారు (Were surprised/astonished)</td>
                     </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 46 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>శిబి చక్రవర్తి ఆశ్చర్యం నుంచి తేరుకుంటూ “ఓ శ్యేన రాజమా! శరణన్న వారిని రక్షించడం రాజధర్మం.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
+                    </tr>
+                    <tr>
+                        <td>చక్రవర్తి</td>
+                        <td>cakravarti</td>
+                        <td>రాజు (Emperor)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆశ్చర్యం</td>
+                        <td>āścaryam</td>
+                        <td>వింత (Surprise)</td>
+                    </tr>
+                    <tr>
+                        <td>నుంచి</td>
+                        <td>nun̄chi</td>
+                        <td>నుండి (From)</td>
+                    </tr>
+                    <tr>
+                        <td>తేరుకుంటూ</td>
+                        <td>tērukunṭū</td>
+                        <td>కోలుకుంటూ (Recovering/Gathering himself)</td>
+                    </tr>
+                    <tr>
+                        <td>ఓ</td>
+                        <td>ō</td>
+                        <td>పిలుపు (Oh!)</td>
+                    </tr>
+                    <tr>
+                        <td>శ్యేన</td>
+                        <td>śyēna</td>
+                        <td>డేగ (Hawk/Eagle)</td>
+                    </tr>
+                    <tr>
+                        <td>రాజమా</td>
+                        <td>rājamā</td>
+                        <td>రాజా! (Oh King!)</td>
+                    </tr>
+                    <tr>
+                        <td>శరణన్న</td>
+                        <td>śaraṇanna</td>
+                        <td>ఆశ్రయం కోరిన (Those who sought refuge)</td>
+                    </tr>
+                    <tr>
+                        <td>వారిని</td>
+                        <td>vārini</td>
+                        <td>వారిని (Them)</td>
+                    </tr>
+                    <tr>
+                        <td>రక్షించడం</td>
+                        <td>rakṣin̄caḍam</td>
+                        <td>కాపాడే పని (The act of protecting)</td>
+                    </tr>
+                    <tr>
+                        <td>రాజధర్మం</td>
+                        <td>rājadharmam</td>
+                        <td>రాజు యొక్క విధి (The duty of a king)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 47 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నీ ఆకలిబాధ తీరడానికి ఏ ఆహారం కావాలో చెప్పు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <td>నీ</td>
-                        <td>Nee</td>
-                        <td>Your</td>
+                        <td>nī</td>
+                        <td>నీయొక్క (Your)</td>
                     </tr>
                     <tr>
-                        <td>శరీర</td>
-                        <td>Shareera</td>
-                        <td>Body</td>
+                        <td>ఆకలిబాధ</td>
+                        <td>ākalibādha</td>
+                        <td>హంగర్ నొప్పి (Hunger pain)</td>
                     </tr>
                     <tr>
-                        <td>మాంసాన్ని</td>
-                        <td>Maamsanni</td>
-                        <td>Meat/Flesh (object)</td>
+                        <td>తீரడానికి</td>
+                        <td>tīraḍāniki</td>
+                        <td>తొలగిపోవడానికి (To be satisfied/resolved)</td>
                     </tr>
                     <tr>
-                        <td>నాకు</td>
-                        <td>Naaku</td>
-                        <td>To me</td>
+                        <td>ఏ</td>
+                        <td>ē</td>
+                        <td>ఏదైతే (Which)</td>
                     </tr>
                     <tr>
-                        <td>ఇవ్వు</td>
-                        <td>Ivvu</td>
-                        <td>Give</td>
+                        <td>ఆహారం</td>
+                        <td>āhāram</td>
+                        <td>తిండి (Food)</td>
                     </tr>
                     <tr>
-                        <td>అని</td>
-                        <td>Ani</td>
-                        <td>Thus/Saying</td>
+                        <td>కావాలో</td>
+                        <td>kāvālō</td>
+                        <td>అవసరమో (Is needed)</td>
                     </tr>
                     <tr>
-                        <td>కోరింది</td>
-                        <td>Korindi</td>
-                        <td>Requested/Asked</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- CARD 14 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>శిబి చక్రవర్తి సంతోషంగా అంగీకరించాడు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
-                    <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>శిబి చక్రవర్తి</td>
-                        <td>Shibi Chakravarthi</td>
-                        <td>Emperor Shibi</td>
-                    </tr>
-                    <tr>
-                        <td>సంతోషంగా</td>
-                        <td>Santhoshamgaa</td>
-                        <td>Happily</td>
-                    </tr>
-                    <tr>
-                        <td>అంగీకరించాడు</td>
-                        <td>Angeekarinchadu</td>
-                        <td>Agreed/Accepted</td>
+                        <td>చెప్పు</td>
+                        <td>cheppu</td>
+                        <td>తెలపండి (Tell)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 15 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ఒక త్రాసును తెప్పించి, ఒక వైపు పావురాన్ని ఉంచి, మరోవైపు తన శరీర మాంసాన్ని కోసి వేయసాగాడు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 48 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నువ్వు కోరిన ఆహారం నీకు ఇస్తాను.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ఒక</td>
-                        <td>Oka</td>
-                        <td>One/A</td>
+                        <td>నువ్వు</td>
+                        <td>nuvvu</td>
+                        <td>మీరు (You)</td>
                     </tr>
                     <tr>
-                        <td>త్రాసును</td>
-                        <td>Thraasunu</td>
-                        <td>Balance scale (object)</td>
+                        <td>కోరిన</td>
+                        <td>kōrina</td>
+                        <td>అడిగిన (Requested)</td>
                     </tr>
                     <tr>
-                        <td>తెప్పించి</td>
-                        <td>Teppinchi</td>
-                        <td>Having brought</td>
+                        <td>ఆహారం</td>
+                        <td>āhāram</td>
+                        <td>తిండి (Food)</td>
                     </tr>
                     <tr>
-                        <td>ఒక</td>
-                        <td>Oka</td>
-                        <td>One</td>
+                        <td>నీకు</td>
+                        <td>nīku</td>
+                        <td>నీయొక్క (To you)</td>
                     </tr>
                     <tr>
-                        <td>వైపు</td>
-                        <td>Vaipu</td>
-                        <td>Side</td>
+                        <td>ఇస్తాను</td>
+                        <td>istānu</td>
+                        <td>అందిస్తాను (I will give)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 49 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఈ పావురాన్ని మాత్రం వదిలిపెట్టు” అన్నాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>ī</td>
+                        <td>ఈయొక్క (This)</td>
                     </tr>
                     <tr>
                         <td>పావురాన్ని</td>
-                        <td>Paavuraanni</td>
-                        <td>Pigeon (object)</td>
+                        <td>pāvurānni</td>
+                        <td>పావురాన్ని (The pigeon)</td>
                     </tr>
                     <tr>
-                        <td>ఉంచి</td>
-                        <td>Unchi</td>
-                        <td>Having placed</td>
+                        <td>మాత్రం</td>
+                        <td>mātram</td>
+                        <td>కేవలం (Only)</td>
                     </tr>
                     <tr>
-                        <td>మరోవైపు</td>
-                        <td>Marovaipu</td>
-                        <td>The other side</td>
+                        <td>వదిలిపెట్టు</td>
+                        <td>vadilipeṭṭu</td>
+                        <td>విడిచిపెట్టు (Leave/Let go)</td>
                     </tr>
                     <tr>
-                        <td>తన</td>
-                        <td>Thana</td>
-                        <td>His own</td>
-                    </tr>
-                    <tr>
-                        <td>శరీర</td>
-                        <td>Shareera</td>
-                        <td>Body</td>
-                    </tr>
-                    <tr>
-                        <td>మాంసాన్ని</td>
-                        <td>Maamsanni</td>
-                        <td>Meat/Flesh (object)</td>
-                    </tr>
-                    <tr>
-                        <td>కోసి</td>
-                        <td>Kosi</td>
-                        <td>Having cut</td>
-                    </tr>
-                    <tr>
-                        <td>వేయసాగాడు</td>
-                        <td>Veyasaagaadu</td>
-                        <td>Started placing/putting</td>
+                        <td>అన్నాడు</td>
+                        <td>annāḍu</td>
+                        <td>చెప్పాడు (Said)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 16 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ఎంత మాంసం వేసినా పావురం ఉన్న పక్కే మొగ్గు చూపింది.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 50 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>“నేను కోరిన ఏ ఆహారమైనా ఇస్తారా?” అని గట్టిగా అడిగింది డేగ.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ఎంత</td>
-                        <td>Entha</td>
-                        <td>How much</td>
+                        <td>నేను</td>
+                        <td>nēnu</td>
+                        <td>నేను (I)</td>
                     </tr>
                     <tr>
-                        <td>మాంసం</td>
-                        <td>Maamsam</td>
-                        <td>Meat/Flesh</td>
+                        <td>కోరిన</td>
+                        <td>kōrina</td>
+                        <td>అడిగిన (Requested)</td>
                     </tr>
                     <tr>
-                        <td>వేసినా</td>
-                        <td>Vesinaa</td>
-                        <td>Even if placed</td>
+                        <td>ఏ</td>
+                        <td>ē</td>
+                        <td>ఏదైతే (Which/Any)</td>
                     </tr>
                     <tr>
-                        <td>పావురం</td>
-                        <td>Paavuram</td>
-                        <td>Pigeon</td>
+                        <td>ఆహారమైనా</td>
+                        <td>āhāramainā</td>
+                        <td>తిండి అయినా (Even if it is food)</td>
                     </tr>
                     <tr>
-                        <td>ఉన్న</td>
-                        <td>Unna</td>
-                        <td>Which is there</td>
+                        <td>ఇస్తారా</td>
+                        <td>istārā</td>
+                        <td>అందిస్తారా? (Will you give?)</td>
                     </tr>
                     <tr>
-                        <td>పక్కే</td>
-                        <td>Pakke</td>
-                        <td>Side (emphasis)</td>
+                        <td>అని</td>
+                        <td>ani</td>
+                        <td>ఈ విధంగా (Thus)</td>
                     </tr>
                     <tr>
-                        <td>మొగ్గు</td>
-                        <td>Moggu</td>
-                        <td>Inclination/Tilt</td>
+                        <td>గట్టిగా</td>
+                        <td>gaṭṭigā</td>
+                        <td>బలంగా (Firmly/Loudly)</td>
                     </tr>
                     <tr>
-                        <td>చూపింది</td>
-                        <td>Choopindi</td>
-                        <td>Showed</td>
+                        <td>అడిగింది</td>
+                        <td>aḍigindi</td>
+                        <td>ప్రశ్నించింది (Asked)</td>
+                    </tr>
+                    <tr>
+                        <td>డేగ</td>
+                        <td>ḍēga</td>
+                        <td>గద్ద (Hawk)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 17 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>చివరికి శిబి చక్రవర్తి తానే ఆ త్రాసులో కూర్చున్నాడు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 51 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నాకివ్వు” అంది డేగ.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నాకివ్వు</td>
+                        <td>nāki'vvu</td>
+                        <td>నాకు ఇవ్వు (Give it to me)</td>
+                    </tr>
+                    <tr>
+                        <td>అంది</td>
+                        <td>andi</td>
+                        <td>చెప్పింది (Said)</td>
+                    </tr>
+                    <tr>
+                        <td>డేగ</td>
+                        <td>ḍēga</td>
+                        <td>గద్ద (Hawk)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 52 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>“శిబి చక్రవర్తి నవ్వుతూ అలాగే నీకు కావాల్సింది నా మాంసమేకదా' అని అప్పటికప్పుడు ఒక కత్తి, త్రాసు తెప్పించాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
+                    </tr>
+                    <tr>
+                        <td>చక్రవర్తి</td>
+                        <td>cakravarti</td>
+                        <td>రాజు (Emperor)</td>
+                    </tr>
+                    <tr>
+                        <td>నవ్వుతూ</td>
+                        <td>navvutū</td>
+                        <td>నవ్వి (Smiling)</td>
+                    </tr>
+                    <tr>
+                        <td>అలాగే</td>
+                        <td>alāgē</td>
+                        <td>సరే (Alright/In that manner)</td>
+                    </tr>
+                    <tr>
+                        <td>నీకు</td>
+                        <td>nīku</td>
+                        <td>నీయొక్క (To you)</td>
+                    </tr>
+                    <tr>
+                        <td>కావాల్సింది</td>
+                        <td>kāvālsindi</td>
+                        <td>అవసరమైనది (What is needed)</td>
+                    </tr>
+                    <tr>
+                        <td>నా</td>
+                        <td>nā</td>
+                        <td>నాయొక్క (My)</td>
+                    </tr>
+                    <tr>
+                        <td>మాంసమేకదా</td>
+                        <td>mānsamēkadā</td>
+                        <td>మాంసమే కదా (Is it not meat?)</td>
+                    </tr>
+                    <tr>
+                        <td>అని</td>
+                        <td>ani</td>
+                        <td>ఈ విధంగా (Thus)</td>
+                    </tr>
+                    <tr>
+                        <td>అప్పటికప్పుడు</td>
+                        <td>appaṭikappuḍu</td>
+                        <td>వెంటనే (Immediately)</td>
+                    </tr>
+                    <tr>
+                        <td>ఒక</td>
+                        <td>oka</td>
+                        <td>ఒకటి (One)</td>
+                    </tr>
+                    <tr>
+                        <td>కత్తి</td>
+                        <td>katti</td>
+                        <td>నైఫ్ (Knife/Sword)</td>
+                    </tr>
+                    <tr>
+                        <td>త్రాసు</td>
+                        <td>trāsu</td>
+                        <td>తూకం వేసే పరికరం (Balance scale)</td>
+                    </tr>
+                    <tr>
+                        <td>తెప్పించాడు</td>
+                        <td>teppin̄chāḍu</td>
+                        <td>రప్పించాడు (Got it brought)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 53 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>సభలోని వారందరూ నిశ్చేష్టులయ్యారు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>సభలోని</td>
+                        <td>sabhalōni</td>
+                        <td>కౌన్సిల్‌లో ఉన్న (In the assembly)</td>
+                    </tr>
+                    <tr>
+                        <td>వారందరూ</td>
+                        <td>vārandarū</td>
+                        <td>అందరూ మనుషులు (All the people)</td>
+                    </tr>
+                    <tr>
+                        <td>నిశ్చేష్టులయ్యారు</td>
+                        <td>niścēṣṭulayyāru</td>
+                        <td>ఏమీ చేయలేని వారయ్యారు (Became motionless/dumbfounded)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 54 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>శిబి చక్రవర్తి పదునైన కత్తితో తన శరీరం నుంచి మాంసాన్ని కోసి త్రాసులో వేశాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
+                    </tr>
+                    <tr>
+                        <td>చక్రవర్తి</td>
+                        <td>cakravarti</td>
+                        <td>రాజు (Emperor)</td>
+                    </tr>
+                    <tr>
+                        <td>పదునైన</td>
+                        <td>padunaina</td>
+                        <td>షార్ప్ అయిన (Sharp)</td>
+                    </tr>
+                    <tr>
+                        <td>కత్తితో</td>
+                        <td>kattitō</td>
+                        <td>నైఫ్‌తో (With a knife)</td>
+                    </tr>
+                    <tr>
+                        <td>తన</td>
+                        <td>tana</td>
+                        <td>తనయొక్క (His own)</td>
+                    </tr>
+                    <tr>
+                        <td>శరీరం</td>
+                        <td>śarīram</td>
+                        <td>దేహం (Body)</td>
+                    </tr>
+                    <tr>
+                        <td>నుంచి</td>
+                        <td>nun̄chi</td>
+                        <td>నుండి (From)</td>
+                    </tr>
+                    <tr>
+                        <td>మాంసాన్ని</td>
+                        <td>mānsānni</td>
+                        <td>కండను (The flesh/meat)</td>
+                    </tr>
+                    <tr>
+                        <td>కోసి</td>
+                        <td>kōsi</td>
+                        <td>కట్ చేసి (Having cut)</td>
+                    </tr>
+                    <tr>
+                        <td>త్రాసులో</td>
+                        <td>trāsuḷō</td>
+                        <td>తూకంలో (In the balance scale)</td>
+                    </tr>
+                    <tr>
+                        <td>వేశాడు</td>
+                        <td>vēśāḍu</td>
+                        <td>పెట్టాడు (Put)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 55 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>పావురం బరువుకు సరికాలేదు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పావురం</td>
+                        <td>pāvuram</td>
+                        <td>పిజియన్ (Pigeon)</td>
+                    </tr>
+                    <tr>
+                        <td>బరువుకు</td>
+                        <td>baruvuku</td>
+                        <td>వెయిట్‌కు (To the weight)</td>
+                    </tr>
+                    <tr>
+                        <td>సరికాలేదు</td>
+                        <td>sarikālēdu</td>
+                        <td>సమానం కాలేదు (Was not equal/enough)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 56 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>మరికొంత మాంసం కోసివేశాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మరికొంత</td>
+                        <td>marikonta</td>
+                        <td>ఇంకా కొంత (Some more)</td>
+                    </tr>
+                    <tr>
+                        <td>మాంసం</td>
+                        <td>mānsam</td>
+                        <td>కండ (Flesh/Meat)</td>
+                    </tr>
+                    <tr>
+                        <td>కోసివేశాడు</td>
+                        <td>kōsivēśāḍu</td>
+                        <td>కట్ చేసి పెట్టాడు (Cut and put it)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 57 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ఉహు! అప్పుడూ సరిపోలేదు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఉహు</td>
+                        <td>uhu</td>
+                        <td>నిరాశ సూచన (Sound of failure/no)</td>
+                    </tr>
+                    <tr>
+                        <td>అప్పుడూ</td>
+                        <td>appuḍū</td>
+                        <td>ఆ సమయంలో కూడా (Even then)</td>
+                    </tr>
+                    <tr>
+                        <td>సరిపోలేదు</td>
+                        <td>saripōlēdu</td>
+                        <td>సరిపోలేదు (Was not enough)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 58 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>మరికొంత జోడించాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మరికొంత</td>
+                        <td>marikonta</td>
+                        <td>ఇంకా కొంత (Some more)</td>
+                    </tr>
+                    <tr>
+                        <td>జోడించాడు</td>
+                        <td>jōḍin̄chāḍu</td>
+                        <td>కలిపాడు (Added)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 59 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>ప్రయోజనం లేకపోయింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ప్రయోజనం</td>
+                        <td>prayōjanam</td>
+                        <td>ఉపయోగం (Benefit/Use)</td>
+                    </tr>
+                    <tr>
+                        <td>లేకపోయింది</td>
+                        <td>lēkapōyindi</td>
+                        <td>ఉండలేదు (Was not there/Failed)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 60 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అది చూడలేక సభలోని వారంతా కళ్ళు మూసుకున్నారు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అది</td>
+                        <td>adi</td>
+                        <td>ఆ దృశ్యాన్ని (That scene)</td>
+                    </tr>
+                    <tr>
+                        <td>చూడలేక</td>
+                        <td>chūḍalēka</td>
+                        <td>చూడటానికి శక్తిలేక (Unable to see)</td>
+                    </tr>
+                    <tr>
+                        <td>సభలోని</td>
+                        <td>sabhalōni</td>
+                        <td>కౌన్సిల్‌లో ఉన్న (In the assembly)</td>
+                    </tr>
+                    <tr>
+                        <td>వారంతా</td>
+                        <td>vārantā</td>
+                        <td>అందరూ మనుషులు (All the people)</td>
+                    </tr>
+                    <tr>
+                        <td>కళ్ళు</td>
+                        <td>kaḷḷu</td>
+                        <td>ఐస్ (Eyes)</td>
+                    </tr>
+                    <tr>
+                        <td>మూసుకున్నారు</td>
+                        <td>mūsukunnāru</td>
+                        <td>క్లోజ్ చేసుకున్నారు (Closed)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 61 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>మరికొంత వేశాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మరికొంత</td>
+                        <td>marikonta</td>
+                        <td>ఇంకా కొంత (Some more)</td>
+                    </tr>
+                    <tr>
+                        <td>వేశాడు</td>
+                        <td>vēśāḍu</td>
+                        <td>పెట్టాడు (Put/Placed)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 62 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అయినా పావురం బరువుతో సరితూగలేదు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అయినా</td>
+                        <td>ayinā</td>
+                        <td>మరి (Even then)</td>
+                    </tr>
+                    <tr>
+                        <td>పావురం</td>
+                        <td>pāvuram</td>
+                        <td>పిజియన్ (Pigeon)</td>
+                    </tr>
+                    <tr>
+                        <td>బరువుతో</td>
+                        <td>baruvutō</td>
+                        <td>వెయిట్‌తో (With the weight)</td>
+                    </tr>
+                    <tr>
+                        <td>సరితూగలేదు</td>
+                        <td>saritūgalēdu</td>
+                        <td>సమానం కాలేదు (Did not balance/match)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 63 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>రాజుగారి శరీరం రక్తం ఓడుతుంది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రాజుగారి</td>
+                        <td>rājugaari</td>
+                        <td>రాజుయొక్క (The King's)</td>
+                    </tr>
+                    <tr>
+                        <td>శరీరం</td>
+                        <td>śarīram</td>
+                        <td>దేహం (Body)</td>
+                    </tr>
+                    <tr>
+                        <td>రక్తం</td>
+                        <td>raktam</td>
+                        <td>బ్లడ్ (Blood)</td>
+                    </tr>
+                    <tr>
+                        <td>ఓడుతుంది</td>
+                        <td>ōḍutundi</td>
+                        <td>కారుతుంది (Is dripping/oozing)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 64 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>చివరికి తానే వెళ్ళి త్రాసు పళ్ళెంలో కూర్చున్నాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>చివరికి</td>
-                        <td>Chivariki</td>
-                        <td>Finally</td>
-                    </tr>
-                    <tr>
-                        <td>శిబి చక్రవర్తి</td>
-                        <td>Shibi Chakravarthi</td>
-                        <td>Emperor Shibi</td>
+                        <td>chivariki</td>
+                        <td>అంతంలో (Finally/In the end)</td>
                     </tr>
                     <tr>
                         <td>తానే</td>
-                        <td>Thaane</td>
-                        <td>He himself</td>
+                        <td>tānē</td>
+                        <td>అతనే (He himself)</td>
                     </tr>
                     <tr>
-                        <td>ఆ</td>
-                        <td>Aa</td>
-                        <td>That</td>
+                        <td>వెళ్ళి</td>
+                        <td>veḷḷi</td>
+                        <td>పోయి (Having gone)</td>
                     </tr>
                     <tr>
-                        <td>త్రాసులో</td>
-                        <td>Thraasulo</td>
-                        <td>In the balance scale</td>
+                        <td>త్రాసు</td>
+                        <td>trāsu</td>
+                        <td>తూకం పరికరం (Balance scale)</td>
+                    </tr>
+                    <tr>
+                        <td>పళ్ళెంలో</td>
+                        <td>paḷḷemlō</td>
+                        <td>గిన్నెలో (In the plate/pan)</td>
                     </tr>
                     <tr>
                         <td>కూర్చున్నాడు</td>
-                        <td>Koorchunnadu</td>
-                        <td>Sat down</td>
+                        <td>kūrcunnāḍu</td>
+                        <td>ఉపవేశించాడు (Sat down)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 18 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>శిబి చక్రవర్తి త్యాగానికి, ధర్మ నిరతికి మెచ్చిన ఇంద్రుడు, అగ్నిదేవుడు తమ నిజరూపాలతో ప్రత్యక్షమయ్యారు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 65 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>తనను తానే డేగకు ఆహారంగా సమర్పించుకున్నాడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>శిబి చక్రవర్తి</td>
-                        <td>Shibi Chakravarthi</td>
-                        <td>Emperor Shibi</td>
-                    </tr>
-                    <tr>
-                        <td>త్యాగానికి</td>
-                        <td>Tyaagaaniki</td>
-                        <td>To the sacrifice</td>
-                    </tr>
-                    <tr>
-                        <td>ధర్మ నిరతికి</td>
-                        <td>Dharma niratiki</td>
-                        <td>To the devotion to duty</td>
-                    </tr>
-                    <tr>
-                        <td>మెచ్చిన</td>
-                        <td>Mechchina</td>
-                        <td>Impressed/Pleased</td>
-                    </tr>
-                    <tr>
-                        <td>ఇంద్రుడు</td>
-                        <td>Indrudu</td>
-                        <td>Indra</td>
-                    </tr>
-                    <tr>
-                        <td>అగ్నిదేవుడు</td>
-                        <td>Agnidevudu</td>
-                        <td>Agni (God of Fire)</td>
-                    </tr>
-                    <tr>
-                        <td>తమ</td>
-                        <td>Tama</td>
-                        <td>Their own</td>
-                    </tr>
-                    <tr>
-                        <td>నిజరూపాలతో</td>
-                        <td>Nija-roopaalatho</td>
-                        <td>With real forms</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రత్యక్షమయ్యారు</td>
-                        <td>Pratyakshamayyaru</td>
-                        <td>Appeared</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- CARD 19 -->
-    <div class="card shadow-sm mb-3">
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ఆయనను దీవించి, గాయాలన్నీ మాయం చేసి, అక్షయమైన కీర్తిని ప్రసాదించారు.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
-                    <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ఆయనను</td>
-                        <td>Aayananu</td>
-                        <td>Him (object)</td>
-                    </tr>
-                    <tr>
-                        <td>దీవించి</td>
-                        <td>Deevinchi</td>
-                        <td>Having blessed</td>
-                    </tr>
-                    <tr>
-                        <td>గాయాలన్నీ</td>
-                        <td>Gaayaalanni</td>
-                        <td>All the wounds</td>
-                    </tr>
-                    <tr>
-                        <td>మాయం</td>
-                        <td>Maayam</td>
-                        <td>Disappearance</td>
-                    </tr>
-                    <tr>
-                        <td>చేసి</td>
-                        <td>Chesi</td>
-                        <td>Having done</td>
-                    </tr>
-                    <tr>
-                        <td>అక్షయమైన</td>
-                        <td>Akshaymaina</td>
-                        <td>Undecaying/Eternal</td>
-                    </tr>
-                    <tr>
-                        <td>కీర్తిని</td>
-                        <td>Keerthini</td>
-                        <td>Fame (object)</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రసాదించారు</td>
-                        <td>Prasaadincharu</td>
-                        <td>Granted/Bestowed</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Summary Section Header -->
-    <h3 class="text-center mt-5 mb-3 text-success">పాఠం సారాంశం (Summary)</h3>
-
-    <!-- CARD 20 (SUMMARY 1) -->
-    <div class="card shadow-sm mb-3 border-success">
-        <div class="card-header bg-success text-white">శరణాగత రక్షణ</div>
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>తనను నమ్మి వచ్చిన వారిని రక్షించడం అత్యున్నతమైన ధర్మం అని ఈ కథ చెబుతుంది.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
-                    <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>తనను</td>
-                        <td>Thananu</td>
-                        <td>Himself/Self (object)</td>
+                        <td>tannu</td>
+                        <td>తనయొక్క (Himself)</td>
                     </tr>
                     <tr>
-                        <td>నమ్మి</td>
-                        <td>Nammi</td>
-                        <td>Having believed/Trusted</td>
+                        <td>తానే</td>
+                        <td>tānē</td>
+                        <td>అతనే (Himself)</td>
                     </tr>
                     <tr>
-                        <td>వచ్చిన</td>
-                        <td>Vachchina</td>
-                        <td>Who came</td>
+                        <td>డేగకు</td>
+                        <td>ḍēgaku</td>
+                        <td>డేగకు (To the hawk)</td>
                     </tr>
                     <tr>
-                        <td>వారిని</td>
-                        <td>Vaarini</td>
-                        <td>Them (people)</td>
+                        <td>ఆహారంగా</td>
+                        <td>āhāraṅgā</td>
+                        <td>తిండిగా (As food)</td>
                     </tr>
                     <tr>
-                        <td>రక్షించడం</td>
-                        <td>Rakshinchadam</td>
-                        <td>Protecting</td>
-                    </tr>
-                    <tr>
-                        <td>అత్యున్నతమైన</td>
-                        <td>Atyunnathamaina</td>
-                        <td>Supreme/Highest</td>
-                    </tr>
-                    <tr>
-                        <td>ధర్మం</td>
-                        <td>Dharmam</td>
-                        <td>Duty/Righteousness</td>
-                    </tr>
-                    <tr>
-                        <td>అని</td>
-                        <td>Ani</td>
-                        <td>Thus/That</td>
-                    </tr>
-                    <tr>
-                        <td>ఈ</td>
-                        <td>Ee</td>
-                        <td>This</td>
-                    </tr>
-                    <tr>
-                        <td>కథ</td>
-                        <td>Katha</td>
-                        <td>Story</td>
-                    </tr>
-                    <tr>
-                        <td>చెబుతుంది</td>
-                        <td>Chebutundi</td>
-                        <td>Tells</td>
+                        <td>సమర్పించుకున్నాడు</td>
+                        <td>samarpin̄chunnāḍu</td>
+                        <td>అర్పించుకున్నాడు (Offered/Sacrificed)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- CARD 21 (SUMMARY 2) -->
-    <div class="card shadow-sm mb-3 border-success">
-        <div class="card-header bg-success text-white">త్యాగం</div>
-        <div class="card-body">
-            <p class="card-text lead text-dark"><strong>ఇతరుల ప్రాణాలను కాపాడటానికి తన ప్రాణాలను సైతం లెక్కచేయని శిబి చక్రవర్తి గుణం మనకు ఆదర్శం.</strong></p>
-            <table class="table table-hover mb-0">
-                <thead class="table-warning">
+    <!-- Sentence 66 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అప్పుడు ఇంద్రుడు, అగ్నిదేవుడు ప్రత్యక్షమయ్యారు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
                     <tr>
-                        <th>Telugu Word</th>
-                        <th>Pronunciation</th>
-                        <th>Meaning</th>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>త్యాగం</td>
-                        <td>Tyaagam</td>
-                        <td>Sacrifice</td>
+                        <td>అప్పుడు</td>
+                        <td>appuḍu</td>
+                        <td>ఆ సమయంలో (Then)</td>
                     </tr>
                     <tr>
-                        <td>ఇతరుల</td>
-                        <td>Itarula</td>
-                        <td>Others'</td>
+                        <td>ఇంద్రుడు</td>
+                        <td>indruḍu</td>
+                        <td>దేవతల రాజు (Indra)</td>
                     </tr>
                     <tr>
-                        <td>ప్రాణాలను</td>
-                        <td>Praanaalanu</td>
-                        <td>Lives/Souls (object)</td>
+                        <td>అగ్నిదేవుడు</td>
+                        <td>agnidēvuḍu</td>
+                        <td>అగ్ని దేవుడు (God of Fire)</td>
                     </tr>
                     <tr>
-                        <td>కాపాడటానికి</td>
-                        <td>Kaapaadataniki</td>
-                        <td>To protect</td>
-                    </tr>
-                    <tr>
-                        <td>తన</td>
-                        <td>Thana</td>
-                        <td>His own</td>
-                    </tr>
-                    <tr>
-                        <td>ప్రాణాలను</td>
-                        <td>Praanaalanu</td>
-                        <td>Lives/Souls (object)</td>
-                    </tr>
-                    <tr>
-                        <td>సైతం</td>
-                        <td>Saitham</td>
-                        <td>Even</td>
-                    </tr>
-                    <tr>
-                        <td>లెక్కచేయని</td>
-                        <td>Lekka cheyani</td>
-                        <td>Not minding/Not caring for</td>
-                    </tr>
-                    <tr>
-                        <td>శిబి చక్రవర్తి</td>
-                        <td>Shibi Chakravarthi</td>
-                        <td>Emperor Shibi</td>
-                    </tr>
-                    <tr>
-                        <td>గుణం</td>
-                        <td>Gunam</td>
-                        <td>Quality/Trait</td>
-                    </tr>
-                    <tr>
-                        <td>మనకు</td>
-                        <td>Manaku</td>
-                        <td>To us</td>
-                    </tr>
-                    <tr>
-                        <td>ఆదర్శం</td>
-                        <td>Aadarsham</td>
-                        <td>Ideal/Model</td>
+                        <td>ప్రత్యక్షమయ్యారు</td>
+                        <td>pratyakṣamayyāru</td>
+                        <td>కనిపించారు (Appeared)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
+    <!-- Sentence 67 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>“రాజా! నీ దానగుణం నిరుపమానమైనది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రాజా</td>
+                        <td>rājā</td>
+                        <td>ఓ రాజు (Oh King!)</td>
+                    </tr>
+                    <tr>
+                        <td>నీ</td>
+                        <td>nī</td>
+                        <td>నీయొక్క (Your)</td>
+                    </tr>
+                    <tr>
+                        <td>దానగుణం</td>
+                        <td>dānaguṇam</td>
+                        <td>దానం చేసే స్వభావం (Charitable nature)</td>
+                    </tr>
+                    <tr>
+                        <td>నిరుపమానమైనది</td>
+                        <td>nirupamānamainadi</td>
+                        <td>పోలిక లేనిది (Unequaled/Incomparable)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 68 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నీవంటి ఉత్తముడు ఇంతవరకు ఈ భూమ్మీద పుట్టలేదు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నీవంటి</td>
+                        <td>nīvanṭi</td>
+                        <td>నీలాంటి (Like you)</td>
+                    </tr>
+                    <tr>
+                        <td>ఉత్తముడు</td>
+                        <td>uttamudu</td>
+                        <td>మంచివాడు (Noble person)</td>
+                    </tr>
+                    <tr>
+                        <td>ఇంతవరకు</td>
+                        <td>intavaruku</td>
+                        <td>ఈ సమయం వరకు (Until now)</td>
+                    </tr>
+                    <tr>
+                        <td>ఈ</td>
+                        <td>ī</td>
+                        <td>ఈయొక్క (This)</td>
+                    </tr>
+                    <tr>
+                        <td>భూమ్మీద</td>
+                        <td>bhūmmīda</td>
+                        <td>నేలపైన (On this earth)</td>
+                    </tr>
+                    <tr>
+                        <td>పుట్టలేదు</td>
+                        <td>puṭṭalēdu</td>
+                        <td>జన్మించలేదు (Has not been born)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 69 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నీ ఔదార్యాన్ని పరీక్షించడానికి నేను డేగగా, అగ్నిదేవుడు పావురంగా వచ్చాం.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నీ</td>
+                        <td>nī</td>
+                        <td>నీయొక్క (Your)</td>
+                    </tr>
+                    <tr>
+                        <td>ఔదార్యాన్ని</td>
+                        <td>audāryānni</td>
+                        <td>దానగుణాన్ని (Generosity)</td>
+                    </tr>
+                    <tr>
+                        <td>పరీక్షించడానికి</td>
+                        <td>parīkṣin̄caḍāniki</td>
+                        <td>టెస్ట్ చేయడానిక (To test)</td>
+                    </tr>
+                    <tr>
+                        <td>నేను</td>
+                        <td>nēnu</td>
+                        <td>ఇంద్రుడు (I/Indra)</td>
+                    </tr>
+                    <tr>
+                        <td>డేగగా</td>
+                        <td>ḍēgagā</td>
+                        <td>డేగ రూపంలో (As a hawk)</td>
+                    </tr>
+                    <tr>
+                        <td>అగ్నిదేవుడు</td>
+                        <td>agnidēvuḍu</td>
+                        <td>అగ్ని దేవుడు (God of Fire)</td>
+                    </tr>
+                    <tr>
+                        <td>పావురంగా</td>
+                        <td>pāvuraṅgā</td>
+                        <td>పావురం రూపంలో (As a pigeon)</td>
+                    </tr>
+                    <tr>
+                        <td>వచ్చాం</td>
+                        <td>vacchām</td>
+                        <td>వచ్చాము (We came)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 70 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>నీ కీర్తి చిరస్థాయిగా నిలిచిపోతుంది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>నీ</td>
+                        <td>nī</td>
+                        <td>నీయొక్క (Your)</td>
+                    </tr>
+                    <tr>
+                        <td>కీర్తి</td>
+                        <td>kīrti</td>
+                        <td>గుడ్ నేమ్ (Fame/Glory)</td>
+                    </tr>
+                    <tr>
+                        <td>చిరస్థాయిగా</td>
+                        <td>cirasthāyigā</td>
+                        <td>ఎప్పటికీ (Permanently/Forever)</td>
+                    </tr>
+                    <tr>
+                        <td>నిలిచిపోతుంది</td>
+                        <td>nilichipōtundi</td>
+                        <td>ఉండిపోతుంది (Will remain)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 71 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>అని ఆశీర్వదించాడు ఇంద్రుడు.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అని</td>
+                        <td>ani</td>
+                        <td>ఈ విధంగా (Thus)</td>
+                    </tr>
+                    <tr>
+                        <td>ఆశీర్వదించాడు</td>
+                        <td>āśīrvadin̄chāḍu</td>
+                        <td>బ్లెస్ చేశాడు (Blessed)</td>
+                    </tr>
+                    <tr>
+                        <td>ఇంద్రుడు</td>
+                        <td>indruḍu</td>
+                        <td>దేవతల రాజు (Indra)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 72 -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>శిబి చక్రవర్తికి మళ్ళీ మునుపటి రూపం వచ్చింది.</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శిబి</td>
+                        <td>śibi</td>
+                        <td>శిబి రాజు</td>
+                    </tr>
+                    <tr>
+                        <td>చక్రవర్తికి</td>
+                        <td>cakravartiki</td>
+                        <td>రాజుకు (To the Emperor)</td>
+                    </tr>
+                    <tr>
+                        <td>మళ్ళీ</td>
+                        <td>maḷḷī</td>
+                        <td>తిరిగి (Again)</td>
+                    </tr>
+                    <tr>
+                        <td>మునుపటి</td>
+                        <td>munupaṭi</td>
+                        <td>పాత (Previous/Original)</td>
+                    </tr>
+                    <tr>
+                        <td>రూపం</td>
+                        <td>rūpam</td>
+                        <td>ఫారం (Form/Appearance)</td>
+                    </tr>
+                    <tr>
+                        <td>వచ్చింది</td>
+                        <td>vacchindi</td>
+                        <td>చేరింది (Came)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 73 (Incomplete sentence fragment) -->
+    <div class="card sentence-card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <p class="h6 mb-2"><b>శిబిచక్రవర్తి వారికి</b></p>
+            <table class="table table-hover mb-0 table-sm">
+                <thead>
+                    <tr>
+                        <th>తెలుగు పదం</th>
+                        <th>ఉచ్చారణ (Pronunciation)</th>
+                        <th>అర్థం (Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>శిబిచక్రవర్తి</td>
+                        <td>śibicakravarti</td>
+                        <td>శిబి రాజు (Emperor Shibi)</td>
+                    </tr>
+                    <tr>
+                        <td>వారికి</td>
+                        <td>vāriki</td>
+                        <td>వారియొక్క (To them)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
     </div>
 </body>
