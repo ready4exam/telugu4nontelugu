@@ -46,7 +46,7 @@ jobs:
           import os
           import sys
           import time
-          from google import genaiit 
+          from google import genai
 
           # --- CONFIGURATION ---
           CHAPTER = "${{ github.event.inputs.chapter_folder }}"
@@ -56,8 +56,7 @@ jobs:
               "gemini-2.0-flash", 
               "gemini-1.5-flash",
               "gemini-1.5-flash-latest",
-              "gemini-1.5-pro",
-              "gemini-1.5-pro-latest"
+              "gemini-1.5-pro"
           ]
 
           # --- STEP 1: LOCATE FILES ---
@@ -75,20 +74,16 @@ jobs:
           output_path = f"class5/{CHAPTER}/exercise.html"
 
           print(f"📂 Chapter: {CHAPTER}")
-          print(f"📄 Exercise Source: {ex_path}")
 
           if not os.path.exists(ex_path):
               print(f"❌ Error: Exercise file {ex_path} not found.")
               sys.exit(1)
               
-          # Load Lesson Text for Context
           lesson_text = ""
           if os.path.exists(lesson_path):
               with open(lesson_path, "r", encoding="utf-8") as f:
                   lesson_text = f.read()
-              print("✅ Lesson text loaded for context.")
-          else:
-              print("⚠️ Warning: Lesson file not found.")
+              print("✅ Lesson text loaded.")
 
           with open(ex_path, "r", encoding="utf-8") as f:
               exercise_text = f.read()
@@ -96,44 +91,36 @@ jobs:
           # --- STEP 2: PREPARE CLIENT ---
           client = genai.Client(api_key=API_KEY)
 
-          # --- STEP 3: REFINED PROMPT ---
+          # --- STEP 3: OPTIMIZED PROMPT ---
+          # Uses concise instructions and an HTML template to save tokens.
           prompt = f"""
-          You are an expert Telugu language tutor.
+          Role: Telugu Tutor.
+          Task: Convert Input to Q&A Cards (HTML).
           
-          CONTEXT (Lesson Story):
+          CONTEXT (Lesson):
           {lesson_text}
           
-          EXERCISE TEXT (Raw OCR):
+          INPUT (Exercises):
           {exercise_text}
 
-          TASK:
-          Convert the "EXERCISE TEXT" into a structured Q&A format.
-          
-          CRITICAL INSTRUCTIONS:
-          1. **Process ALL Sections:** You must handle Questions, Fill in the Blanks, Meanings (Arthalu), and especially "Match the Following" (Jata Parchandi).
-          2. **Match the Following Handling:** Treat each *correctly matched pair* as a Q&A. 
-             - Question = The Left side item.
-             - Answer = The Correctly Matched Right side item.
-          3. **Fill in the Blanks Handling:**
-             - Question = The sentence with the blank.
-             - Answer = The full correct sentence (or just the missing word).
-          4. **MANDATORY PRONUNCIATION:** - EVERY single Telugu sentence/word in the Question block MUST have an English pronunciation.
-             - EVERY single Telugu sentence/word in the Answer block MUST have an English pronunciation.
-             - **ZERO TOLERANCE:** Do not output any Telugu text without its English transliteration next to it.
-          5. **Context:** Use the Lesson Story provided to find the correct answers if they are missing or ambiguous in the exercise text.
+          RULES:
+          1. **Coverage:** Extract ALL Questions, Meanings, Blanks, & Matches.
+          2. **Matches:** Pair Left Item (Q) with Correct Right Item (A).
+          3. **Blanks:** Q = Sentence w/ blank; A = Filled Sentence.
+          4. **Logic:** Use CONTEXT to fix typos and find answers.
+          5. **STRICT REQUIREMENT:** EVERY Telugu phrase (Q & A) MUST have English Pronunciation & Meaning.
 
-          OUTPUT FORMAT:
-          Return ONLY raw HTML. Wrap each pair in:
+          OUTPUT TEMPLATE (Return ONLY raw HTML, no markdown):
           <div class="card mb-4 shadow-sm">
             <div class="alert alert-info">
-               <strong>Q:</strong> [Telugu Text] <br>
-               <em>(Pronunciation: [English Transliteration])</em> <br>
-               <span>Meaning: [English Translation]</span>
+               <strong>Q:</strong> [Telugu Q] <br>
+               <em>(Pronunciation: [English])</em> <br>
+               <span>Meaning: [English]</span>
             </div>
             <div class="alert alert-success">
-               <strong>A:</strong> [Telugu Text] <br>
-               <em>(Pronunciation: [English Transliteration])</em> <br>
-               <span>Meaning: [English Translation]</span>
+               <strong>A:</strong> [Telugu A] <br>
+               <em>(Pronunciation: [English])</em> <br>
+               <span>Meaning: [English]</span>
             </div>
           </div>
           """
@@ -165,40 +152,13 @@ jobs:
                       <title>{CHAPTER.replace("_", " ")} - Exercises</title>
                       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
                       <style>
-                          body {{ 
-                              background-color: #f0f2f5; 
-                              font-family: 'Segoe UI', sans-serif; 
-                              padding-top: 20px; 
-                              padding-bottom: 40px;
-                              overflow-x: hidden; 
-                          }}
-                          .exercise-title {{ 
-                              background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); 
-                              color: white; 
-                              border-radius: 15px; 
-                              padding: 20px; 
-                              margin-bottom: 30px; 
-                              text-align: center; 
-                          }}
-                          .card {{ 
-                              border: none; 
-                              border-radius: 12px; 
-                              overflow: hidden; 
-                              width: 100%;
-                              max-width: 100%;
-                          }}
-                          /* MOBILE FIXES & TYPOGRAPHY */
-                          .alert, .card-body, p, div, span, strong, em {{
-                              word-wrap: break-word;
-                              overflow-wrap: break-word;
-                              word-break: break-word;
-                              white-space: normal;
-                              max-width: 100%;
-                          }}
+                          body {{ background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; padding-top: 20px; padding-bottom: 40px; overflow-x: hidden; }}
+                          .exercise-title {{ background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; text-align: center; }}
+                          .card {{ border: none; border-radius: 12px; overflow: hidden; width: 100%; }}
+                          .alert, .card-body, p, div, span, strong, em {{ word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; white-space: normal; max-width: 100%; }}
                           .alert {{ margin-bottom: 0; border-radius: 0; border: none; padding: 15px; }}
                           .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
                           .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
-                          
                           em {{ color: #555; font-size: 0.9rem; display: block; margin-top: 2px; }}
                           strong {{ font-size: 1.1rem; }}
                       </style>
@@ -239,5 +199,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull
           git add .
-          git commit -m "Generate exercises for ${{ github.event.inputs.chapter_folder }} with full pronunciation"
+          git commit -m "Generate optimized exercises for ${{ github.event.inputs.chapter_folder }}"
           git push
