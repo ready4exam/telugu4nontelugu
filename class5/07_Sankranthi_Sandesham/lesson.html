@@ -6,12 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; }
-        .sentence-card { background: white; border-radius: 15px; border: none; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; }
-        .full-sentence { background-color: #eef2ff; padding: 15px; font-weight: bold; color: #3730a3; border-bottom: 1px solid #e0e7ff; }
-        .word-table { font-size: 0.95rem; }
-        .lesson-title { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; }
-        @media (max-width: 576px) { .word-table { font-size: 0.85rem; } }
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; overflow-x: hidden; }
+        
+        .sentence-card { 
+            background: white; 
+            border-radius: 15px; 
+            border: none; 
+            margin-bottom: 25px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            overflow: hidden; 
+            width: 100%; /* Ensure card fits container */
+        }
+        
+        .full-sentence { 
+            background-color: #eef2ff; 
+            padding: 15px; 
+            font-weight: bold; 
+            color: #3730a3; 
+            border-bottom: 1px solid #e0e7ff; 
+        }
+        
+        .lesson-title { 
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); 
+            color: white; 
+            border-radius: 15px; 
+            padding: 20px; 
+            margin-bottom: 30px; 
+        }
+
+        /* --- MOBILE FIXES --- */
+        .table {
+            table-layout: fixed; /* Forces table to stay within width */
+            width: 100%;
+        }
+        
+        .table td, .table th {
+            white-space: normal !important; /* Forces text to wrap */
+            word-wrap: break-word; 
+            word-break: break-word;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 576px) { 
+            .table { font-size: 0.85rem; } 
+            .full-sentence { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -19,840 +58,956 @@
         <div class="lesson-title text-center">
             <h1>07 Sankranthi Sandesham</h1>
         </div>
-        <div class="container py-4">
-    <h1 class="text-primary mb-4">7. సంక్రాంతి సందేశం</h1>
-    <p class="lead">మీ తెలుగు ట్యూటర్ నుండి ప్రత్యేక పాఠం!</p>
+        <div class="container py-3">
+    <h3 class="text-primary text-center mb-4">సంక్రాంతి పాఠ్యభాగం (Lesson Text)</h3>
 
-    <!-- Card 1 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 1, Line 1)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>సంక్రాంతి పండుగ వస్తున్నది సందేశం తెస్తున్నది</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>సంక్రాంతి</td>
-                            <td>Sankraanti</td>
-                            <td>Sankranti (A harvest festival)</td>
-                        </tr>
-                        <tr>
-                            <td>పండుగ</td>
-                            <td>Panduga</td>
-                            <td>Festival</td>
-                        </tr>
-                        <tr>
-                            <td>వస్తున్నది</td>
-                            <td>Vastunnadi</td>
-                            <td>Is coming</td>
-                        </tr>
-                        <tr>
-                            <td>సందేశం</td>
-                            <td>Sandesham</td>
-                            <td>Message</td>
-                        </tr>
-                        <tr>
-                            <td>తెస్తున్నది</td>
-                            <td>Testunnadi</td>
-                            <td>Is bringing</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 1 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>స్తాళ స్త్‌ ము.</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>స్తాళ</td>
+                        <td>Stāḷa</td>
+                        <td>(పాఠం/Lesson related term)</td>
+                    </tr>
+                    <tr>
+                        <td>స్త్‌ ము</td>
+                        <td>Stu Mu</td>
+                        <td>(పాఠం/Lesson related term)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 1, Line 2)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>సరికొత్త జీవితమును సాధించగ నడువమన్నది</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>సరికొత్త</td>
-                            <td>Sarikotta</td>
-                            <td>Brand new</td>
-                        </tr>
-                        <tr>
-                            <td>జీవితమును</td>
-                            <td>Jeevitamunu</td>
-                            <td>Life (accusative)</td>
-                        </tr>
-                        <tr>
-                            <td>సాధించగ</td>
-                            <td>Saadhinchaga</td>
-                            <td>To achieve, so as to gain</td>
-                        </tr>
-                        <tr>
-                            <td>నడువమన్నది</td>
-                            <td>Nadvamannadi</td>
-                            <td>It asked (us) to walk/proceed</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 2 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>కింది బొమ్మను చూడండి, మాట్లాడండి.</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>కింది</td>
+                        <td>Kindi</td>
+                        <td>Below / Following</td>
+                    </tr>
+                    <tr>
+                        <td>బొమ్మను</td>
+                        <td>Bommanu</td>
+                        <td>The picture</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>Chūḍaṇḍi</td>
+                        <td>Look (Plural/Respectful)</td>
+                    </tr>
+                    <tr>
+                        <td>మాట్లాడండి</td>
+                        <td>Māṭlāḍaṇḍi</td>
+                        <td>Speak (Plural/Respectful)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 3 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 2, Line 1)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>పాత చేదు జ్ఞాపకాల పాతివేసి బ్రతుకునింక</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>పాత</td>
-                            <td>Paata</td>
-                            <td>Old</td>
-                        </tr>
-                        <tr>
-                            <td>చేదు</td>
-                            <td>Chedu</td>
-                            <td>Bitter</td>
-                        </tr>
-                        <tr>
-                            <td>జ్ఞాపకాల</td>
-                            <td>Gnyaapakaala</td>
-                            <td>Memories</td>
-                        </tr>
-                        <tr>
-                            <td>పాతివేసి</td>
-                            <td>Paativēsi</td>
-                            <td>Having buried</td>
-                        </tr>
-                        <tr>
-                            <td>బ్రతుకునింక</td>
-                            <td>Bratukuninka</td>
-                            <td>Life + now (Bratuku + inka)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 3 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>ప్రశ్నలకు జవాబులు చెప్పుండి</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ప్రశ్నలకు</td>
+                        <td>Praśnalaku</td>
+                        <td>To the questions</td>
+                    </tr>
+                    <tr>
+                        <td>జవాబులు</td>
+                        <td>Javābulu</td>
+                        <td>Answers</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పుండి</td>
+                        <td>Cheppuṇḍi</td>
+                        <td>Tell (Plural/Respectful)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 4 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 2, Line 2)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>సార్ధకమ్ము చేయుటకై సాగవలయునని యన్నది</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>సార్ధకమ్ము</td>
-                            <td>Saardhakammu</td>
-                            <td>Meaningful, purposeful</td>
-                        </tr>
-                        <tr>
-                            <td>చేయుటకై</td>
-                            <td>Cheyutakai</td>
-                            <td>In order to make/do</td>
-                        </tr>
-                        <tr>
-                            <td>సాగవలయునని</td>
-                            <td>Saagavalayunani</td>
-                            <td>That (we) must proceed/move forward</td>
-                        </tr>
-                        <tr>
-                            <td>యన్నది</td>
-                            <td>Yannadi</td>
-                            <td>It said/told</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 3, Line 1)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>ముగ్గులోని అందానికి మురియబోకుగాని దాని</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ముగ్గులోని</td>
-                            <td>Muggulōni</td>
-                            <td>In the Rangoli/design</td>
-                        </tr>
-                        <tr>
-                            <td>అందానికి</td>
-                            <td>Andaaniki</td>
-                            <td>To the beauty</td>
-                        </tr>
-                        <tr>
-                            <td>మురియబోకుగాని</td>
-                            <td>Muriyabōkugaani</td>
-                            <td>Don't get too delighted/carried away (but)</td>
-                        </tr>
-                        <tr>
-                            <td>దాని</td>
-                            <td>Daani</td>
-                            <td>Its/That's</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 4 (Corrected from source: ఏమి చేస్తున్నారో) -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>పై బొమ్మలో ఏమి చేస్తున్నారో చెప్పండి?</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పై</td>
+                        <td>Pai</td>
+                        <td>Above / Top</td>
+                    </tr>
+                    <tr>
+                        <td>బొమ్మలో</td>
+                        <td>Bommalō</td>
+                        <td>In the picture</td>
+                    </tr>
+                    <tr>
+                        <td>ఏమి</td>
+                        <td>Ēmi</td>
+                        <td>What</td>
+                    </tr>
+                    <tr>
+                        <td>చేస్తున్నారో</td>
+                        <td>Cēstunnārō</td>
+                        <td>Are they doing</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పండి</td>
+                        <td>Cheppaṇḍi</td>
+                        <td>Tell</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 6 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 3, Line 2)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>ముడుల వలెనె జీవితాన సుడులున్నవి కనుమన్నది</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ముడుల</td>
-                            <td>Mudula</td>
-                            <td>Knots/Twists (in the pattern)</td>
-                        </tr>
-                        <tr>
-                            <td>వలెనె</td>
-                            <td>Valene</td>
-                            <td>Just like</td>
-                        </tr>
-                        <tr>
-                            <td>జీవితాన</td>
-                            <td>Jeevitaana</td>
-                            <td>In life</td>
-                        </tr>
-                        <tr>
-                            <td>సుడులున్నవి</td>
-                            <td>Sudulunnavi</td>
-                            <td>There are whirls/cycles (Suduulu + unnavi)</td>
-                        </tr>
-                        <tr>
-                            <td>కనుమన్నది</td>
-                            <td>Knumannadi</td>
-                            <td>It asked (us) to see/recognize</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 4, Line 1)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>తిలలు బెల్లమెల్లరుకును తినుటకీయ చాలదోయి</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>తిలలు</td>
-                            <td>Tilalu</td>
-                            <td>Sesame seeds</td>
-                        </tr>
-                        <tr>
-                            <td>బెల్లమెల్లరుకును</td>
-                            <td>Bellamellarukunu</td>
-                            <td>Jaggery + to everyone (Bellam + Ellarukunu)</td>
-                        </tr>
-                        <tr>
-                            <td>తినుటకీయ</td>
-                            <td>Tinuṭakīya</td>
-                            <td>To give for eating (Tinuṭaku + īya)</td>
-                        </tr>
-                        <tr>
-                            <td>చాలదోయి</td>
-                            <td>Chaaldōyi</td>
-                            <td>It is not enough, friend (o/hey)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 5 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>మీరు హోలీ పండుగను ఎలా జరుపుకుంటారో చెప్పండి.</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మీరు</td>
+                        <td>Mīru</td>
+                        <td>You (Plural/Respectful)</td>
+                    </tr>
+                    <tr>
+                        <td>హోలీ</td>
+                        <td>Hōlī</td>
+                        <td>Holi (Festival name)</td>
+                    </tr>
+                    <tr>
+                        <td>పండుగను</td>
+                        <td>Paṇḍuganu</td>
+                        <td>The festival</td>
+                    </tr>
+                    <tr>
+                        <td>ఎలా</td>
+                        <td>Elā</td>
+                        <td>How</td>
+                    </tr>
+                    <tr>
+                        <td>జరుపుకుంటారో</td>
+                        <td>Jarupukuṇṭārō</td>
+                        <td>Do you celebrate</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పండి</td>
+                        <td>Cheppaṇḍi</td>
+                        <td>Tell</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 8 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 4, Line 2)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>తీపి మనసు సాధించుట నేర్చుకొనిన మేలన్నది</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>తీపి</td>
-                            <td>Teepi</td>
-                            <td>Sweet</td>
-                        </tr>
-                        <tr>
-                            <td>మనసు</td>
-                            <td>Manasu</td>
-                            <td>Heart/Mind</td>
-                        </tr>
-                        <tr>
-                            <td>సాధించుట</td>
-                            <td>Saadhinchuta</td>
-                            <td>Achieving/Gaining</td>
-                        </tr>
-                        <tr>
-                            <td>నేర్చుకొనిన</td>
-                            <td>Nērchukonina</td>
-                            <td>If (we) learn</td>
-                        </tr>
-                        <tr>
-                            <td>మేలన్నది</td>
-                            <td>Mēlanṇadi</td>
-                            <td>It is better, it said (Mēlu + annadi)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 6 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>రంగులతో మీకు ఏం చేస్తారో చెప్పండి?</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>రంగులతో</td>
+                        <td>Raṅgulato</td>
+                        <td>With colors</td>
+                    </tr>
+                    <tr>
+                        <td>మీకు</td>
+                        <td>Mīku</td>
+                        <td>To you</td>
+                    </tr>
+                    <tr>
+                        <td>ఏం</td>
+                        <td>Ēṁ</td>
+                        <td>What</td>
+                    </tr>
+                    <tr>
+                        <td>చేస్తారో</td>
+                        <td>Cēstāro</td>
+                        <td>Do (they/you)</td>
+                    </tr>
+                    <tr>
+                        <td>చెప్పండి</td>
+                        <td>Cheppaṇḍi</td>
+                        <td>Tell</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 9 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 5, Line 1)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>మనషులంత కలిసి మెలిసి మనుగడ ఒకరోజైనను</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>మనషులంత</td>
-                            <td>Manashulanta</td>
-                            <td>All people</td>
-                        </tr>
-                        <tr>
-                            <td>కలిసి</td>
-                            <td>Kalisi</td>
-                            <td>Mixing together</td>
-                        </tr>
-                        <tr>
-                            <td>మెలిసి</td>
-                            <td>Melisi</td>
-                            <td>Moving together/interacting</td>
-                        </tr>
-                        <tr>
-                            <td>మనుగడ</td>
-                            <td>Manugaḍa</td>
-                            <td>Existence/Life</td>
-                        </tr>
-                        <tr>
-                            <td>ఒకరోజైనను</td>
-                            <td>Okarōjainanu</td>
-                            <td>Even for one day</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <h4 class="text-info mt-4 mb-3">విద్యార్థులకు సూచనలు (Instructions for Students)</h4>
+
+    <!-- Sentence 7 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>విద్యార్థులకు సూచనలు</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>విద్యార్థులకు</td>
+                        <td>Vidyārthulaku</td>
+                        <td>To the students</td>
+                    </tr>
+                    <tr>
+                        <td>సూచనలు</td>
+                        <td>Sūcanalū</td>
+                        <td>Instructions / Guidelines</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 10 -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-success text-white">
-            <h5 class="mb-0">గేయం (Stanza 5, Line 2)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>మంచిని సాధించాలని మరల త్వరగా వస్తున్నది</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>మంచిని</td>
-                            <td>Manchini</td>
-                            <td>Goodness (accusative)</td>
-                        </tr>
-                        <tr>
-                            <td>సాధించాలని</td>
-                            <td>Saadhinchaalani</td>
-                            <td>That (we) must achieve/obtain</td>
-                        </tr>
-                        <tr>
-                            <td>మరల</td>
-                            <td>Marala</td>
-                            <td>Again</td>
-                        </tr>
-                        <tr>
-                            <td>త్వరగా</td>
-                            <td>Tvaragaa</td>
-                            <td>Quickly</td>
-                        </tr>
-                        <tr>
-                            <td>వస్తున్నది</td>
-                            <td>Vastunnadi</td>
-                            <td>Is coming</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Card 11 (Author Metadata) -->
-    <div class="card shadow mb-4 border-info">
-        <div class="card-header bg-info text-white">
-            <h5 class="mb-0">రచయిత పరిచయం (Author Introduction)</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>రచయిత: వాసాల నరసయ్య (బాలగేయ కుసుమాలు)</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>రచయిత</td>
-                            <td>Rachayita</td>
-                            <td>Author</td>
-                        </tr>
-                        <tr>
-                            <td>వాసాల నరసయ్య</td>
-                            <td>Vaasaala Narasayya</td>
-                            <td>(Author's Name)</td>
-                        </tr>
-                        <tr>
-                            <td>బాలగేయ</td>
-                            <td>Baalageya</td>
-                            <td>Children's songs/poems</td>
-                        </tr>
-                        <tr>
-                            <td>కుసుమాలు</td>
-                            <td>Kusumaalu</td>
-                            <td>Flowers (The collection name)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 8 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>పాఠంలోని బొమ్మలు చూడండి. మాట్లాడండి.</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పాఠంలోని</td>
+                        <td>Pāṭhaṁlōni</td>
+                        <td>Located in the lesson</td>
+                    </tr>
+                    <tr>
+                        <td>బొమ్మలు</td>
+                        <td>Bommalu</td>
+                        <td>Pictures</td>
+                    </tr>
+                    <tr>
+                        <td>చూడండి</td>
+                        <td>Chūḍaṇḍi</td>
+                        <td>Look</td>
+                    </tr>
+                    <tr>
+                        <td>మాట్లాడండి</td>
+                        <td>Māṭlāḍaṇḍi</td>
+                        <td>Speak</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <h2 class="text-secondary mt-5 mb-3">పాఠం సారాంశం (Summary)</h2>
-
-    <!-- Card 12 (Summary Point 1) -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-warning text-dark">
-            <h5 class="mb-0">సారాంశం 1</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>సంక్రాంతి పండుగ మనకు కొత్త జీవితం వైపు అడుగులు వేయాలని చెబుతుంది.</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>సంక్రాంతి</td>
-                            <td>Sankraanti</td>
-                            <td>Sankranti</td>
-                        </tr>
-                        <tr>
-                            <td>పండుగ</td>
-                            <td>Panduga</td>
-                            <td>Festival</td>
-                        </tr>
-                        <tr>
-                            <td>మనకు</td>
-                            <td>Manaku</td>
-                            <td>To us</td>
-                        </tr>
-                        <tr>
-                            <td>కొత్త</td>
-                            <td>Kotta</td>
-                            <td>New</td>
-                        </tr>
-                        <tr>
-                            <td>జీవితం</td>
-                            <td>Jeevitam</td>
-                            <td>Life</td>
-                        </tr>
-                        <tr>
-                            <td>వైపు</td>
-                            <td>Vaipu</td>
-                            <td>Towards</td>
-                        </tr>
-                        <tr>
-                            <td>అడుగులు</td>
-                            <td>Adugulu</td>
-                            <td>Steps</td>
-                        </tr>
-                        <tr>
-                            <td>వేయాలని</td>
-                            <td>Vēyaalani</td>
-                            <td>That (we) should take/put</td>
-                        </tr>
-                        <tr>
-                            <td>చెబుతుంది</td>
-                            <td>Chebutundi</td>
-                            <td>Tells</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 9 (Corrected from source: ఉపాధ్యాయిని) -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>ఉపాధ్యాయిని గేయాన్ని చదువుతున్నప్పుడు జాగ్రత్తగా వినండి.</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ఉపాధ్యాయిని</td>
+                        <td>Upādhyāyini</td>
+                        <td>Teacher (female)</td>
+                    </tr>
+                    <tr>
+                        <td>గేయాన్ని</td>
+                        <td>Gēyānni</td>
+                        <td>The song/poem</td>
+                    </tr>
+                    <tr>
+                        <td>చదువుతున్నప్పుడు</td>
+                        <td>Chaduvutunnappuḍu</td>
+                        <td>While reading</td>
+                    </tr>
+                    <tr>
+                        <td>జాగ్రత్తగా</td>
+                        <td>Jāgrattagā</td>
+                        <td>Carefully</td>
+                    </tr>
+                    <tr>
+                        <td>వినండి</td>
+                        <td>Vinaṇḍi</td>
+                        <td>Listen</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 13 (Summary Point 2) -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-warning text-dark">
-            <h5 class="mb-0">సారాంశం 2</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>పాత బాధలను మర్చిపోయి మంచి పనుల వైపు సాగాలి.</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>పాత</td>
-                            <td>Paata</td>
-                            <td>Old</td>
-                        </tr>
-                        <tr>
-                            <td>బాధలను</td>
-                            <td>Baadhalanu</td>
-                            <td>Sorrows/Pains (accusative)</td>
-                        </tr>
-                        <tr>
-                            <td>మర్చిపోయి</td>
-                            <td>Marchipōyi</td>
-                            <td>Having forgotten</td>
-                        </tr>
-                        <tr>
-                            <td>మంచి</td>
-                            <td>Manchi</td>
-                            <td>Good</td>
-                        </tr>
-                        <tr>
-                            <td>పనుల</td>
-                            <td>Panula</td>
-                            <td>Works/Deeds</td>
-                        </tr>
-                        <tr>
-                            <td>వైపు</td>
-                            <td>Vaipu</td>
-                            <td>Towards</td>
-                        </tr>
-                        <tr>
-                            <td>సాగాలి</td>
-                            <td>Saagaali</td>
-                            <td>Must proceed/move</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 10 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>పాఠం చదువండి. అర్థంకాని పదాల కింద గీత గీయండి.</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పాఠం</td>
+                        <td>Pāṭhaṁ</td>
+                        <td>Lesson</td>
+                    </tr>
+                    <tr>
+                        <td>చదువండి</td>
+                        <td>Chadavaṇḍi</td>
+                        <td>Read</td>
+                    </tr>
+                    <tr>
+                        <td>అర్థంకాని</td>
+                        <td>Ardhaṁkāni</td>
+                        <td>Not understood / Meaningless</td>
+                    </tr>
+                    <tr>
+                        <td>పదాల</td>
+                        <td>Padāla</td>
+                        <td>Of words</td>
+                    </tr>
+                    <tr>
+                        <td>కింద</td>
+                        <td>Kinda</td>
+                        <td>Under / Below</td>
+                    </tr>
+                    <tr>
+                        <td>గీత</td>
+                        <td>Gīta</td>
+                        <td>Line</td>
+                    </tr>
+                    <tr>
+                        <td>గీయండి</td>
+                        <td>Gīyaṇḍi</td>
+                        <td>Draw</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Card 14 (Summary Point 3) -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-warning text-dark">
-            <h5 class="mb-0">సారాంశం 3</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>ఇంటి ముందు వేసే ముగ్గుల్లో ఎలాగైతే మెలికలు ఉంటాయో, జీవితంలో కూడా కష్టసుఖాలనే సుడులు ఉంటాయని గుర్తించాలి.</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ఇంటి</td>
-                            <td>Inṭi</td>
-                            <td>House's</td>
-                        </tr>
-                        <tr>
-                            <td>ముందు</td>
-                            <td>Mundu</td>
-                            <td>Front</td>
-                        </tr>
-                        <tr>
-                            <td>వేసే</td>
-                            <td>Vēsē</td>
-                            <td>That is put/drawn</td>
-                        </tr>
-                        <tr>
-                            <td>ముగ్గుల్లో</td>
-                            <td>Muggullō</td>
-                            <td>In the Rangolis</td>
-                        </tr>
-                        <tr>
-                            <td>ఎలాగైతే</td>
-                            <td>Elaagaitē</td>
-                            <td>Just how/Like how</td>
-                        </tr>
-                        <tr>
-                            <td>మెలికలు</td>
-                            <td>Melikalu</td>
-                            <td>Twists/Turns/Curves</td>
-                        </tr>
-                        <tr>
-                            <td>ఉంటాయో</td>
-                            <td>Unṭaayō</td>
-                            <td>Are there (indicative)</td>
-                        </tr>
-                        <tr>
-                            <td>జీవితంలో</td>
-                            <td>Jeevitamlō</td>
-                            <td>In life</td>
-                        </tr>
-                        <tr>
-                            <td>కూడా</td>
-                            <td>Kūḍaa</td>
-                            <td>Also</td>
-                        </tr>
-                        <tr>
-                            <td>కష్టసుఖాలనే</td>
-                            <td>Kashṭasukhaalanē</td>
-                            <td>Which are called difficulties and comforts</td>
-                        </tr>
-                        <tr>
-                            <td>సుడులు</td>
-                            <td>Suḍulu</td>
-                            <td>Whirlpools/Cycles</td>
-                        </tr>
-                        <tr>
-                            <td>ఉంటాయని</td>
-                            <td>Unṭaayani</td>
-                            <td>That there will be</td>
-                        </tr>
-                        <tr>
-                            <td>గుర్తించాలి</td>
-                            <td>Gurtinchaali</td>
-                            <td>Must recognize/know</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Card 15 (Summary Point 4) -->
-    <div class="card shadow mb-4">
-        <div class="card-header bg-warning text-dark">
-            <h5 class="mb-0">సారాంశం 4</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text fs-5 mb-3"><strong>కేవలం నువ్వులు, బెల్లం పంచుకోవడం మాత్రమే కాదు, ఎదుటివారితో తీయగా మాట్లాడి మంచి మనసును కలిగి ఉండటమే సంక్రాంతి ఇచ్చే గొప్ప సందేశం.</strong></p>
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Telugu Word</th>
-                            <th>Pronunciation</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>కేవలం</td>
-                            <td>Kēvalam</td>
-                            <td>Only/Merely</td>
-                        </tr>
-                        <tr>
-                            <td>నువ్వులు</td>
-                            <td>Nuvvulu</td>
-                            <td>Sesame seeds</td>
-                        </tr>
-                        <tr>
-                            <td>బెల్లం</td>
-                            <td>Bellam</td>
-                            <td>Jaggery</td>
-                        </tr>
-                        <tr>
-                            <td>పంచుకోవడం</td>
-                            <td>Panchukōvaḍam</td>
-                            <td>Sharing</td>
-                        </tr>
-                        <tr>
-                            <td>మాత్రమే</td>
-                            <td>Maatramē</td>
-                            <td>Only (just that)</td>
-                        </tr>
-                        <tr>
-                            <td>కాదు</td>
-                            <td>Kaadu</td>
-                            <td>Not</td>
-                        </tr>
-                        <tr>
-                            <td>ఎదుటివారితో</td>
-                            <td>Eduṭivaaritō</td>
-                            <td>With others/the opposite person</td>
-                        </tr>
-                        <tr>
-                            <td>తీయగా</td>
-                            <td>Teeyagaa</td>
-                            <td>Sweetly</td>
-                        </tr>
-                        <tr>
-                            <td>మాట్లాడి</td>
-                            <td>Maaṭlaaḍi</td>
-                            <td>Having spoken</td>
-                        </tr>
-                        <tr>
-                            <td>మంచి</td>
-                            <td>Manchi</td>
-                            <td>Good</td>
-                        </tr>
-                        <tr>
-                            <td>మనసును</td>
-                            <td>Manasunu</td>
-                            <td>Heart/Mind (accusative)</td>
-                        </tr>
-                        <tr>
-                            <td>కలిగి</td>
-                            <td>Kaligi</td>
-                            <td>Having</td>
-                        </tr>
-                        <tr>
-                            <td>ఉండటమే</td>
-                            <td>Unḍaṭamē</td>
-                            <td>Being (is only that)</td>
-                        </tr>
-                        <tr>
-                            <td>సంక్రాంతి</td>
-                            <td>Sankraanti</td>
-                            <td>Sankranti</td>
-                        </tr>
-                        <tr>
-                            <td>ఇచ్చే</td>
-                            <td>Ichchē</td>
-                            <td>That gives</td>
-                        </tr>
-                        <tr>
-                            <td>గొప్ప</td>
-                            <td>Goppa</td>
-                            <td>Great</td>
-                        </tr>
-                        <tr>
-                            <td>సందేశం</td>
-                            <td>Sandēsham</td>
-                            <td>Message</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Sentence 11 (Corrected from source: అర్థాలను) -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>గీత గీసిన పదాలకు అర్థాలను మీ మిత్రులనుగాని, ఉపాధ్యాయులనుగాని అడుగండి. లేదా 'పదాలు-అర్థాలు' అనే పట్టికలో చూసి తెలుసుకోండి.</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>గీత</td>
+                        <td>Gīta</td>
+                        <td>Line</td>
+                    </tr>
+                    <tr>
+                        <td>గీసిన</td>
+                        <td>Gīsina</td>
+                        <td>Drawn</td>
+                    </tr>
+                    <tr>
+                        <td>పదాలకు</td>
+                        <td>Padālaku</td>
+                        <td>To the words</td>
+                    </tr>
+                    <tr>
+                        <td>అర్థాలను</td>
+                        <td>Arthālanu</td>
+                        <td>Meanings</td>
+                    </tr>
+                    <tr>
+                        <td>మీ</td>
+                        <td>Mī</td>
+                        <td>Your</td>
+                    </tr>
+                    <tr>
+                        <td>మిత్రులనుగాని</td>
+                        <td>Mitrulanugāni</td>
+                        <td>Either your friends</td>
+                    </tr>
+                    <tr>
+                        <td>ఉపాధ్యాయులనుగాని</td>
+                        <td>Upādhyāyulanu gāni</td>
+                        <td>Or your teachers</td>
+                    </tr>
+                    <tr>
+                        <td>అడుగండి</td>
+                        <td>Aḍugaṇḍi</td>
+                        <td>Ask</td>
+                    </tr>
+                    <tr>
+                        <td>లేదా</td>
+                        <td>Lēdā</td>
+                        <td>Or</td>
+                    </tr>
+                    <tr>
+                        <td>పదాలు</td>
+                        <td>Padālu</td>
+                        <td>Words</td>
+                    </tr>
+                    <tr>
+                        <td>అర్థాలు</td>
+                        <td>Arthālu</td>
+                        <td>Meanings</td>
+                    </tr>
+                    <tr>
+                        <td>అనే</td>
+                        <td>Anē</td>
+                        <td>Called</td>
+                    </tr>
+                    <tr>
+                        <td>పట్టికలో</td>
+                        <td>Paṭṭikalō</td>
+                        <td>In the table/list</td>
+                    </tr>
+                    <tr>
+                        <td>చూసి</td>
+                        <td>Chūsi</td>
+                        <td>Having seen</td>
+                    </tr>
+                    <tr>
+                        <td>తెలుసుకోండి</td>
+                        <td>Telusukōṇḍi</td>
+                        <td>Find out / Understand</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <footer class="text-center text-muted mt-5 pb-3">
-        పాఠం పూర్తి అయింది. బాగా చదివారు!
-    </footer>
+    <h4 class="text-success mt-4 mb-3">సంక్రాంతి గేయం (The Sankranti Poem)</h4>
+
+    <!-- Sentence 12 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>సంక్రాంతి పండుగ వస్తున్నది సందేశం తెస్తున్నది</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>సంక్రాంతి</td>
+                        <td>Saṅkrānti</td>
+                        <td>Sankranti (Harvest festival)</td>
+                    </tr>
+                    <tr>
+                        <td>పండుగ</td>
+                        <td>Paṇḍuga</td>
+                        <td>Festival</td>
+                    </tr>
+                    <tr>
+                        <td>వస్తున్నది</td>
+                        <td>Vastunnadi</td>
+                        <td>Is coming</td>
+                    </tr>
+                    <tr>
+                        <td>సందేశం</td>
+                        <td>Sandēśaṁ</td>
+                        <td>Message</td>
+                    </tr>
+                    <tr>
+                        <td>తెస్తున్నది</td>
+                        <td>Testunnadi</td>
+                        <td>Is bringing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 13 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>సరికొత్త జీవితమును సాధించగ నడువమన్నది</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>సరికొత్త</td>
+                        <td>Sarikotta</td>
+                        <td>Brand new</td>
+                    </tr>
+                    <tr>
+                        <td>జీవితమును</td>
+                        <td>Jīvitamunu</td>
+                        <td>The life</td>
+                    </tr>
+                    <tr>
+                        <td>సాధించగ</td>
+                        <td>Sādhiñcaga</td>
+                        <td>To achieve / to attain</td>
+                    </tr>
+                    <tr>
+                        <td>నడువమన్నది</td>
+                        <td>Naḍuvamannadi</td>
+                        <td>It told us to walk/proceed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 14 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>పాత చేదు జ్ఞాపకాల పాతివేసి బ్రతుకునింక</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పాత</td>
+                        <td>Pāta</td>
+                        <td>Old</td>
+                    </tr>
+                    <tr>
+                        <td>చేదు</td>
+                        <td>Cēdu</td>
+                        <td>Bitter</td>
+                    </tr>
+                    <tr>
+                        <td>జ్ఞాపకాల</td>
+                        <td>Gnāpakāla</td>
+                        <td>Memories</td>
+                    </tr>
+                    <tr>
+                        <td>పాతివేసి</td>
+                        <td>Pātivēsi</td>
+                        <td>Having buried</td>
+                    </tr>
+                    <tr>
+                        <td>బ్రతుకునింక</td>
+                        <td>Bratukininka</td>
+                        <td>Now, the life</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 15 (Corrected from source: సార్ధకమ్ము) -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>సార్ధకమ్ము చేయుటకై సాగవలయునని యన్నది</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>సార్ధకమ్ము</td>
+                        <td>Sārdhakammu</td>
+                        <td>Meaningful / Purposeful</td>
+                    </tr>
+                    <tr>
+                        <td>చేయుటకై</td>
+                        <td>Cēyuṭakai</td>
+                        <td>In order to make/do</td>
+                    </tr>
+                    <tr>
+                        <td>సాగవలయునని</td>
+                        <td>Sāgavalayunani</td>
+                        <td>That one must proceed</td>
+                    </tr>
+                    <tr>
+                        <td>యన్నది</td>
+                        <td>Yannadi</td>
+                        <td>It said</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 16 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>ముగ్గులోని అందానికి మురియబోకుగాని దాని</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ముగ్గులోని</td>
+                        <td>Muggulōni</td>
+                        <td>In the rangoli/design</td>
+                    </tr>
+                    <tr>
+                        <td>అందానికి</td>
+                        <td>Andāniki</td>
+                        <td>To the beauty</td>
+                    </tr>
+                    <tr>
+                        <td>మురియబోకుగాని</td>
+                        <td>Muriyabōkugāni</td>
+                        <td>Do not get overly delighted (but)</td>
+                    </tr>
+                    <tr>
+                        <td>దాని</td>
+                        <td>Dāni</td>
+                        <td>Its</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 17 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>ముడుల వలెనె జీవితాన సుడులున్నవి కనుమన్నది</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ముడుల</td>
+                        <td>Muḍula</td>
+                        <td>Knots / Intricacies (of the muggu design)</td>
+                    </tr>
+                    <tr>
+                        <td>వలెనె</td>
+                        <td>Valene</td>
+                        <td>Just like</td>
+                    </tr>
+                    <tr>
+                        <td>జీవితాన</td>
+                        <td>Jīvitāna</td>
+                        <td>In life</td>
+                    </tr>
+                    <tr>
+                        <td>సుడులున్నవి</td>
+                        <td>Suḍulunnavi</td>
+                        <td>There are swirls/twists</td>
+                    </tr>
+                    <tr>
+                        <td>కనుమన్నది</td>
+                        <td>Kanumannadi</td>
+                        <td>It told us to see</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 18 (Corrected segmentation) -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>తిలలు బెల్లం ఎల్లరుకును తినుటకీయ చాలదోయి</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>తిలలు</td>
+                        <td>Tilalu</td>
+                        <td>Sesame seeds</td>
+                    </tr>
+                    <tr>
+                        <td>బెల్లం</td>
+                        <td>Bellaṁ</td>
+                        <td>Jaggery</td>
+                    </tr>
+                    <tr>
+                        <td>ఎల్లరుకును</td>
+                        <td>Ellarukunu</td>
+                        <td>To everyone</td>
+                    </tr>
+                    <tr>
+                        <td>తినుటకీయ</td>
+                        <td>Tinuṭakīya</td>
+                        <td>To give for eating</td>
+                    </tr>
+                    <tr>
+                        <td>చాలదోయి</td>
+                        <td>Cāladōyi</td>
+                        <td>It is not enough (exclamation)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 19 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>తీపి మనసు సాధించుట నేర్చుకొనిన మేలన్నది</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>తీపి</td>
+                        <td>Tīpi</td>
+                        <td>Sweet</td>
+                    </tr>
+                    <tr>
+                        <td>మనసు</td>
+                        <td>Manasu</td>
+                        <td>Heart / Mind</td>
+                    </tr>
+                    <tr>
+                        <td>సాధించుట</td>
+                        <td>Sādhiñcuṭa</td>
+                        <td>Achieving / Attaining</td>
+                    </tr>
+                    <tr>
+                        <td>నేర్చుకొనిన</td>
+                        <td>Nērcukonina</td>
+                        <td>If learned</td>
+                    </tr>
+                    <tr>
+                        <td>మేలన్నది</td>
+                        <td>Mēlannadi</td>
+                        <td>It said it is better</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 20 (Corrected ending: ఒకరోజైనను) -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>మనషులంత కలిసి మెలిసి మనుగడ ఒకరోజైనను</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మనషులంత</td>
+                        <td>Manaṣulanta</td>
+                        <td>All the people</td>
+                    </tr>
+                    <tr>
+                        <td>కలిసి</td>
+                        <td>Kalisi</td>
+                        <td>Having met / Together</td>
+                    </tr>
+                    <tr>
+                        <td>మెలిసి</td>
+                        <td>Melisi</td>
+                        <td>Blending / Mingling</td>
+                    </tr>
+                    <tr>
+                        <td>మనుగడ</td>
+                        <td>Manugaḍa</td>
+                        <td>Existence / Living</td>
+                    </tr>
+                    <tr>
+                        <td>ఒకరోజైనను</td>
+                        <td>Okarōjainanu</td>
+                        <td>Even if it is just one day</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sentence 21 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>మంచిని సాధించాలని మరల త్వరగ రాలా</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మంచిని</td>
+                        <td>Mañcini</td>
+                        <td>Goodness</td>
+                    </tr>
+                    <tr>
+                        <td>సాధించాలని</td>
+                        <td>Sādhiñcālani</td>
+                        <td>In order to achieve</td>
+                    </tr>
+                    <tr>
+                        <td>మరల</td>
+                        <td>Marala</td>
+                        <td>Again</td>
+                    </tr>
+                    <tr>
+                        <td>త్వరగ</td>
+                        <td>Tvaraga</td>
+                        <td>Quickly</td>
+                    </tr>
+                    <tr>
+                        <td>రాలా</td>
+                        <td>Rālā</td>
+                        <td>Didn't come (rhetorical)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h4 class="text-secondary mt-4 mb-3">రచయిత (Author)</h4>
+
+    <!-- Sentence 22 -->
+    <div class="card sentence-card mb-3 shadow-sm">
+        <div class="card-body p-3">
+            <p class="card-text"><strong>- వాసాల నరసయ్య (బాలగేయ కుసుమాలు)</strong></p>
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 33%;">Telugu Word</th>
+                        <th scope="col" style="width: 33%;">Pronunciation</th>
+                        <th scope="col">Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వాసాల</td>
+                        <td>Vāsāla</td>
+                        <td>Vasala (Surname)</td>
+                    </tr>
+                    <tr>
+                        <td>నరసయ్య</td>
+                        <td>Narasayya</td>
+                        <td>Narasayya (Name)</td>
+                    </tr>
+                    <tr>
+                        <td>బాలగేయ</td>
+                        <td>Bālagēya</td>
+                        <td>Children's song</td>
+                    </tr>
+                    <tr>
+                        <td>కుసుమాలు</td>
+                        <td>Kusumālu</td>
+                        <td>Flowers (A collection/anthology)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </div>
     </div>
 </body>
